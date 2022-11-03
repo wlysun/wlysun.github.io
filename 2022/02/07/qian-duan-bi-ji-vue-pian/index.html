@@ -1,0 +1,2783 @@
+<!DOCTYPE html>
+<html>
+  <!-- meta/link... -->
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>前端笔记(vue篇) | Sun</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/wly/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/wly/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/wly/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/wly/css/style.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/wly/js/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/wly/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+        <script src="/wly/js/valine/index.js"></script>
+    
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/wly/atom.xml" title="Sun" type="application/atom+xml">
+</head>
+
+  
+  <!-- 依赖于jquery和vue -->
+  
+    
+<script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+
+  
+
+  
+    
+<script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+
+  
+  
+  <body>
+    <!-- 预加载动画 -->
+    <!-- 页面预加载动画 -->
+
+<div id='loader'>
+  <link rel="stylesheet" href="/wly/js/loaded/index.css" >
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="configure-border-1">
+      <div class="configure-core"></div>
+    </div>
+    <div class="configure-border-2">
+      <div class="configure-core"></div>
+    </div>
+    <div class="loading-word">加载中...</div>
+  </div>
+</div>
+
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('DOMContentLoaded',endLoading);
+  
+</script>
+
+    
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script>
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (href, before, media, attributes) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/wly/js/swiper/swiper.min.js"></script>
+<script src="/wly/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/wly/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/wly/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/wly/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header   " 
+  id="navHeader"
+  style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/wly/medias/logo.png" class="lazyload placeholder" data-srcset="/wly/medias/logo.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">Sun</h3>
+      <h5 class="drawer-box-head_desc">千磨万击还坚劲，任尔东西南北风</h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/wly/" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/wly/archives" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">归档</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/wly/tags" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/wly/categories" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/wly/about" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/wly/message" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-comments" aria-hidden="true"></i>
+                  
+                  <span class="name">留言板</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/wly/friends" class="drawer-menu-item-link">
+                  
+                  <span class="name">友情链接</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(7)">
+                  <span>
+                    
+                    <span class="name">更多</span>
+                  </span>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(7)}" aria-hidden="true"></i>
+                </a>
+                <ul class="drawer-sub-menu" v-if="isOpen(7)">
+                  
+                  <li>
+                    <a href="/wly/gallery">
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+        
+          <li class="drawer-box-content_item">
+            <a href="https://github.com/laowly">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/wly/medias/logo.png" class="lazyload placeholder" data-srcset="/wly/medias/logo.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/wly/" class="logo">Sun</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/wly/" class="menu-item-link" title="首页">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/wly/archives" class="menu-item-link" title="归档">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">归档</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/wly/tags" class="menu-item-link" title="标签">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/wly/categories" class="menu-item-link" title="分类">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/wly/about" class="menu-item-link" title="关于">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/wly/message" class="menu-item-link" title="留言板">
+                  
+                    <i class="fas fa-comments" aria-hidden="true"></i>
+                  
+                  <span class="name">留言板</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/wly/friends" class="menu-item-link" title="友情链接">
+                  
+                  <span class="name">友情链接</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="javascript:;" class="menu-item-link" title="更多">
+                  
+                  <span class="name">更多</span>
+                  <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-menu">
+                  
+                  <li>
+                    <a href="/wly/gallery">
+                      
+                      <span>图库</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">本地搜索</span>
+          </span>
+          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text"
+            placeholder="请输入关键字"
+            id="local-search-input" 
+            @click="getSearchFile()"
+            class="st-search-input"
+            v-model="searchInput"
+          />
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/wly/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/wly/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a href="https://github.com/laowly" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+    <div id="he-plugin-simple"></div>
+    <script>
+      WIDGET = {
+        CONFIG: {
+          "modules": "012",
+          "background": 5,
+          "tmpColor": "4A4A4A",
+          "tmpSize": 16,
+          "cityColor": "4A4A4A",
+          "citySize": 16,
+          "aqiSize": 16,
+          "weatherIconSize": 24,
+          "alertIconSize": 18,
+          "padding": "10px 10px 10px 10px",
+          "shadow": "1",
+          "language": "auto",
+          "borderRadius": 5,
+          "fixed": "false",
+          "vertical": "middle",
+          "horizontal": "center",
+          "key": "2784dd3fcb1e4f0f9a9b579bf69641f2"
+        }
+      }
+    </script>
+    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    
+</header>
+        <!-- 内容区域 -->
+        
+ <!-- prismjs 代码高亮 -->
+ 
+    
+    <link href="/wly/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/wly/js/prism/prism.min.css" rel="stylesheet">
+    
+
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
+  
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/wly/medias/6.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        前端笔记(vue篇)
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2022-02-07 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/wly/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" class="post-detail-header_category">
+              前端笔记
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/wly/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content row justify-position" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1 id="vue笔记总结"><a href="#vue笔记总结" class="headerlink" title="vue笔记总结"></a>vue笔记总结</h1><h2 id="什么是Vue？"><a href="#什么是Vue？" class="headerlink" title="什么是Vue？"></a>什么是Vue？</h2><p>Vue是一套用于构建用户界面的渐进式JavaScript框架<br>形成Vue渐进式框架的核心概念为：<span class='p red'>组件化，MVVM，响应式和生命周期</span></p>
+<h2 id="vue指令"><a href="#vue指令" class="headerlink" title="vue指令"></a>vue指令</h2><p>指令: <span class='p red'>v-on，v-model，v-cloak，v-once，v-pre，v-text，v-html，v-for，v-show，v-if， v-else，v-else-if</span></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">v<span class="token operator">-</span>on 是事件绑定，可以缩写为@
+常用的修饰符也有很多：
+比如
+<span class="token punctuation">.</span>stop用来取消冒泡事件；
+<span class="token punctuation">.</span>prevent阻止默认事件；
+<span class="token punctuation">.</span>once只执行一次；当然还有许多。
+
+v<span class="token operator">-</span>model 是双向绑定，一般用于文本框、单选、复选、下拉；
+常用的修饰符有
+<span class="token punctuation">.</span>lazy <span class="token operator">-</span> 取代 input 监听 change 事件
+<span class="token punctuation">.</span>number <span class="token operator">-</span> 输入字符串转为有效的数字
+<span class="token punctuation">.</span>trim <span class="token operator">-</span> 输入首尾空格过滤
+
+v<span class="token operator">-</span>cloak使用 v<span class="token operator">-</span>cloak 能够解决插值表达式闪烁的问题
+
+v<span class="token operator">-</span>once只渲染一次
+
+v<span class="token operator">-</span>pre跳出渲染
+
+v<span class="token operator">-</span>text 可以将data中的文本放入元素中
+
+v<span class="token operator">-</span>html 可以识别标签
+
+v<span class="token operator">-</span><span class="token keyword">for</span> 和原生<span class="token constant">JS</span>的<span class="token keyword">for</span>循环差不多
+
+v<span class="token operator">-</span>show 判断元素显示还是隐藏
+v<span class="token operator">-</span>show<span class="token operator">=</span>“<span class="token boolean">true</span><span class="token operator">/</span><span class="token boolean">false</span>”
+
+v<span class="token operator">-</span><span class="token keyword">if</span>是条件判断<span class="token punctuation">,</span>判断元素显示还是隐藏
+当然还有配套的v<span class="token operator">-</span><span class="token keyword">else</span>、v<span class="token operator">-</span><span class="token keyword">else</span><span class="token operator">-</span><span class="token keyword">if</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="怎么理解mvvm这种设计模式"><a href="#怎么理解mvvm这种设计模式" class="headerlink" title="怎么理解mvvm这种设计模式"></a>怎么理解mvvm这种设计模式</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">Model–View–ViewModel（<span class="token constant">MVVM</span>）是一个软件架构设计模式，是一种简化用户界面的事件驱动编程方式。
+<span class="token constant">MVVM</span>
+ <span class="token constant">M</span> Model 模型 指的是数据层
+ <span class="token constant">V</span> View  视图 指的是用户页面
+ <span class="token constant">VM</span> ViewModel 视图模型
+视图模型是<span class="token constant">MVVM</span>模式的核心，它是连接view和model的桥梁，<span class="token constant">MVVM</span>实现了view和model的自动同步，
+当model的属性改变时，我们不用自己手动操作<span class="token constant">DOM</span>元素，来改变view的显示，称之为数据的双向绑定。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="v-if和v-show的区别，使用场景区别"><a href="#v-if和v-show的区别，使用场景区别" class="headerlink" title="v-if和v-show的区别，使用场景区别"></a>v-if和v-show的区别，使用场景区别</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">v<span class="token operator">-</span><span class="token keyword">if</span>和v<span class="token operator">-</span>show看起来似乎都是元素显示和隐藏，但是这两个选项是有区别的<span class="token operator">:</span>
+<span class="token number">1</span>、v<span class="token operator">-</span><span class="token keyword">if</span>在条件切换时，会对标签进行适当的创建和销毁，而v<span class="token operator">-</span>show则仅在初始化时加载一次，
+因此v<span class="token operator">-</span><span class="token keyword">if</span>的开销相对来说会比v<span class="token operator">-</span>show大。
+<span class="token number">2</span>、v<span class="token operator">-</span><span class="token keyword">if</span>是惰性的，只有当条件为真时才会真正渲染标签；如果初始条件不为真，则v<span class="token operator">-</span><span class="token keyword">if</span>不会去渲染标签。
+v<span class="token operator">-</span>show则无论初始条件是否成立，都会渲染标签，它仅仅做的只是简单的<span class="token constant">CSS</span>（display）切换。
+<span class="token number">3</span>、v<span class="token operator">-</span><span class="token keyword">if</span>适用于不需要频繁切换元素显示和隐藏的情况
+   v<span class="token operator">-</span>show适用于需要频繁切换元素的显示和隐藏的场景。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="vue事件修饰符和按键修饰符有哪些"><a href="#vue事件修饰符和按键修饰符有哪些" class="headerlink" title="vue事件修饰符和按键修饰符有哪些"></a>vue事件修饰符和按键修饰符有哪些</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">事件修饰符：
+  <span class="token punctuation">.</span>prevent  阻止事件默认行为
+  <span class="token punctuation">.</span>stop     阻止事件冒泡
+  <span class="token punctuation">.</span>capture  设置事件捕获机制
+  <span class="token punctuation">.</span>self     只有点击元素自身才能触发事件
+  <span class="token punctuation">.</span>once     事件只触发一次
+ 按键修饰符：
+  <span class="token punctuation">.</span>tab      空格
+  <span class="token punctuation">.</span>enter    回车
+  <span class="token punctuation">.</span>esc      返回 
+  <span class="token punctuation">.</span>space    空格
+  <span class="token punctuation">.</span>delete   捕获<span class="token string">"删除"</span>和<span class="token string">"空格"</span>键
+  <span class="token punctuation">.</span>up       上
+  <span class="token punctuation">.</span>down     下
+  <span class="token punctuation">.</span>left     左
+  <span class="token punctuation">.</span>right    右<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="v-model修饰符有哪些"><a href="#v-model修饰符有哪些" class="headerlink" title="v-model修饰符有哪些"></a>v-model修饰符有哪些</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">.</span>trim   去除首尾空格
+<span class="token punctuation">.</span>lazy   只在输入框失去焦点或按回车键时更新内容，不是实时更新
+<span class="token punctuation">.</span>number <span class="token function">将数据转换成number类型</span><span class="token punctuation">(</span>原本是字符串类型<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="v-for中为什么要加key，原理是什么"><a href="#v-for中为什么要加key，原理是什么" class="headerlink" title="v-for中为什么要加key，原理是什么"></a>v-for中为什么要加key，原理是什么</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">作用：
+  <span class="token number">1</span><span class="token punctuation">.</span>key的作用主要是为了高效的更新虚拟<span class="token constant">DOM</span>，提高渲染性能。
+  <span class="token number">2</span><span class="token punctuation">.</span>key属性可以避免数据混乱的情况出现。
+原理：
+  <span class="token number">1</span><span class="token punctuation">.</span>vue实现了一套虚拟<span class="token constant">DOM</span>，使我们可以不直接操作<span class="token constant">DOM</span>元素只操作数据，就可以重新渲染页面
+  <span class="token number">2.</span>当页面数据发生变化时，Diff算法只会比较同一层级的节点；
+  <span class="token number">3.</span>如果节点类型不同，直接干掉前面的节点，再创建并插入新的节点，
+  不会再比较这个节点后面的子节点；如果节点类型相同，则会重新设置该节点属性，从而实现节点更新<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="v-for和v-if的优先级"><a href="#v-for和v-if的优先级" class="headerlink" title="v-for和v-if的优先级"></a>v-for和v-if的优先级</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"> v<span class="token operator">-</span><span class="token keyword">for</span>优先级高于v<span class="token operator">-</span><span class="token keyword">if</span>
+如果同时出现v<span class="token operator">-</span><span class="token keyword">for</span>和v<span class="token operator">-</span><span class="token keyword">if</span>，无论判断条件是否成立，都会执行一遍v<span class="token operator">-</span><span class="token keyword">for</span>循环，
+这样浪费性能，所以要尽可能的避免两者一起使用。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="插槽（solt）"><a href="#插槽（solt）" class="headerlink" title="插槽（solt）"></a>插槽（solt）</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、什么是插槽
+	<span class="token number">1.1</span> 插槽（Slot）是Vue提出来的一个概念，插槽用于决定将所携带的内容，
+  插入到指定的某个位置，从而使模板分块，具有模块化的特质和更大的重用性。
+	<span class="token number">1.2</span> 插槽显不显示、怎样显示是由父组件来控制的，而插槽在哪里显示就由子组件来进行控制
+<span class="token number">2</span>、插槽使用
+	<span class="token number">2.1</span> 默认插槽  在子组件中写入slot，slot所在的位置就是父组件要显示的内容
+  <span class="token number">2.2</span> 具名插槽  在子组件中定义了三个slot标签，其中有两个分别添加了name属性header和footer
+    在父组件中使用template并写入对应的slot名字来指定该内容在子组件中现实的位置
+  <span class="token number">2.3</span> 作用域插槽  在子组件的slot标签上绑定需要的值
+    <span class="token operator">&lt;</span>slot <span class="token operator">:</span>data<span class="token operator">=</span><span class="token string">"user"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>slot<span class="token operator">></span>
+在父组件上使用slot<span class="token operator">-</span>scope<span class="token operator">=</span>“user”来接收子组件传过来的值 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="组件中的data为什么是函数-new-Vue-实例里，data-可以直接是一个对象"><a href="#组件中的data为什么是函数-new-Vue-实例里，data-可以直接是一个对象" class="headerlink" title="组件中的data为什么是函数,new Vue 实例里，data 可以直接是一个对象"></a>组件中的data为什么是函数,new Vue 实例里，data 可以直接是一个对象</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、组件是用来复用的，组件中的data写成一个函数<span class="token punctuation">,</span>数据以函数返回值形式定义<span class="token punctuation">,</span>函数有独立的作用域，
+这样每复用一次组件<span class="token punctuation">,</span>就会返回一份新的data<span class="token punctuation">,</span>类似于给每个组件实例创建一个私有的数据空间<span class="token punctuation">,</span>
+让各个组件实例维护各自的数据。
+<span class="token number">2</span>、而单纯的写成对象形式<span class="token punctuation">,</span>由于对象是引用类型，就使得所有组件实例共用了一份data<span class="token punctuation">,</span>
+就会造成一个变了全都会变的结果。
+<span class="token number">3</span>、因为<span class="token keyword">new</span> <span class="token class-name">vue</span>里面的代码是不存在复用的情况，所以可以写成对象形式<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="vue-中怎么给-data-动态添加数据，为什么要这样写"><a href="#vue-中怎么给-data-动态添加数据，为什么要这样写" class="headerlink" title="vue 中怎么给 data 动态添加数据，为什么要这样写"></a>vue 中怎么给 data 动态添加数据，为什么要这样写</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1.</span>官方文档定义：如果在vue实例创建之后添加新的属性到实例上，她不会触发视图更新。
+<span class="token number">2.</span>原因：受现代JavaScript的限制，vue不能检测到对象属性的添加或删除。由于vue会在初始化实例是
+对属性执行getter<span class="token operator">/</span>setter转换过程（使用Object<span class="token punctuation">.</span>defineProperty进行数据的劫持）。
+所以属性必须在data对象上存在才能让vue转换它，这样才能让它是响应的。
+    方法：<span class="token number">1</span><span class="token punctuation">.</span>this<span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span>对象名，属性，值<span class="token punctuation">)</span>或 Vue<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>对象名，属性，值<span class="token punctuation">)</span>
+          <span class="token number">2</span><span class="token punctuation">.</span>Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span>source<span class="token punctuation">)</span>添加多个属性
+          例如：
+            <span class="token keyword">const</span> target <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">a</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">b</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">&#125;</span>
+            <span class="token keyword">const</span> source <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token literal-property property">b</span><span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token literal-property property">d</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">&#125;</span>
+            <span class="token keyword">const</span> returnedTarget <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span>source<span class="token punctuation">)</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>returnedTarget<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//&#123; a: 1, b: 4, c: 5 &#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="computed和watch的区别是什么"><a href="#computed和watch的区别是什么" class="headerlink" title="computed和watch的区别是什么"></a>computed和watch的区别是什么</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">计算属性computed：
+<span class="token number">1</span>、支持缓存，只有依赖数据发生改变，才会重新进行计算
+<span class="token number">2</span>、不支持异步，当computed内有异步操作时无效，无法监听数据的变化
+<span class="token number">3</span>、如果computed需要对数据修改，需要写<span class="token keyword">get</span>和<span class="token keyword">set</span>两个方法，当数据变化时，调用<span class="token keyword">set</span>方法。
+<span class="token number">4</span>、computed擅长处理的场景：一个数据受多个数据影响，例如购物车计算总价
+侦听属性watch：
+<span class="token number">1</span>、不支持缓存，数据变，直接会触发相应的操作；
+<span class="token number">2</span>、watch支持异步；监听的函数接收两个参数，第一个参数是最新的值；第二个参数是输入之前的值；
+<span class="token number">3</span>、immediate：组件加载立即触发回调函数执行
+<span class="token number">4</span><span class="token literal-property property">、deep</span><span class="token operator">:</span><span class="token boolean">true</span>的意思就是深入监听，任何修改obj里面任何一个属性都会触发这个监听器里的 handler方法来处理逻辑
+<span class="token number">5</span>、watch擅长处理的场景：一个数据影响多个数据，例如搜索框<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="组件化和模块化的区别"><a href="#组件化和模块化的区别" class="headerlink" title="组件化和模块化的区别"></a>组件化和模块化的区别</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、组件相当于库，把一些能在项目里或者不同类型项目中可复用的代码进行工具性的封装。
+<span class="token number">2</span>、模块相应于业务逻辑模块，把同一类型项目里的功能逻辑进行进行需求性的封装。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="怎么理解vue中的虚拟DOM"><a href="#怎么理解vue中的虚拟DOM" class="headerlink" title="怎么理解vue中的虚拟DOM"></a>怎么理解vue中的虚拟DOM</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">原理：	
+	用 JavaScript 对象模拟真实 <span class="token constant">DOM</span> 树，对真实 <span class="token constant">DOM</span> 进行抽象；
+diff 算法 — 比较两棵虚拟 <span class="token constant">DOM</span> 树的差异；
+pach 算法 — 将两个虚拟 <span class="token constant">DOM</span> 对象的差异应用到真正的 <span class="token constant">DOM</span> 树。
+
+好处：
+	<span class="token number">1</span>、性能优化
+  <span class="token number">2</span>、无需手动操作<span class="token constant">DOM</span>
+  <span class="token number">3</span>、可以跨平台，服务端渲染等<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="怎么理解vue的生命周期"><a href="#怎么理解vue的生命周期" class="headerlink" title="怎么理解vue的生命周期"></a>怎么理解vue的生命周期</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">vue的生命周期：vue实例从创建到销毁的全过程，这个过程可以分为<span class="token number">3</span>个阶段
+   第一阶段：初始化阶段   创建vue实例<span class="token punctuation">,</span>准备数据<span class="token punctuation">,</span>准备模板<span class="token punctuation">,</span>渲染视图
+   第二阶段：数据更新阶段 当数据变化时，会进行新旧<span class="token constant">DOM</span>的对比，对比出差异的部分进行差异化更新。
+   第三阶段：实例销毁阶段 当vm<span class="token punctuation">.</span><span class="token function">$destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>被调用，vue实例就会被销毁，
+   释放相关资源，此时再更新数据，视图不会再变化。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="vue-钩子函数有哪些，有哪些使用的场景"><a href="#vue-钩子函数有哪些，有哪些使用的场景" class="headerlink" title="vue 钩子函数有哪些，有哪些使用的场景"></a>vue 钩子函数有哪些，有哪些使用的场景</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、各阶段包含钩子： 
+beforeCreate  在data数据注入到vm实例之前，此时vm身上没有数据    
+created       在data数据注入到vm实例之前，此时vm身上有数据   
+beforeMount   生成的结构替换视图之前，此时<span class="token constant">DOM</span>还没更新   
+mounted       生成的结构替换视图之前，此时<span class="token constant">DOM</span>已经更新完成    
+beforeUpdate  数据变化了，dom更新之前    
+updated       数据变化了，dom更新之后        
+activated     被keep<span class="token operator">-</span>alive缓存的组件激活时调用    
+deactivated   被keep<span class="token operator">-</span>alive缓存的组件停用时调用    
+beforeDestroy 实例销毁，是否资源之前    
+destroyed     实例销毁，是否资源之后    
+
+这些钩子函数会在vue的生命周期的不同阶段，自动被vue调用<span class="token number">2</span>、常用的钩子函数使用场景：    
+beforeCreate  做loading的一些渲染    
+created       结束loading， 发送数据的请求，拿数据    
+mounted       可以对dom进行操作    
+updated       监视数据的更新    
+beforeDestroy 销毁非vue资源，防止内存泄漏，例如清除定时器    
+activated     当我们运用了组件缓存时，如果想每次切换都发送一次请求的话，
+需要把请求函数写在activated中，而写在created或mounted中其只会在首次加载该组件的时候起作用。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Vue-的父组件和子组件生命周期钩子函数执行顺序"><a href="#Vue-的父组件和子组件生命周期钩子函数执行顺序" class="headerlink" title="Vue 的父组件和子组件生命周期钩子函数执行顺序"></a>Vue 的父组件和子组件生命周期钩子函数执行顺序</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">Vue 的父组件和子组件生命周期钩子函数执行顺序可以归类为以下 <span class="token number">4</span> 部分：  
+<span class="token number">1</span>）加载渲染过程  
+父 beforeCreate <span class="token operator">-</span><span class="token operator">></span> 父 created <span class="token operator">-</span><span class="token operator">></span> 父 beforeMount <span class="token operator">-</span><span class="token operator">></span> 子 beforeCreate <span class="token operator">-</span><span class="token operator">></span> 子 created 
+<span class="token operator">-</span><span class="token operator">></span> 子 beforeMount <span class="token operator">-</span><span class="token operator">></span> 子 mounted <span class="token operator">-</span><span class="token operator">></span> 父 mounted  
+<span class="token number">2</span>）子组件更新过程     
+父 beforeUpdate <span class="token operator">-</span><span class="token operator">></span> 子 beforeUpdate <span class="token operator">-</span><span class="token operator">></span> 子 updated <span class="token operator">-</span><span class="token operator">></span> 父 updated  
+<span class="token number">3</span>）父组件更新过程     父 beforeUpdate <span class="token operator">-</span><span class="token operator">></span> 父 updated  <span class="token number">4</span>）
+<span class="token number">4</span>）销毁过程  父 beforeDestroy <span class="token operator">-</span><span class="token operator">></span> 子 beforeDestroy <span class="token operator">-</span><span class="token operator">></span> 子 destroyed <span class="token operator">-</span><span class="token operator">></span> 父 destroyed <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="vue组件传值的方式"><a href="#vue组件传值的方式" class="headerlink" title="vue组件传值的方式"></a>vue组件传值的方式</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、父传子
+    通过props传递
+    父组件： <span class="token operator">&lt;</span>child <span class="token operator">:</span>list <span class="token operator">=</span> <span class="token string">'list'</span> <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token literal-property property">子组件</span><span class="token operator">:</span> props<span class="token punctuation">[</span><span class="token string">'list'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>接收数据<span class="token punctuation">,</span>接受之后使用和data中定义数据使用方式一样
+
+<span class="token number">2</span>、子传父
+	<span class="token function">在父组件中给子组件绑定一个自定义的事件，子组件通过$emit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>触发该事件并传值。
+    父组件： <span class="token operator">&lt;</span>child @receive <span class="token operator">=</span> <span class="token string">'getData'</span> <span class="token operator">/</span><span class="token operator">></span>
+            <span class="token function">getData</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>value就是接收的值<span class="token punctuation">&#125;</span>
+    <span class="token literal-property property">子组件</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'receive'</span><span class="token punctuation">,</span>value<span class="token punctuation">)</span>
+
+<span class="token number">3</span>、兄弟组件传值
+	通过中央通信 <span class="token keyword">let</span> bus <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token constant">A</span><span class="token literal-property property">组件：methods</span> <span class="token operator">:</span><span class="token punctuation">&#123;</span> 
+    	    <span class="token function">sendData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                bus<span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'getData'</span><span class="token punctuation">,</span>value<span class="token punctuation">)</span>
+              <span class="token punctuation">&#125;</span> 发送
+    <span class="token constant">B</span><span class="token function">组件：created</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        bus<span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span>‘getData’<span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>value就是接收的数据<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span> 进行数据接收
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="vue-钩子函数有哪些"><a href="#vue-钩子函数有哪些" class="headerlink" title="vue 钩子函数有哪些"></a>vue 钩子函数有哪些</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">beforeCreate 属性 方法加载之前
+created    属性和方法加载完成  数据接口加载的时候就在 created
+beforeMount 组件渲染之前
+mounted   组件加载完成以后   获取元素就在mounted
+beforeUpdate 数据更新之前
+updated   数据更新完成
+beforeDestory 组件即将销毁
+destoryed   组件销毁完成
+deactivated：在被包裹组件停止使用时调用
+activate：是在被包裹组建被激活的状态下使用的生命周期钩子
+<span class="token function">errorCaptured</span><span class="token punctuation">(</span>错误调用<span class="token punctuation">)</span>：当捕获一个来自后代组件的错误时被调用<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="nextTick是什么？原理是什么？使用的场景"><a href="#nextTick是什么？原理是什么？使用的场景" class="headerlink" title="$nextTick是什么？原理是什么？使用的场景"></a>$nextTick是什么？原理是什么？使用的场景</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">背景：
+	<span class="token number">1</span>、简单来说，Vue 在修改数据后，视图不会立刻更新，
+  而是等同一事件循环中的所有数据变化完成之后，再统一进行视图更新。
+    
+定义：
+	<span class="token number">2</span>、在下次 <span class="token constant">DOM</span> 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，
+  获取更新后的 <span class="token constant">DOM</span><span class="token function">。nextTick</span><span class="token punctuation">(</span><span class="token punctuation">)</span>，是将回调函数延迟在下一次dom更新数据后调用，
+  简单的理解是：当数据更新了，在dom中渲染后，自动执行该函数。
+    
+原理
+	<span class="token number">3</span>、vue用异步队列的方式来控制<span class="token constant">DOM</span>更新和nextTick回调先后执行。
+	简单来说，nextTick是做了promise加上setTimeout的封装<span class="token punctuation">,</span>利用事件换行机制，
+  来确保当nextTick出现时，都是在我们所有操作<span class="token constant">DOM</span>更新之后的。
+
+场景：
+	<span class="token number">4.1</span> 点击获取元素宽度
+  <span class="token number">4.2</span> 使用swiper插件通过 ajax 请求图片后的滑动问题
+  <span class="token number">4.3</span> 点击按钮显示原本以 v<span class="token operator">-</span>show <span class="token operator">=</span> <span class="token boolean">false</span> 隐藏起来的输入框，并获取焦点<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="vue是如何获取DOM"><a href="#vue是如何获取DOM" class="headerlink" title="vue是如何获取DOM"></a>vue是如何获取DOM</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、先给标签设置一个ref值，再通过<span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>domName获取，这个操作要在mounted阶段进行。
+<span class="token number">2</span>、例如：<span class="token operator">&lt;</span>template<span class="token operator">></span><span class="token operator">&lt;</span>div ref<span class="token operator">=</span><span class="token string">"test"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+<span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token keyword">const</span> dom <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>test <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="v-on可以监听多个方法吗"><a href="#v-on可以监听多个方法吗" class="headerlink" title="v-on可以监听多个方法吗"></a>v-on可以监听多个方法吗</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">可以例如：<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span> v<span class="token operator">-</span>on<span class="token operator">=</span><span class="token string">"&#123; input:onInput,focus:onFocus &#125;"</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="谈谈你对-keep-alive-的了解"><a href="#谈谈你对-keep-alive-的了解" class="headerlink" title="谈谈你对 keep-alive 的了解"></a>谈谈你对 keep-alive 的了解</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、keep<span class="token operator">-</span>alive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，避免重新渲染
+<span class="token number">2</span>、一般结合路由和动态组件一起使用，用于缓存组件
+<span class="token number">3</span>、对应两个钩子函数 activated 和 deactivated ，当组件被激活时，触发钩子函数 activated，
+当组件被移除时，触发钩子函数 deactivated4、提供 include 和 exclude 属性，两者都支持字符串或正则表达式，
+include 表示只有名称匹配的组件会被缓存，exclude 表示任何名称匹配的组件都不会被缓存 ，
+其中 exclude 的优先级比 include 高；例如：
+<span class="token operator">&lt;</span>keep<span class="token operator">-</span>alive include<span class="token operator">=</span><span class="token string">"a"</span><span class="token operator">></span> 
+<span class="token operator">&lt;</span>component<span class="token operator">></span> <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> name 为 a 的组件将被缓存！<span class="token operator">--</span><span class="token operator">></span> <span class="token operator">&lt;</span><span class="token operator">/</span>component<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>keep<span class="token operator">-</span>alive<span class="token operator">></span>
+<span class="token operator">&lt;</span>keep<span class="token operator">-</span>alive exclude<span class="token operator">=</span><span class="token string">"a"</span><span class="token operator">></span> 
+<span class="token operator">&lt;</span>component<span class="token operator">></span>  <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 除了 name 为 a 的组件都将被缓存！<span class="token operator">--</span><span class="token operator">></span> <span class="token operator">&lt;</span><span class="token operator">/</span>component<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>keep<span class="token operator">-</span>alive<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="vue中动态组件如何使用"><a href="#vue中动态组件如何使用" class="headerlink" title="vue中动态组件如何使用"></a>vue中动态组件如何使用</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、在某个中使用 is 特性来切换不同的组件：	
+<span class="token operator">&lt;</span>component <span class="token operator">:</span>is<span class="token operator">=</span><span class="token string">"TabComponent"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>component<span class="token operator">></span>  
+<span class="token literal-property property">TabComponent</span><span class="token operator">:</span>已注册组件的名字<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="v-model的原理是什么"><a href="#v-model的原理是什么" class="headerlink" title="v-model的原理是什么"></a>v-model的原理是什么</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、v<span class="token operator">-</span>model主要提供了两个功能，view层输入值影响data的属性值，属性值发生改变会更新层的数值变化<span class="token punctuation">.</span>
+<span class="token number">2</span>、v<span class="token operator">-</span>model指令的实现：	
+  <span class="token number">3.1</span> v<span class="token operator">-</span>bind<span class="token operator">:</span>绑定响应式数据	
+  <span class="token number">3.2</span> <span class="token function">触发input事件并传递数据</span> <span class="token punctuation">(</span>核心和重点<span class="token punctuation">)</span>
+<span class="token number">3</span><span class="token function">、其底层原理就是</span><span class="token punctuation">(</span>双向数据绑定原理<span class="token punctuation">)</span>：	
+  <span class="token number">3.1</span> 一方面modal层通过defineProperty来劫持每个属性，一旦监听到变化通过相关的页面元素更新。    
+  <span class="token number">3.2</span> 另一方面通过编译模板文件，为控件的v<span class="token operator">-</span>model绑定input事件，从而页面输入能实时更新相关data属性值。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="vue响应式的原理"><a href="#vue响应式的原理" class="headerlink" title="vue响应式的原理"></a>vue响应式的原理</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、原理：
+	Vue 的响应式原理是核心是通过 <span class="token constant">ES5</span> 的 Object<span class="token punctuation">.</span>defindeProperty 进行数据劫持，
+  然后利用 <span class="token keyword">get</span> 和 <span class="token keyword">set</span> 方法进行获取和设置，data 中声明的属性都被添加到了<span class="token keyword">get</span>和<span class="token keyword">set</span>中，
+  当读取 data 中的数据时自动调用 <span class="token keyword">get</span> 方法，当修改 data 中的数据时，自动调用 <span class="token keyword">set</span> 方法，
+  检测到数据的变化，会通知观察者 Wacher，观察者 Wacher自动触发重新render 当前组件
+  （子组件不会重新渲染）<span class="token punctuation">,</span>生成新的虚拟 <span class="token constant">DOM</span> 树，
+  Vue 框架会遍历并对比新虚拟 <span class="token constant">DOM</span> 树和旧虚拟 <span class="token constant">DOM</span> 树中每个节点的差别，
+  并记录下来，最后，加载操作，将所有记录的不同点，局部修改到真实 <span class="token constant">DOM</span> 树上。
+
+<span class="token number">2</span>、底层代码实现：
+	   <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"lis"</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">sex</span><span class="token operator">:</span> <span class="token string">"男"</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token comment">//  vue2.0实现  使用Object.defineProperty进行数据劫持</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> data<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">let</span> temp <span class="token operator">=</span> data<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+        Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> data<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">return</span> temp
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token function">set</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                temp <span class="token operator">=</span> value
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token comment">// vue3.0实现 使用Proxy 进行数据的代理</span>
+    <span class="token keyword">let</span> newData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">get</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> target<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token function">set</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            target<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="vue2-0和vue3-0响应式的区别"><a href="#vue2-0和vue3-0响应式的区别" class="headerlink" title="vue2.0和vue3.0响应式的区别"></a>vue2.0和vue3.0响应式的区别</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、Object<span class="token punctuation">.</span>defineProperty 
+  <span class="token number">1</span><span class="token punctuation">)</span> 用于监听对象的数据变化
+  <span class="token number">2</span><span class="token punctuation">)</span> <span class="token function">无法监听数组变化</span><span class="token punctuation">(</span>下标，长度<span class="token punctuation">)</span>
+  <span class="token number">3</span><span class="token punctuation">)</span> 只能劫持对象的自身属性，动态添加的劫持不到
+<span class="token number">2</span>、Proxy
+  <span class="token number">1</span><span class="token punctuation">)</span> proxy返回的是一个新对象， 可以通过操作返回的新的对象达到目的
+  <span class="token number">2</span>）可以监听到数组变化，也可以监听到动态添加的数据<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="router和route的区别"><a href="#router和route的区别" class="headerlink" title="router和route的区别"></a>router和route的区别</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、$router对象    
+  <span class="token number">1</span>）$router对象是全局路由的实例，是router构造方法的实例    
+  <span class="token number">2</span><span class="token function">）$router对象上的方法有：push</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token function">、go</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token function">、replace</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token number">2</span>、$route对象    
+  <span class="token number">1</span>）$route对象表示当前的路由信息，包含了当前 <span class="token constant">URL</span> 解析得到的信息。
+  包含当前的路径，参数，query对象等    
+  <span class="token number">2</span>）$route对象上的属性有：path、params、query、hash等等   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="路由传参params和query区别"><a href="#路由传参params和query区别" class="headerlink" title="路由传参params和query区别"></a>路由传参params和query区别</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">  方式：params 和 query2
+区别：
+  <span class="token number">1</span>）params用的是name，传递的参数在地址栏不会显示，类似于post        
+  <span class="token number">2</span>）query用的是path<span class="token punctuation">,</span>传递的参数会在地址栏显示出来，类似于<span class="token keyword">get</span>      
+<span class="token number">3</span>、举例说明：   
+  <span class="token number">1</span>）params 传参  
+  传： <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'particulars'</span><span class="token punctuation">,</span> <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">id</span><span class="token operator">:</span> id <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>     
+  接：<span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id        
+  <span class="token number">2</span>）query传参     
+  传：<span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/particulars'</span><span class="token punctuation">,</span> <span class="token literal-property property">query</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">id</span><span class="token operator">:</span> id <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>     
+  接：<span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>query<span class="token punctuation">.</span>id<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Vue模版编译原理知道吗，能简单说一下吗"><a href="#Vue模版编译原理知道吗，能简单说一下吗" class="headerlink" title="Vue模版编译原理知道吗，能简单说一下吗"></a>Vue模版编译原理知道吗，能简单说一下吗</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、简单说，Vue的编译过程就是将template转化为render函数的过程。
+<span class="token number">2</span>、首先解析模版，生成<span class="token constant">AST</span><span class="token function">语法树</span><span class="token punctuation">(</span>一种用JavaScript对象的形式来描述整个模板<span class="token punctuation">)</span>。
+使用大量的正则表达式对模板进行解析，遇到标签、文本的时候都会执行对应的钩子进行相关处理。
+<span class="token number">3</span>、Vue的数据是响应式的，但其实模板中并不是所有的数据都是响应式的。
+有一些数据首次渲染后就不会再变化，对应的<span class="token constant">DOM</span>也不会变化。
+那么优化过程就是深度遍历<span class="token constant">AST</span>树，按照相关条件对树节点进行标记。
+<span class="token function">这些被标记的节点</span><span class="token punctuation">(</span>静态节点<span class="token punctuation">)</span>我们就可以跳过对它们的比对，对运行时的模板起到很大的优化作用。
+<span class="token number">4</span>、编译的最后一步是将优化后的<span class="token constant">AST</span>树转换为可执行的代码。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="SSR了解吗"><a href="#SSR了解吗" class="headerlink" title="SSR了解吗"></a>SSR了解吗</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、<span class="token constant">SSR</span>也就是服务端渲染，也就是将Vue在客户端把标签渲染成<span class="token constant">HTML</span>的工作放在服务端完成，
+然后再把html直接返回给客户端。
+<span class="token number">2</span>、<span class="token constant">SSR</span>有着更好的<span class="token constant">SEO</span>、并且首屏加载速度更快等优点。不过它也有一些缺点，
+比如我们的开发条件会受到限制，服务器端渲染只支持beforeCreate和created两个钩子，
+当我们需要一些外部扩展库时需要特殊处理，服务端渲染应用程序也需要处于Node<span class="token punctuation">.</span>js的运行环境。
+还有就是服务器的压力比较大。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="你都做过哪些Vue的性能优化"><a href="#你都做过哪些Vue的性能优化" class="headerlink" title="你都做过哪些Vue的性能优化"></a>你都做过哪些Vue的性能优化</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、v<span class="token operator">-</span><span class="token keyword">if</span>和v<span class="token operator">-</span><span class="token keyword">for</span>不能连用
+<span class="token number">2</span>、页面采用keep<span class="token operator">-</span>alive缓存组件
+<span class="token number">3</span>、合理使用v<span class="token operator">-</span><span class="token keyword">if</span>和v<span class="token operator">-</span>show
+<span class="token number">4</span>、key保证唯一
+<span class="token number">5</span>、使用路由懒加载、异步组件、组件封装
+<span class="token number">6</span>、防抖、节流
+<span class="token number">7</span>、第三方模块按需导入
+<span class="token number">8</span>、图片懒加载
+<span class="token number">9</span>、精灵图的使用
+<span class="token number">10</span>、代码压缩<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Vue-router-路由有哪些模式"><a href="#Vue-router-路由有哪些模式" class="headerlink" title="Vue-router 路由有哪些模式"></a>Vue-router 路由有哪些模式</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">  hash 模式和history 模式
+<span class="token number">1</span>、hash 模式：后面的 hash 值的变化，浏览器既不会向服务器发出请求，浏览器也不会刷新，
+每次 hash 值的变化会触发 hashchange 事件。
+<span class="token number">2</span>、history 模式：利用了 <span class="token constant">HTML5</span> 中新增的 <span class="token function">pushState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 和 <span class="token function">replaceState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 方法。
+这两个方法应用于浏览器的历史记录栈，在当前已有的 back、forward、go 的基础之上，
+它们提供了对历史记录进行修改的功能。只是当它们执行修改时，虽然改变了当前的 <span class="token constant">URL</span>，
+但浏览器不会立即向后端发送请求。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Vuex-是什么？有哪几种属性？"><a href="#Vuex-是什么？有哪几种属性？" class="headerlink" title="Vuex 是什么？有哪几种属性？"></a>Vuex 是什么？有哪几种属性？</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、Vuex 是专为Vue设计的状态管理工具，采用集中式储存管理 Vue 中所有组件的状态。
+<span class="token number">2</span>、属性
+（<span class="token number">1</span>）state属性：基本数据
+（<span class="token number">2</span>）getters属性：从 state 中派生出的数据
+（<span class="token number">3</span>）mutation属性：更新 store 中数据的唯一途径，其接收一个以 state 为第一参数的回调函数
+（<span class="token number">4</span>）action 属性：提交 mutation 以更改 state，其中可以包含异步操作，数据请求
+（<span class="token number">5</span>）module 属性：用于将 store分割成不同的模块。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="axios封装请求拦截器和响应拦截器"><a href="#axios封装请求拦截器和响应拦截器" class="headerlink" title="axios封装请求拦截器和响应拦截器"></a>axios封装请求拦截器和响应拦截器</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">interceptors：【ɪntərˈsɛptərz】
+<span class="token number">1</span>、项目中会在utils文件中，封装一个request<span class="token punctuation">.</span>js文件
+<span class="token number">2</span>、通过axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span>配置baseURL，并得到一个request实例
+<span class="token number">3</span>、通过request<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span>use来配置请求拦截
+<span class="token number">4</span>、通过request<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span>use来配置响应拦截<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="vue怎么实现强制刷新组件"><a href="#vue怎么实现强制刷新组件" class="headerlink" title="vue怎么实现强制刷新组件"></a>vue怎么实现强制刷新组件</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">第一<span class="token punctuation">.</span>使用<span class="token keyword">this</span><span class="token punctuation">.</span>$forceUpdate强制重新渲染    
+<span class="token operator">&lt;</span>template<span class="token operator">></span>  
+<span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"reload()"</span><span class="token operator">></span>刷新当前组件<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>    
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>   
+ <span class="token operator">&lt;</span>script<span class="token operator">></span>    
+ <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'comp'</span><span class="token punctuation">,</span>  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$forceUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span>  <span class="token punctuation">&#125;</span>  <span class="token punctuation">&#125;</span>    
+ <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+ 第二<span class="token punctuation">.</span>使用v<span class="token operator">-</span><span class="token keyword">if</span>指令
+ <span class="token operator">&lt;</span>template<span class="token operator">></span>   
+  <span class="token operator">&lt;</span>comp v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"update"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>comp<span class="token operator">></span>    
+  <span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"reload()"</span><span class="token operator">></span>刷新comp组件<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+ <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+ <span class="token operator">&lt;</span>script<span class="token operator">></span>
+  <span class="token keyword">import</span> comp <span class="token keyword">from</span> <span class="token string">'@/views/comp.vue'</span>
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>  
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'parentComp'</span><span class="token punctuation">,</span> 
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>  
+        <span class="token literal-property property">update</span><span class="token operator">:</span> <span class="token boolean">true</span>  
+      <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>  
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> 
+    <span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>   
+    <span class="token comment">// 移除组件  this.update = false            </span>
+    <span class="token comment">// 在组件移除后，重新渲染组件   // this.$nextTick可实现在DOM 状态更新后，执行传入的方法。           </span>
+    <span class="token comment">// this.$nextTick(() => &#123;    this.update = true  &#125;)  &#125;  &#125;&#125;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="在使用计算属性的时-函数名和data数据源中的数据可以同名吗"><a href="#在使用计算属性的时-函数名和data数据源中的数据可以同名吗" class="headerlink" title="在使用计算属性的时,函数名和data数据源中的数据可以同名吗?"></a>在使用计算属性的时,函数名和data数据源中的数据可以同名吗?</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">不可以	
+在初始化vm的过程，因为不管是计算属性还是data还是props 都会被挂载在vm实例上，
+会把data覆盖了<span class="token punctuation">,</span>因此 这三个都不能同名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="vue中data的属性可以和methods中的方法同名吗"><a href="#vue中data的属性可以和methods中的方法同名吗" class="headerlink" title="vue中data的属性可以和methods中的方法同名吗?"></a>vue中data的属性可以和methods中的方法同名吗?</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">不可以
+vue源码中的 <span class="token function">initData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 方法会取出 methods 中的方法进行判断，如果有重复的就会报错<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="你知道style加scoped属性的用途和原理吗"><a href="#你知道style加scoped属性的用途和原理吗" class="headerlink" title="你知道style加scoped属性的用途和原理吗"></a>你知道style加scoped属性的用途和原理吗</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">用途：防止全局同名<span class="token constant">CSS</span>污染
+原理：在标签加上v<span class="token operator">-</span>data<span class="token operator">-</span>something属性，再在选择器时加上对应<span class="token punctuation">[</span>v<span class="token operator">-</span>data<span class="token operator">-</span>something<span class="token punctuation">]</span>，
+即<span class="token constant">CSS</span>带属性选择器，以此完成类似作用域的选择方式<span class="token punctuation">.</span>
+scoped会在元素上添加唯一的属性（data<span class="token operator">-</span>v<span class="token operator">-</span>x形式），css编译后也会加上属性选择器，
+从而达到限制作用域的目的。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="如何在子组件中访问父组件的实例"><a href="#如何在子组件中访问父组件的实例" class="headerlink" title="如何在子组件中访问父组件的实例"></a>如何在子组件中访问父组件的实例</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">Vue中子组件调用父组件的方法，这里有三种方法提供参考：
+  <span class="token number">1</span>：直接在子组件中通过<span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span>event来调用父组件的方法
+  <span class="token number">2</span>：在子组件里用$emit向父组件触发一个事件，父组件监听这个事件
+  <span class="token number">3</span>：父组件把方法传入子组件中，在子组件里直接调用这个方法<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="watch的属性用箭头函数定义结果会怎么样"><a href="#watch的属性用箭头函数定义结果会怎么样" class="headerlink" title="watch的属性用箭头函数定义结果会怎么样"></a>watch的属性用箭头函数定义结果会怎么样</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">不应该使用箭头函数来定义 watch <span class="token operator">:</span>
+例如：
+    <span class="token literal-property property">watch</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token function-variable function">a</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>  <span class="token comment">//  这里不应该用箭头函数</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>sum <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>b<span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>。
+理由是箭头函数绑定了父级作用域的上下文，所以 <span class="token keyword">this</span> 将不会按照期望指向 Vue 实例，
+<span class="token keyword">this</span><span class="token punctuation">.</span>a 将是 <span class="token keyword">undefined</span>。
+注意：methods里面定义的方法也不要用箭头函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="怎么解决vue打包后静态资源图片失效的问题"><a href="#怎么解决vue打包后静态资源图片失效的问题" class="headerlink" title="怎么解决vue打包后静态资源图片失效的问题"></a>怎么解决vue打包后静态资源图片失效的问题</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">在vue<span class="token operator">-</span>cli 需要在根目录下建一个vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>js 在里面配置publicPath即可
+默认值为<span class="token operator">/</span>，更改为<span class="token punctuation">.</span><span class="token operator">/</span>就好了<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="怎么解决vue动态设置img的src不生效的问题"><a href="#怎么解决vue动态设置img的src不生效的问题" class="headerlink" title="怎么解决vue动态设置img的src不生效的问题"></a>怎么解决vue动态设置img的src不生效的问题</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">因为动态添加src被当做静态资源处理了，没有进行编译，所以要加上require。
+<span class="token operator">&lt;</span>img <span class="token operator">:</span>src<span class="token operator">=</span><span class="token string">"require('@/assets/images/xxx.png')"</span> <span class="token operator">/</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="EventBus注册在全局上时，路由切换时会重复触发事件，如何解决呢"><a href="#EventBus注册在全局上时，路由切换时会重复触发事件，如何解决呢" class="headerlink" title="EventBus注册在全局上时，路由切换时会重复触发事件，如何解决呢"></a>EventBus注册在全局上时，路由切换时会重复触发事件，如何解决呢</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">原因：因为我们的事件是全局的，它并不会随着组件的销毁而自动注销，需要我们手动调用注销方法来注销。
+解决：我们可以在组件的 beforeDestroy <span class="token punctuation">,</span>或 destroy 生命周期中执行注销方法，手动注销事件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="你认为vue的核心是什么"><a href="#你认为vue的核心是什么" class="headerlink" title="你认为vue的核心是什么"></a>你认为vue的核心是什么</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">组件化
+双向数据绑定<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="在-vue文件中style是必须的吗？那script是必须的吗"><a href="#在-vue文件中style是必须的吗？那script是必须的吗" class="headerlink" title="在.vue文件中style是必须的吗？那script是必须的吗"></a>在.vue文件中style是必须的吗？那script是必须的吗</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">在<span class="token punctuation">.</span>vue 文件中，template是必须的，而script与style都不是必须的。
+都没有的话那就是一个静态网页<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="说说vue的优缺点"><a href="#说说vue的优缺点" class="headerlink" title="说说vue的优缺点"></a>说说vue的优缺点</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">优点：
+    <span class="token number">1.</span>数据驱动
+    <span class="token number">2.</span>组件化
+    <span class="token number">3.</span>轻量级
+    <span class="token number">4.</span><span class="token constant">SPA</span><span class="token punctuation">(</span>单页面<span class="token punctuation">)</span>
+    <span class="token number">5.</span>版本<span class="token number">3.0</span>的界面化管理工具比较好使
+    <span class="token number">6</span><span class="token punctuation">.</span>vue易入门
+    <span class="token number">7.</span>中文社区强大，入门简单，提升也有很多的参考资料。
+缺点：
+    <span class="token number">1.</span>不支持<span class="token constant">IE8</span>及以下浏览器
+    <span class="token number">2.</span>吃内存（每个组件都会实例化一个Vue实例，实例的属性和方法很多）
+    <span class="token number">3.</span>定义在data里面的对象，实例化时，都会递归的遍历转成响应式数据，
+    然而有的响应式数据我们并不会用到，造成性能上的浪费<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="库和框架的区别"><a href="#库和框架的区别" class="headerlink" title="库和框架的区别"></a>库和框架的区别</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">库 本质上是一个函数的集合，每一次调用函数，实现一个特定的功能，使用库的时候，
+   把库当成工具使用，需要自己控制代码的执行逻辑。
+框架 是一套完整的解决方案，使用框架的时候，框架实现了大部分的功能，
+     我们只需要按照框架的规则书写代码即可，使用框架开发比库开发效率更高，更容易维护。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="MVC-和-MVVM-的区别"><a href="#MVC-和-MVVM-的区别" class="headerlink" title="MVC 和 MVVM 的区别"></a>MVC 和 MVVM 的区别</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token constant">MVVM</span>
+<span class="token constant">M</span> Model 模型 指的是数据层
+<span class="token constant">V</span> View  视图 指的是用户页面
+<span class="token constant">VM</span> ViewModel 视图模型
+视图模型是<span class="token constant">MVVM</span>模式的核心，它是连接view和model的桥梁，<span class="token constant">MVVM</span>实现了view和model的自动同步，
+当model的属性改变时，我们不用自手动操作<span class="token constant">DOM</span>元素，来改变view的显示，称之为数据的双向绑定。
+
+<span class="token constant">MVC</span>
+<span class="token constant">M</span> Model 模型 指的是数据层
+<span class="token constant">V</span> View  视图 指的是用户页面
+<span class="token constant">C</span> controller 控制器 指的是页面业务逻辑
+view传送指令到controller，controller完成业务逻辑后，要求model改变状态，
+model将新的数据发送给view，用户得到反馈。所 信都是单向的。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="自己实现一个-v-model-的效果"><a href="#自己实现一个-v-model-的效果" class="headerlink" title="自己实现一个 v-model 的效果"></a>自己实现一个 v-model 的效果</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">答</span><span class="token operator">:</span>
+    <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"text"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>script<span class="token operator">></span>
+    
+     <span class="token comment">// vue2.0</span>
+    <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'hello vue'</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">let</span> input <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span>
+    input<span class="token punctuation">.</span>value <span class="token operator">=</span> data<span class="token punctuation">.</span>msg
+    input<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      data<span class="token punctuation">.</span>msg <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> temp <span class="token operator">=</span> data<span class="token punctuation">.</span>msg
+    Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">'msg'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+      <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> temp
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token function">set</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        input<span class="token punctuation">.</span>value <span class="token operator">=</span> value
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>temp <span class="token operator">=</span> value<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// vue3.0</span>
+    <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'hello vue'</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">let</span> input <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span>
+    input<span class="token punctuation">.</span>value <span class="token operator">=</span> data<span class="token punctuation">.</span>msg
+    input<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      obj<span class="token punctuation">.</span>msg <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+      <span class="token function">get</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> target<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token function">set</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        target<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value
+        input<span class="token punctuation">.</span>value <span class="token operator">=</span> value
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+   <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Object-defineProperty和proxy的区别"><a href="#Object-defineProperty和proxy的区别" class="headerlink" title="Object.defineProperty和proxy的区别"></a>Object.defineProperty和proxy的区别</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、Object<span class="token punctuation">.</span>defineProperty  用于监听对象的数据变化
+缺点：
+    <span class="token number">1</span>）无法监听数组变化
+    <span class="token number">2</span>）只能劫持对象的属性<span class="token punctuation">,</span>属性值也是对象那么需要深度遍历
+<span class="token number">2</span>、proxy  可以理解为 在被劫持的对象之前 加了一层拦截
+   proxy返回的是一个新对象， 可以通过操作返回的新的对象达到目的
+总结：
+当使用 defineProperty 时，我们修改原来的 obj 对象就可以触发拦截
+而使用 proxy，就必须修改代理对象，即 Proxy 的实例才可以触发拦截<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="vue-中怎么操作-dom"><a href="#vue-中怎么操作-dom" class="headerlink" title="vue 中怎么操作 dom"></a>vue 中怎么操作 dom</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">答</span><span class="token operator">:</span> 要在mounted中使用，在执行mounted的时候，vue已经渲染了dom节点，可以获取dom节点。
+    方法：
+      <span class="token number">1</span>）在标签中添加ref<span class="token operator">=</span><span class="token string">"name"</span>
+      <span class="token number">2</span>）在方法中用<span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>name拿到这个元素，<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="导航钩子有几种（导航守卫）具体怎么用的"><a href="#导航钩子有几种（导航守卫）具体怎么用的" class="headerlink" title="导航钩子有几种（导航守卫）具体怎么用的"></a>导航钩子有几种（导航守卫）具体怎么用的</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">答</span><span class="token operator">:</span> 分类：
+    <span class="token number">1</span>、全局守卫： router<span class="token punctuation">.</span>beforeEach
+    <span class="token number">2</span>、全局解析守卫： router<span class="token punctuation">.</span>beforeResolve
+    <span class="token number">3</span>、全局后置钩子： router<span class="token punctuation">.</span>afterEach
+    <span class="token number">4</span>、路由独享的守卫： beforeEnter
+    <span class="token number">5</span>、组件内的守卫： <span class="token function">beforeRouteEnter、beforeRouteUpdate</span> <span class="token punctuation">(</span><span class="token number">2.2</span> 新增<span class="token punctuation">)</span>、beforeRouteLeave
+    使用：
+    <span class="token number">1</span>、全局守卫： router<span class="token punctuation">.</span>beforeEach
+       <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token operator">...</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+          router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+          <span class="token comment">// ...</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token number">2</span>、全局解析守卫： router<span class="token punctuation">.</span>beforeResolve
+       可以用 router<span class="token punctuation">.</span>beforeResolve 注册一个全局守卫。这和 router<span class="token punctuation">.</span>beforeEach 类似，区别是：在导航被确认之前，同时在所有组件内守卫和异步路由组件被解析之后，解析守卫就被调用。
+    <span class="token number">3</span>、全局后置钩子： router<span class="token punctuation">.</span>afterEach
+       router<span class="token punctuation">.</span><span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+          <span class="token comment">// ...</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token number">4</span>、路由独享的守卫： beforeEnter
+       <span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+          <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/foo'</span><span class="token punctuation">,</span>
+              <span class="token literal-property property">component</span><span class="token operator">:</span> Foo<span class="token punctuation">,</span>
+              <span class="token function-variable function">beforeEnter</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">// ...</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token number">5</span>、组件内的守卫： <span class="token function">beforeRouteEnter、beforeRouteUpdate</span> <span class="token punctuation">(</span><span class="token number">2.2</span> 新增<span class="token punctuation">)</span>、beforeRouteLeave
+       <span class="token keyword">const</span> Foo <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+          <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">...</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+          <span class="token function">beforeRouteEnter</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 在渲染该组件的对应路由被 confirm 前调用</span>
+            <span class="token comment">// 不能获取组件实例 `this`</span>
+            <span class="token comment">// 因为当守卫执行前，组件实例还没被创建</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+          <span class="token function">beforeRouteUpdate</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 在当前路由改变，但是该组件被复用时调用</span>
+            <span class="token comment">// 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，</span>
+            <span class="token comment">// 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。</span>
+            <span class="token comment">// 可以访问组件实例 `this`</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+          <span class="token function">beforeRouteLeave</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> from<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 导航离开该组件的对应路由时调用</span>
+            <span class="token comment">// 可以访问组件实例 `this`</span>
+          <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="什么是promise，特点是什么"><a href="#什么是promise，特点是什么" class="headerlink" title="什么是promise，特点是什么"></a>什么是promise，特点是什么</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">首先，它是一个对象，也就是说与其他JavaScript对象的用法，没有什么两样；其次，它起到代理作用（proxy），充当异步操作与回调函数之间的中介。它使得异步操作具备同步操作的效果，使得程序具备正常的同步运行的流程，回调函数不必再一层层嵌套。
+简单说，它的思想是，每一个异步任务立刻返回一个Promise对象，由于是立刻返回，所以可以采用同步操作的流程。这个Promises对象有一个then方法，允许指定回调函数，在异步任务完成后调用。
+特点：
+   <span class="token number">1</span>、Promise对象只有三种状态。
+       异步操作“未完成”（pending）
+       异步操作“已完成”（resolved，又称fulfilled）
+       异步操作“失败”（rejected）
+       异步操作成功，Promise对象传回一个值，状态变为resolved。
+       异步操作失败，Promise对象抛出一个错误，状态变为rejected。
+   <span class="token number">2</span>、promise的回调是同步的，then是异步的
+   <span class="token number">3</span>、可以链式调用<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="promise的方法有哪些，能说明其作用"><a href="#promise的方法有哪些，能说明其作用" class="headerlink" title="promise的方法有哪些，能说明其作用"></a>promise的方法有哪些，能说明其作用</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">原型上的方法：
+<span class="token number">1</span>、Promise<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token number">1</span>）作用是为 Promise 实例添加状态改变时的回调函数。接受两个回调函数作为参数。第一个回调函数是Promise对象的状态变为resolved时调用，第二个回调函数是Promise对象的状态变为rejected时调用。其中，第二个函数是可选的，不一定要提供。
+    <span class="token number">2</span>）返回的是另一个Promise对象，后面还可以接着调用then方法。
+<span class="token number">2</span>、Promise<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token number">1</span>）用于指定发生错误时的回调函数。
+    <span class="token number">2</span>）返回的也是一个 Promise 对象，因此还可以接着调用then方法
+<span class="token number">3</span>、Promise<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">finally</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token number">1</span>）finally方法用于指定不管 Promise 对象最后状态如何，都会执行的回调函数。
+    <span class="token number">2</span>）finally方法的回调函数不接受任何参数，这意味着没有办法知道，前面的 Promise 状态到底是fulfilled还是rejected。
+
+自身<span class="token constant">API</span><span class="token operator">:</span>
+<span class="token number">1</span>、Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token number">1</span>）不带参数传递 — 返回一个新的状态为resolve的promise对象
+    <span class="token number">2</span>）参数是一个 Promise 实例— 返回 当前的promise实例
+<span class="token number">2</span>、Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token number">1</span><span class="token punctuation">)</span>返回的是一个值
+    <span class="token number">2</span>）返回的值会传递到下一个then的resolve方法参数中
+<span class="token number">3</span>、Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+	<span class="token number">1</span>）并行执行异步操作的能力
+    <span class="token number">2</span>）所有异步操作执行完后才执行回调
+<span class="token number">4</span>、Promise<span class="token punctuation">.</span><span class="token function">race</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token number">1</span>）那个结果返回来的快就是，那个结果，不管结果是成功还是失败<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="async和await是干什么的"><a href="#async和await是干什么的" class="headerlink" title="async和await是干什么的"></a>async和await是干什么的</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"> <span class="token keyword">async</span>和<span class="token keyword">await</span>可以说是异步终极解决方案了。
+<span class="token number">1</span>、<span class="token keyword">async</span> 用于申明一个 <span class="token keyword">function</span> 是异步的，而 <span class="token keyword">await</span> 用于等待一个异步方法执行完成。
+<span class="token number">2</span>、<span class="token keyword">await</span> 只能出现在 <span class="token keyword">async</span> 函数中。
+<span class="token number">3</span>、<span class="token keyword">async</span> 函数返回的是一个 Promise 对象，后面可以用then方法。
+
+缺点：因为<span class="token keyword">await</span>将异步代码改造成了同步代码，如果多个异步代码都使用了<span class="token keyword">await</span>会导致性能上的降低。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="什么是宏任务和微任务，执行顺序是什么"><a href="#什么是宏任务和微任务，执行顺序是什么" class="headerlink" title="什么是宏任务和微任务，执行顺序是什么"></a>什么是宏任务和微任务，执行顺序是什么</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、宏任务一般是：包括整体代码script，setTimeout，setInterval。
+<span class="token number">2</span><span class="token function">、微任务：Promise</span><span class="token punctuation">(</span>then、catch、finally<span class="token punctuation">)</span>，process<span class="token punctuation">.</span>nextTick（node<span class="token punctuation">.</span>js）。
+<span class="token number">3</span>、先执行主代码块，然后执行微任务，最后在执行宏任务（异步）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/wly/tags/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" class="">
+              前端笔记
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>阳</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/wly/2022/02/07/qian-duan-bi-ji-vue-pian/" target="_blank" title="前端笔记(vue篇)">https://github.com/chinesSun/wly.git/2022/02/07/qian-duan-bi-ji-vue-pian/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/wly/medias/7.jpg" class="lazyload placeholder" data-srcset="/wly/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/wly/2022/02/07/webpack-da-bao/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">webpack打包</div>
+      </div>
+      
+      <!-- <div class="content">
+        webpack 打包webpack 在项目中的常见配置// webpack.config.js
+module.expor
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/wly/medias/5.jpg" class="lazyload placeholder" data-srcset="/wly/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+    </div>
+    <a href="/wly/2022/02/07/qian-duan-bi-ji-ajax-pian/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">前端笔记(ajax篇)</div>
+      </div>
+      <!-- <div class="content">
+        ajax笔记总结什么是事件流答: 事件流是指事件传播的顺序,由事件捕获 => 目标事件 => 事件冒泡
+如何阻止冒泡和默
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/wly/medias/zfb.jpg" class="lazyload placeholder" data-srcset="/wly/medias/zfb.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/wly/medias/wx.jpg" class="lazyload placeholder" data-srcset="/wly/medias/wx.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/wly/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+
+
+<script>
+  function closeToc(init) {
+    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
+    $(".toc-content").css({'width': 0});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+    $(".main-content").css({'width': '75%', 'margin-left': 'auto', 'margin-right': 'auto',});
+  };
+  function openToc() {
+    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
+    $(".toc-content").css({'width': '300px'});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+  }
+  function openBtnClickFn () {
+    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+    let open = eval('' || 'true');
+    openOrCloseBtn.click(function() {
+      if (open) {
+        closeToc();
+        open = false;
+      } else {
+        openToc();
+        open = true;
+      }
+    });
+  };
+  openBtnClickFn();
+  initCloseTocWidth(true);
+
+  function initCloseTocWidth(init) {
+    if (window.innerWidth >= 992) {
+      let isClose = false;
+      isClose && closeToc(init)
+    }
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    $(".toc-aside").css({'transition': 'no'});
+  })
+  document.addEventListener('pjax:complete', function () {
+    openBtnClickFn();
+  })
+  
+</script>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/wly/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/wly/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style="position: relative; height: 150px; width: auto"></div>
+<script>
+  var RENDERER = {
+      POINT_INTERVAL: 5,
+      FISH_COUNT: 3,
+      MAX_INTERVAL_COUNT: 50,
+      INIT_HEIGHT_RATE: 0.5,
+      THRESHOLD: 50,
+      FISH_COLOR: '',
+      init: function () {
+        this.setFishColor()
+        this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+      },
+      setFishColor: function () {
+        let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false')
+        if (isDark) {
+          this.FISH_COLOR = '#222' // 暗黑色，有时间把这整成一个变量
+        } else {
+          this.FISH_COLOR = 'rgba(66, 185, 133, 0.8)' || '#42b983'
+        }
+      },
+      setParameters: function () {
+        ;(this.$window = $(window)),
+          (this.$container = $('#j-fish-skip')),
+          (this.$canvas = $('<canvas />')),
+          (this.context = this.$canvas.appendTo(this.$container).get(0).getContext('2d')),
+          (this.points = []),
+          (this.fishes = []),
+          (this.watchIds = [])
+      },
+      createSurfacePoints: function () {
+        var t = Math.round(this.width / this.POINT_INTERVAL)
+        ;(this.pointInterval = this.width / (t - 1)), this.points.push(new SURFACE_POINT(this, 0))
+        for (var i = 1; i < t; i++) {
+          var e = new SURFACE_POINT(this, i * this.pointInterval),
+            h = this.points[i - 1]
+          e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+        }
+      },
+      reconstructMethods: function () {
+        ;(this.watchWindowSize = this.watchWindowSize.bind(this)),
+          (this.jdugeToStopResize = this.jdugeToStopResize.bind(this)),
+          (this.startEpicenter = this.startEpicenter.bind(this)),
+          (this.moveEpicenter = this.moveEpicenter.bind(this)),
+          (this.reverseVertical = this.reverseVertical.bind(this)),
+          (this.render = this.render.bind(this))
+      },
+      setup: function () {
+        ;(this.points.length = 0),
+          (this.fishes.length = 0),
+          (this.watchIds.length = 0),
+          (this.intervalCount = this.MAX_INTERVAL_COUNT),
+          (this.width = this.$container.width()),
+          (this.height = this.$container.height()),
+          (this.fishCount = (((this.FISH_COUNT * this.width) / 500) * this.height) / 500),
+          this.$canvas.attr({
+            width: this.width,
+            height: this.height
+          }),
+          (this.reverse = !1),
+          this.fishes.push(new FISH(this)),
+          this.createSurfacePoints()
+      },
+      watchWindowSize: function () {
+        this.clearTimer(),
+          (this.tmpWidth = this.$window.width()),
+          (this.tmpHeight = this.$window.height()),
+          this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+      },
+      clearTimer: function () {
+        for (; this.watchIds.length > 0; ) clearTimeout(this.watchIds.pop())
+      },
+      jdugeToStopResize: function () {
+        var t = this.$window.width(),
+          i = this.$window.height(),
+          e = t == this.tmpWidth && i == this.tmpHeight
+        ;(this.tmpWidth = t), (this.tmpHeight = i), e && this.setup()
+      },
+      bindEvent: function () {
+        this.$window.on('resize', this.watchWindowSize),
+          this.$container.on('mouseenter', this.startEpicenter),
+          this.$container.on('mousemove', this.moveEpicenter)
+      },
+      getAxis: function (t) {
+        var i = this.$container.offset()
+        return {
+          x: t.clientX - i.left + this.$window.scrollLeft(),
+          y: t.clientY - i.top + this.$window.scrollTop()
+        }
+      },
+      startEpicenter: function (t) {
+        this.axis = this.getAxis(t)
+      },
+      moveEpicenter: function (t) {
+        var i = this.getAxis(t)
+        this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), (this.axis = i)
+      },
+      generateEpicenter: function (t, i, e) {
+        if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+          var h = Math.round(t / this.pointInterval)
+          h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+        }
+      },
+      reverseVertical: function () {
+        this.reverse = !this.reverse
+        for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+      },
+      controlStatus: function () {
+        for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf()
+        for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors()
+        this.fishes.length < this.fishCount &&
+          0 == --this.intervalCount &&
+          ((this.intervalCount = this.MAX_INTERVAL_COUNT), this.fishes.push(new FISH(this)))
+      },
+      render: function () {
+        requestAnimationFrame(this.render),
+          this.controlStatus(),
+          this.context.clearRect(0, 0, this.width, this.height),
+          (this.context.fillStyle = this.FISH_COLOR)
+        for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context)
+        this.context.save(),
+          (this.context.globalCompositeOperation = 'xor'),
+          this.context.beginPath(),
+          this.context.moveTo(0, this.reverse ? 0 : this.height)
+        for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context)
+        this.context.lineTo(this.width, this.reverse ? 0 : this.height),
+          this.context.closePath(),
+          this.context.fill(),
+          this.context.restore()
+      }
+    },
+    SURFACE_POINT = function (t, i) {
+      ;(this.renderer = t), (this.x = i), this.init()
+    }
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: 0.03,
+    SPRING_FRICTION: 0.9,
+    WAVE_SPREAD: 0.3,
+    ACCELARATION_RATE: 0.01,
+    init: function () {
+      ;(this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE),
+        (this.height = this.initHeight),
+        (this.fy = 0),
+        (this.force = {
+          previous: 0,
+          next: 0
+        })
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      ;(this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height)), (this.fy *= this.SPRING_FRICTION), (this.height += this.fy)
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)),
+        this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && ((this.previous.height += this.force.previous), (this.previous.fy += this.force.previous)),
+        this.next && ((this.next.height += this.force.next), (this.next.fy += this.force.next)),
+        t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  }
+  var FISH = function (t) {
+    ;(this.renderer = t), this.init()
+  }
+  ;(FISH.prototype = {
+    GRAVITY: 0.4,
+    init: function () {
+      ;(this.direction = Math.random() < 0.5),
+        (this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD),
+        (this.previousY = this.y),
+        (this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1)),
+        this.renderer.reverse
+          ? ((this.y = this.getRandomValue((1 * this.renderer.height) / 10, (4 * this.renderer.height) / 10)),
+            (this.vy = this.getRandomValue(2, 5)),
+            (this.ay = this.getRandomValue(0.05, 0.2)))
+          : ((this.y = this.getRandomValue((6 * this.renderer.height) / 10, (9 * this.renderer.height) / 10)),
+            (this.vy = this.getRandomValue(-5, -2)),
+            (this.ay = this.getRandomValue(-0.2, -0.05))),
+        (this.isOut = !1),
+        (this.theta = 0),
+        (this.phi = 0)
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      ;(this.isOut = !this.isOut), (this.ay *= -1)
+    },
+    controlStatus: function (t) {
+      ;(this.previousY = this.y),
+        (this.x += this.vx),
+        (this.y += this.vy),
+        (this.vy += this.ay),
+        this.renderer.reverse
+          ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE
+            ? ((this.vy -= this.GRAVITY), (this.isOut = !0))
+            : (this.isOut && (this.ay = this.getRandomValue(0.05, 0.2)), (this.isOut = !1))
+          : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE
+          ? ((this.vy += this.GRAVITY), (this.isOut = !0))
+          : (this.isOut && (this.ay = this.getRandomValue(-0.2, -0.05)), (this.isOut = !1)),
+        this.isOut || ((this.theta += Math.PI / 20), (this.theta %= 2 * Math.PI), (this.phi += Math.PI / 30), (this.phi %= 2 * Math.PI)),
+        this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY),
+        ((this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD) || (this.vx < 0 && this.x < -this.renderer.THRESHOLD)) &&
+          this.init()
+    },
+    render: function (t) {
+      t.save(),
+        t.translate(this.x, this.y),
+        t.rotate(Math.PI + Math.atan2(this.vy, this.vx)),
+        t.scale(1, this.direction ? 1 : -1),
+        t.beginPath(),
+        t.moveTo(-30, 0),
+        t.bezierCurveTo(-20, 15, 15, 10, 40, 0),
+        t.bezierCurveTo(15, -10, -20, -15, -30, 0),
+        t.fill(),
+        t.save(),
+        t.translate(40, 0),
+        t.scale(0.9 + 0.2 * Math.sin(this.theta), 1),
+        t.beginPath(),
+        t.moveTo(0, 0),
+        t.quadraticCurveTo(5, 10, 20, 8),
+        t.quadraticCurveTo(12, 5, 10, 0),
+        t.quadraticCurveTo(12, -5, 20, -8),
+        t.quadraticCurveTo(5, -10, 0, 0),
+        t.fill(),
+        t.restore(),
+        t.save(),
+        t.translate(-3, 0),
+        t.rotate((Math.PI / 3 + (Math.PI / 10) * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)),
+        t.beginPath(),
+        this.renderer.reverse
+          ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0))
+          : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)),
+        t.closePath(),
+        t.fill(),
+        t.restore(),
+        t.restore(),
+        this.controlStatus(t)
+    }
+  }),
+    $(function () {
+      RENDERER.init()
+      $('.dark').click(function () {
+        setTimeout(() => {
+          RENDERER.setFishColor()
+          RENDERER.context.fill()
+        })
+      })
+    })
+</script>
+
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+              
+                <a href="/wly/atom.xml" class="social">
+                  
+                    <i class="fas fa-rss" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="mailto:2535472822@qq.com" class="social">
+                  
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="https://github.com/laowly" class="social">
+                  
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+              
+                <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=2535472822" class="social">
+                  
+                    <i class="fab fa-qq" aria-hidden="true"></i>
+                  
+                </a>
+              
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2020 - 2022 <a target="_blank" rel="noopener" href="https://gitee.com/wlysun">wly</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> </p>
+
+          </div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark">
+  <div class="dark-content">
+    <i class="fas fa-moon" aria-hidden="true"></i>
+    <!-- <span>关灯</span> -->
+  </div>
+  
+</div>
+
+<script>
+  $(function() {
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    if (isDark) {
+      $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+    }
+    $('.dark').click(function() {
+      if ($(document.body).is('.darkModel')) {
+        $(document.body).removeClass('darkModel');
+        localStorage.setItem('dark', false);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      } else {
+        $(document.body).addClass('darkModel');
+        localStorage.setItem('dark', true);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      }
+    })
+  })
+</script>
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script src="/wly/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/wly/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js  
+  class=""
+  server="tencent"
+  type="playlist"
+  id="8062553743"
+  fixed='true'
+  autoplay='false'
+  theme='#42b983'
+  loop='all'
+  order='random'
+  preload='auto'
+  volume='0.7'
+  list-folded='true'
+>
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="/wly/js/fancybox/jquery.fancybox.min.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+      <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/wly/js/ribbon.min.js"></script>
+    
+
+    <script src="/wly/js/utils/index.js"></script>
+    <script src="/wly/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<link href="/wly/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/wly/js/tocbot/tocbot.min.js"></script>
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -80,
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    positionFixedSelector: '.toc-main',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 100) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  }
+</style> 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const headerMenuTransparent = true;
+    if (!headerMenuTransparent) { return; }
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/wly/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/wly/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/wly/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax>
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+    <!-- 弹幕所需的css和js -->
+    
+<!-- 具体js，请前往valine/script.ejs查看 -->
+
+    <script>
+  var requiredFields = 'nick';
+  requiredFields = requiredFields.split(',');
+  comment_el = '.comment';
+  let looperValine = null;
+  load_valine = function () {
+    if ($(comment_el).length) {
+      var valine = new Valine({
+        el: '#vcomment',
+        path: window.location.pathname,
+        notify: false,
+        verify: false,
+        app_id: "Qt6x2oXJVu7A8GxXqQTDwy6W-gzGzoHsz",
+        app_key: "q4fUSLpOwBZXaU2XiTdY5l0b",
+        placeholder: "客官，说点什么吧",
+        avatar: "",
+        master: "",   //博主邮箱md5
+        tagMeta: ["博主","小伙伴","访客"],     //标识字段名
+        friends: "",
+        metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱" },
+        requiredFields: requiredFields,
+        enableQQ: true,
+      });
+      function debounce(fn) {
+        var timerID = null
+        return function () {
+          var arg = arguments[0]   //获取事件
+          if (timerID) {
+            clearTimeout(timerID)
+          }
+          timerID = setTimeout(function () {
+            fn(arg)              //事件传入函数
+          }, 200)
+        }
+      }
+      //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
+      var themeDanmu = eval('false');
+      var themeLoop = eval('false');
+      var themeLooperTime = '5000' || 5000;
+      var speed = '40' || 20;
+      var isBarrager = true;
+      if (themeDanmu == true) {
+        do_barrager();
+        if ($('.danmuBox').length <= 0) {
+          $('.navbar').append('<div class="danmuBox"><div class="danmuBtn open"><span class="danmuCircle"></span><span class="danmuText">弹幕</span></div></div>');
+        }
+        $('.danmuBtn').on('click', debounce(
+          function () {
+            if ($('.danmuBtn').hasClass('open')) {
+              $('.danmuBtn').removeClass('open')
+              clearInterval(looperValine);
+              $.fn.barrager.removeAll();
+            } else {
+              $('.danmuBtn').addClass("open");
+              do_barrager();
+            }
+          }
+        ))
+      }
+      function do_barrager() {
+        isBarrager && valine.Q(window.location.pathname).find().then(function (comments) {
+          // var num = 0; // 可以记录条数，循环调用的时候只取最新的评论放入弹幕中
+          var run_once = true;
+          var looper_time = themeLooperTime;
+          var total = comments.length;
+          // var looper = null;
+          var index = 0;
+          if (total > 0) {
+            barrager();
+          } else {
+            // 当评论数为0的时候，自动关闭弹幕
+            // $('.danmuBtn').removeClass('open');
+          }
+          function barrager() {
+            if (run_once) {
+              //如果是首次执行,则设置一个定时器,并且把首次执行置为false
+              looperValine = setInterval(barrager, looper_time);
+              run_once = false;
+            }
+            var content = comments[index]._serverData.comment;
+            var email = comments[index]._serverData.mail;
+            var link = comments[index]._serverData.link;
+            var newcontent = content.substring(0, 50).replace(/<[^>]+>/g, "");
+            //发布一个弹幕
+            const item = {
+              img: `https://q1.qlogo.cn/g?b=qq&nk=${email}&s=640`, //图片 
+              info: newcontent, //文字 
+              href: link, //链接 
+              close: true, //显示关闭按钮 
+              speed: speed, //延迟,单位秒,默认6 
+              color: '#fff', //颜色,默认白色 
+              old_ie_color: '#000000', //ie低版兼容色,不能与网页背景相同,默认黑色
+            }
+            $('body').barrager(item);
+            //索引自增
+            index++;
+            //所有弹幕发布完毕，清除计时器。
+            if (index == total) {
+              clearInterval(looperValine);
+              if (themeLoop === true) {
+                setTimeout(function () {
+                  do_barrager();
+                }, 5000);
+              } else {
+                $('.danmuBtn').removeClass('open');
+              }
+              return false;
+            }
+
+          }
+        })
+      }
+    }
+  };
+  $(document).ready(load_valine);
+  document.addEventListener('pjax:send', function (e) {
+    
+  })
+  document.addEventListener('pjax:complete', function () {
+    load_valine();
+  });
+</script>
+
+  
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+   
+    <script src="/wly/js/cursor/clicklove.js"></script> 
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+
+
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/wly/js/pjax@0.2.8/index.js"></script>
+  
+    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  </body>
+</html>
