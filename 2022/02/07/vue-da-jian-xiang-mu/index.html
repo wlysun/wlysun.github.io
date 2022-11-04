@@ -604,8 +604,7 @@
     
 </header>
         <!-- 内容区域 -->
-        
- <!-- prismjs 代码高亮 -->
+         <!-- prismjs 代码高亮 -->
  
     
     <link href="/wly/js/prism/prism-line-numbers.css" rel="stylesheet">
@@ -623,64 +622,59 @@
     </style>
   
 
+<div class="bg-dark-floor" style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: -1"></div>
 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+ <!-- 文章详情页顶部图片和标题 -->
+ 
 
-
-  <!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/wly/medias/10.jpg')">
+<div
+  class="post-detail-header"
+  id="thumbnail_canvas"
+  style="
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    background-image: url('/wly/medias/10.jpg');
+  "
+>
   <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
+  <canvas id="header_canvas" style="position: absolute; bottom: 0; pointer-events: none"></canvas>
+
   <div class="post-detail-header_info-box">
     <div class="title-box">
-      <span class="title">
-        vue搭建项目
-      </span>
+      <span class="title"> vue搭建项目 </span>
     </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2022-02-07 |
-        </span>
-      
 
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> 分类：
-          
-            <a href="/wly/categories/%E9%A1%B9%E7%9B%AE/" class="post-detail-header_category">
-              项目
-            </a>
-          
-        </span>
-      
-
-      
+     
+    <span class="post-detail-header_date">
+      <i class="fas fa-calendar"></i> 发表于：2022-02-07 |
+    </span>
     
+
+    <!-- 增添update时间 -->
+    
+    <span class="post-detail-header_update">
+      <i class="fas fa-history"></i> 更新于：2022-11-04 |
+    </span>
+     
+    <span class="post-detail-header_categories">
+      <i class="iconfont iconbookmark1"></i> 分类： 
+      <a href="/wly/categories/%E9%A1%B9%E7%9B%AE/" class="post-detail-header_category"> 项目 </a>
+      
+    </span>
+      
   </div>
+
   
-  
-    <script src="/wly/js/bubble/bubble.js"></script>
+  <script src="/wly/js/bubble/bubble.js"></script>
   
 </div>
-
-
-
-
-
-<div class="post-detail-content row justify-position" 
-  style="padding-top: 0px;">
+  
+<div class="post-detail-content row justify-position" style="padding-top: 0px">
   <div class="main-content">
     <article class="post post-detail">
-      <div class="post-content">
-        <h2 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h2><p>Vscode：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a><br>Node：<a target="_blank" rel="noopener" href="http://nodejs.cn/">http://nodejs.cn/</a><br>npm 淘宝镜像:<a target="_blank" rel="noopener" href="http://npm.taobao.org/">http://npm.taobao.org/</a></p>
+      <div class="post-content"><h2 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h2><p>Vscode：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a><br>Node：<a target="_blank" rel="noopener" href="http://nodejs.cn/">http://nodejs.cn/</a><br>npm 淘宝镜像:<a target="_blank" rel="noopener" href="http://npm.taobao.org/">http://npm.taobao.org/</a></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">#经过下面的配置，以后所有的 npm install 都会经过淘宝的镜像地址下载
 npm config <span class="token keyword">set</span> registry https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>registry<span class="token punctuation">.</span>npm<span class="token punctuation">.</span>taobao<span class="token punctuation">.</span>org
 #查看npm配置信息
@@ -688,21 +682,105 @@ npm config list<span aria-hidden="true" class="line-numbers-rows"><span></span><
 <h2 id="脚手架工具-Vue-Cli"><a href="#脚手架工具-Vue-Cli" class="headerlink" title="脚手架工具 Vue-Cli"></a>脚手架工具 Vue-Cli</h2><p>安装 vue-cli:</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"># 安装vue2<span class="token punctuation">.</span><span class="token constant">X</span>
 npm install vue<span class="token operator">-</span>cli <span class="token operator">-</span>g
+
 # 安装vue3<span class="token punctuation">.</span><span class="token constant">X</span>
 npm install <span class="token operator">-</span>g @vue<span class="token operator">/</span>cli
+
 # 输出版本号说明安装成功
 vue <span class="token operator">--</span>version
+
 # 进入你的项目目录
-cd workspace
-vue init webpack 项目名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+cd workspace<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>创建一个基于 webpack 模板的 vue 应用程序:</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"># 这里的 mytest 是项目名称
-vue init webpack mytest
+vue init webpack mytest <span class="token comment">//vue2.X</span>
+
+vue create mytest <span class="token comment">//vue3.X</span>
 
 # 初始化并运行
 npm install
-npm run dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/wly/1.jpg" class="lazyload placeholder" data-srcset="/wly/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"></p>
+
+npm run dev <span class="token comment">//vue2.X</span>
+
+npm run serve <span class="token comment">//vue2.X</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="目录详解"><a href="#目录详解" class="headerlink" title="目录详解"></a>目录详解</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"># 安装vue2<span class="token punctuation">.</span><span class="token constant">X</span>
+<span class="token number">1</span>、build：构建脚本目录
+　<span class="token number">1</span>）build<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> 生产环境构建脚本；
+　<span class="token number">2</span>）check<span class="token operator">-</span>versions<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> 检查npm，node<span class="token punctuation">.</span>js版本；
+　<span class="token number">3</span>）utils<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> 构建相关工具方法；
+　<span class="token number">5</span>）webpack<span class="token punctuation">.</span>base<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> webpack基本配置；
+　<span class="token number">6</span>）webpack<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> webpack开发环境配置；
+　<span class="token number">7</span>）webpack<span class="token punctuation">.</span>prod<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> webpack生产环境配置；
+
+<span class="token number">2</span>、config：项目配置
+　<span class="token number">1</span>）dev<span class="token punctuation">.</span>env<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> 开发环境变量；
+　<span class="token number">2</span>）index<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> 项目配置文件；
+　<span class="token number">3</span>）prod<span class="token punctuation">.</span>env<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> 生产环境变量；
+
+<span class="token number">3</span>、node_modules：npm 加载的项目依赖模块
+
+<span class="token number">4</span>、src：这里是我们要开发的目录，基本上要做的事情都在这个目录里。里面包含了几个目录及文件：
+　<span class="token number">1</span>）assets：资源目录，放置一些图片或者公共js、公共css。这里的资源会被webpack构建；
+　<span class="token number">2</span>）components：组件目录，我们写的组件就放在这个目录里面；
+　<span class="token number">3</span>）router：前端路由，我们需要配置的路由路径写在index<span class="token punctuation">.</span>js里面；
+　<span class="token number">4</span>）App<span class="token punctuation">.</span>vue：根组件；
+　<span class="token number">5</span>）main<span class="token punctuation">.</span>js：入口js文件；
+
+<span class="token number">5</span>、<span class="token keyword">static</span>：静态资源目录，如图片、字体等。不会被webpack构建
+
+<span class="token number">6</span>、index<span class="token punctuation">.</span>html：首页入口文件，可以添加一些 meta 信息等
+
+<span class="token number">7</span>、<span class="token keyword">package</span><span class="token punctuation">.</span>json：npm包配置文件，定义了项目的npm脚本，依赖包等信息
+
+<span class="token number">8</span>、<span class="token constant">README</span><span class="token punctuation">.</span>md：项目的说明文档，markdown 格式
+
+<span class="token number">9</span>、<span class="token punctuation">.</span>xxxx文件：这些是一些配置文件，包括语法配置，git配置等<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"># 安装vue3<span class="token punctuation">.</span><span class="token constant">X</span>
+<span class="token number">1</span>、<span class="token keyword">public</span>：
+　<span class="token number">1</span>）favicon<span class="token punctuation">.</span>ico <span class="token operator">==</span><span class="token operator">></span> 网页logo；
+　<span class="token number">2</span>）index<span class="token punctuation">.</span>html：首页入口文件，可以添加一些 meta 信息等
+
+<span class="token number">2</span>、node_modules：npm 加载的项目依赖模块
+
+<span class="token number">3</span>、src：这里是我们要开发的目录，基本上要做的事情都在这个目录里。里面包含了几个目录及文件：
+　<span class="token number">1</span>）assets：资源目录，放置一些图片或者公共js、公共css。这里的资源会被webpack构建；
+　<span class="token number">2</span>）components：组件目录，我们写的组件就放在这个目录里面；
+　<span class="token number">3</span>）router：前端路由，我们需要配置的路由路径写在index<span class="token punctuation">.</span>js里面；
+　<span class="token number">4</span>）App<span class="token punctuation">.</span>vue：根组件；
+　<span class="token number">5</span>）main<span class="token punctuation">.</span>js：入口js文件；
+
+<span class="token number">4</span>、config：项目配置
+　<span class="token number">1</span>）vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> 配置环境变量；<span class="token comment">//一级目录自建</span>
+
+<span class="token number">5</span>、<span class="token keyword">package</span><span class="token punctuation">.</span>json：npm包配置文件，定义了项目的npm脚本，依赖包等信息
+
+<span class="token number">6</span>、<span class="token constant">README</span><span class="token punctuation">.</span>md：项目的说明文档，markdown 格式
+
+<span class="token number">7</span>、<span class="token punctuation">.</span>xxxx文件：这些是一些配置文件，包括语法配置，git配置等<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//vue.config.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">baseUrl</span><span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span> <span class="token operator">?</span> <span class="token string">'/online/'</span> <span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+  <span class="token comment">// outputDir: 在npm run build时 生成文件的目录 type:string, default:'dist'</span>
+  <span class="token comment">// outputDir: 'dist',</span>
+  <span class="token comment">// pages:&#123; type:Object,Default:undfind &#125;</span>
+  <span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">8888</span><span class="token punctuation">,</span> <span class="token comment">// 端口号</span>
+    <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">https</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// https:&#123;type:Boolean&#125;</span>
+    <span class="token literal-property property">open</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">//配置自动启动浏览器</span>
+    <span class="token comment">// proxy: 'http://localhost:4000' // 配置跨域处理,只有一个代理</span>
+    <span class="token literal-property property">proxy</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token string-property property">'/api'</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'&lt;url>'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">ws</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">changeOrigin</span><span class="token operator">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token string-property property">'/foo'</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'&lt;other_url>'</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span> <span class="token comment">// 配置多个代理</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="安装-vuex、axios、elemnet-ui、sass、less-等依赖"><a href="#安装-vuex、axios、elemnet-ui、sass、less-等依赖" class="headerlink" title="安装 vuex、axios、elemnet-ui、sass、less 等依赖"></a>安装 vuex、axios、elemnet-ui、sass、less 等依赖</h2><p>Axios 依赖:</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">npm install axios<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在项目根目录下添加文件夹 utils，新建文件 interceptor.js，添加如下代码：</p>
@@ -807,37 +885,6 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">npm install less less<span class="token operator">-</span>loader <span class="token operator">--</span>save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>使用 less 的地方添加 lang&#x3D;less</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>style lang<span class="token operator">=</span><span class="token string">"less"</span> <span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="目录详解"><a href="#目录详解" class="headerlink" title="目录详解"></a>目录详解</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、build：构建脚本目录
-　<span class="token number">1</span>）build<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> 生产环境构建脚本；
-　<span class="token number">2</span>）check<span class="token operator">-</span>versions<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> 检查npm，node<span class="token punctuation">.</span>js版本；
-　<span class="token number">3</span>）utils<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> 构建相关工具方法；
-　<span class="token number">5</span>）webpack<span class="token punctuation">.</span>base<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> webpack基本配置；
-　<span class="token number">6</span>）webpack<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> webpack开发环境配置；
-　<span class="token number">7</span>）webpack<span class="token punctuation">.</span>prod<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> webpack生产环境配置；
-
-<span class="token number">2</span>、config：项目配置
-　<span class="token number">1</span>）dev<span class="token punctuation">.</span>env<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> 开发环境变量；
-　<span class="token number">2</span>）index<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> 项目配置文件；
-　<span class="token number">3</span>）prod<span class="token punctuation">.</span>env<span class="token punctuation">.</span>js <span class="token operator">==</span><span class="token operator">></span> 生产环境变量；
-
-<span class="token number">3</span>、node_modules：npm 加载的项目依赖模块
-
-<span class="token number">4</span>、src：这里是我们要开发的目录，基本上要做的事情都在这个目录里。里面包含了几个目录及文件：
-　<span class="token number">1</span>）assets：资源目录，放置一些图片或者公共js、公共css。这里的资源会被webpack构建；
-　<span class="token number">2</span>）components：组件目录，我们写的组件就放在这个目录里面；
-　<span class="token number">3</span>）router：前端路由，我们需要配置的路由路径写在index<span class="token punctuation">.</span>js里面；
-　<span class="token number">4</span>）App<span class="token punctuation">.</span>vue：根组件；
-　<span class="token number">5</span>）main<span class="token punctuation">.</span>js：入口js文件；
-
-<span class="token number">5</span>、<span class="token keyword">static</span>：静态资源目录，如图片、字体等。不会被webpack构建
-
-<span class="token number">6</span>、index<span class="token punctuation">.</span>html：首页入口文件，可以添加一些 meta 信息等
-
-<span class="token number">7</span>、<span class="token keyword">package</span><span class="token punctuation">.</span>json：npm包配置文件，定义了项目的npm脚本，依赖包等信息
-
-<span class="token number">8</span>、<span class="token constant">README</span><span class="token punctuation">.</span>md：项目的说明文档，markdown 格式
-
-<span class="token number">9</span>、<span class="token punctuation">.</span>xxxx文件：这些是一些配置文件，包括语法配置，git配置等<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p>解决 vue 不能自动打开浏览器的问题：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>）打开config <span class="token operator">==</span><span class="token operator">></span> index<span class="token punctuation">.</span>js
 <span class="token number">2</span>）module<span class="token punctuation">.</span>exports配置中找到autoOpenBrowser，默认设置的是<span class="token boolean">false</span>
@@ -869,21 +916,17 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <p>修改 host 即可：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token function">getNetworkIp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/liul99/article/details/95603254">https://blog.csdn.net/liul99/article/details/95603254</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37508531/article/details/107321292">https://blog.csdn.net/m0_37508531/article/details/107321292</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_47906106/article/details/119057019">https://blog.csdn.net/weixin_47906106/article/details/119057019</a></p>
-
-      </div>
+</div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/wly/tags/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" class="">
-              项目搭建
-            </a>
+          <a href="/wly/tags/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" class=""> 项目搭建 </a>
           
         </div>
         
       </div>
-      
-        <div class="copyright">
+       <div class="copyright">
   <ul class="post-copyright">
     <li class="post-copyright-author">
     <strong>作者:  </strong>阳</a>
@@ -898,12 +941,10 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
       许可协议。转载请注明出处!
     </li>
   </ul>
-<div>
-      
+<div> 
     </article>
     <!-- 上一篇文章和下一篇文章 -->
-    
-      <!-- 文章详情页的上一页和下一页 -->
+     <!-- 文章详情页的上一页和下一页 -->
 <div class="post-nav">
 
 
@@ -949,13 +990,10 @@ module.expor
   </div>
 
 </div>
-
-    
-    
+ 
 
     <!-- 打赏 -->
-    
-      <div id="appDonate" class="post-donate">
+     <div id="appDonate" class="post-donate">
   <div id="donate_board" class="donate_bar center" ref="donate">
     <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
   </div>
@@ -1036,12 +1074,10 @@ module.expor
     },
     created() {}
   })
-</script>
-    
+</script> 
 
     <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
+     <!-- https://github.com/overtrue/share.js -->
 <!-- 文章详情页的分享 -->
 <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
@@ -1054,9 +1090,8 @@ module.expor
   }
 </style>
 
+ 
 
-    
-    
     <!-- 评论 -->
     <!-- 评论 -->
 
@@ -1162,7 +1197,6 @@ module.expor
   </div>
 
 <!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
-
 
   </div>
 
@@ -1356,12 +1390,7 @@ module.expor
 		width: 100%;
 		height: 100%;
 	}
-</style>
-
-
-
-
-  <script>
+</style>   <script>
   function loadMermaid() {
     if (document.getElementsByClassName('mermaid').length) {
       if (window.mermaidJsLoad) mermaid.init()
@@ -1387,7 +1416,7 @@ module.expor
   })
   
 </script>
-
+ 
 
       </main>
     </div>

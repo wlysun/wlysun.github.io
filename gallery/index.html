@@ -604,8 +604,7 @@
     
 </header>
         <!-- 内容区域 -->
-        
- <!-- prismjs 代码高亮 -->
+         <!-- prismjs 代码高亮 -->
  
     
     <link href="/wly/js/prism/prism-line-numbers.css" rel="stylesheet">
@@ -623,55 +622,49 @@
     </style>
   
 
+<div class="bg-dark-floor" style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: -1"></div>
 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+ <!-- 文章详情页顶部图片和标题 -->
+ 
 
-
-  <!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-2cf3b62a87045ee279096449cf6f3ac1_1440w.jpg?source=1940ef5c')">
+<div
+  class="post-detail-header"
+  id="thumbnail_canvas"
+  style="
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    background-image: url('https://pic2.zhimg.com/80/v2-2cf3b62a87045ee279096449cf6f3ac1_1440w.jpg?source=1940ef5c');
+  "
+>
   <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
+  <canvas id="header_canvas" style="position: absolute; bottom: 0; pointer-events: none"></canvas>
+
   <div class="post-detail-header_info-box">
     <div class="title-box">
-      <span class="title">
-        gallery
-      </span>
+      <span class="title"> gallery </span>
     </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2022-01-07 |
-        </span>
-      
 
-      
-
-      
+     
+    <span class="post-detail-header_date">
+      <i class="fas fa-calendar"></i> 发表于：2022-01-07 |
+    </span>
     
+
+    <!-- 增添update时间 -->
+       
   </div>
+
   
-  
-    <script src="/wly/js/bubble/bubble.js"></script>
+  <script src="/wly/js/bubble/bubble.js"></script>
   
 </div>
-
-
-
-
-
-<div class="post-detail-content row justify-position" 
-  style="padding-top: 0px;">
+  
+<div class="post-detail-content row justify-position" style="padding-top: 0px">
   <div class="main-content">
     <article class="post post-detail">
-      <div class="post-content">
-        <div class="gallery-group-main">
+      <div class="post-content"><div class="gallery-group-main">
     
   <figure class="gallery-group">
   <img class="gallery-group-img" src='https://pic1.zhimg.com/80/v2-23c3820e8abfb1cef689531af2dc6d09_1440w.jpg?source=1940ef5c' alt="Group Image Gallery">
@@ -695,13 +688,11 @@
 </div>
 
 
-
-      </div>
+</div>
       <div class="post-tags-categories">
         
       </div>
-      
-        <div class="copyright">
+       <div class="copyright">
   <ul class="post-copyright">
     <li class="post-copyright-author">
     <strong>作者:  </strong>阳</a>
@@ -716,12 +707,10 @@
       许可协议。转载请注明出处!
     </li>
   </ul>
-<div>
-      
+<div> 
     </article>
     <!-- 上一篇文章和下一篇文章 -->
-    
-      <!-- 文章详情页的上一页和下一页 -->
+     <!-- 文章详情页的上一页和下一页 -->
 <div class="post-nav">
 
 
@@ -729,13 +718,10 @@
 
 
 </div>
-
-    
-    
+ 
 
     <!-- 打赏 -->
-    
-      <div id="appDonate" class="post-donate">
+     <div id="appDonate" class="post-donate">
   <div id="donate_board" class="donate_bar center" ref="donate">
     <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
   </div>
@@ -816,12 +802,10 @@
     },
     created() {}
   })
-</script>
-    
+</script> 
 
     <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
+     <!-- https://github.com/overtrue/share.js -->
 <!-- 文章详情页的分享 -->
 <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
@@ -834,9 +818,8 @@
   }
 </style>
 
+ 
 
-    
-    
     <!-- 评论 -->
     <!-- 评论 -->
 
@@ -942,7 +925,6 @@
   </div>
 
 <!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
-
 
   </div>
 
@@ -1136,12 +1118,7 @@
 		width: 100%;
 		height: 100%;
 	}
-</style>
-
-
-
-
-  <script>
+</style>   <script>
   function loadMermaid() {
     if (document.getElementsByClassName('mermaid').length) {
       if (window.mermaidJsLoad) mermaid.init()
@@ -1167,7 +1144,7 @@
   })
   
 </script>
-
+ 
 
       </main>
     </div>

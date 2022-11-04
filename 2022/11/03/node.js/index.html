@@ -604,8 +604,7 @@
     
 </header>
         <!-- 内容区域 -->
-        
- <!-- prismjs 代码高亮 -->
+         <!-- prismjs 代码高亮 -->
  
     
     <link href="/wly/js/prism/prism-line-numbers.css" rel="stylesheet">
@@ -623,64 +622,55 @@
     </style>
   
 
+<div class="bg-dark-floor" style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: -1"></div>
 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+ <!-- 文章详情页顶部图片和标题 -->
+ 
 
-
-  <!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/wly/medias/14.jpg')">
+<div
+  class="post-detail-header"
+  id="thumbnail_canvas"
+  style="
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    background-image: url('/wly/medias/14.jpg');
+  "
+>
   <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
+  <canvas id="header_canvas" style="position: absolute; bottom: 0; pointer-events: none"></canvas>
+
   <div class="post-detail-header_info-box">
     <div class="title-box">
-      <span class="title">
-        node
-      </span>
+      <span class="title"> node </span>
     </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2022-11-03 |
-        </span>
-      
 
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> 分类：
-          
-            <a href="/wly/categories/node/" class="post-detail-header_category">
-              node
-            </a>
-          
-        </span>
-      
-
-      
+     
+    <span class="post-detail-header_date">
+      <i class="fas fa-calendar"></i> 发表于：2022-11-03 |
+    </span>
     
+
+    <!-- 增添update时间 -->
+     
+    <span class="post-detail-header_categories">
+      <i class="iconfont iconbookmark1"></i> 分类： 
+      <a href="/wly/categories/node/" class="post-detail-header_category"> node </a>
+      
+    </span>
+      
   </div>
+
   
-  
-    <script src="/wly/js/bubble/bubble.js"></script>
+  <script src="/wly/js/bubble/bubble.js"></script>
   
 </div>
-
-
-
-
-
-<div class="post-detail-content row justify-position" 
-  style="padding-top: 0px;">
+  
+<div class="post-detail-content row justify-position" style="padding-top: 0px">
   <div class="main-content">
     <article class="post post-detail">
-      <div class="post-content">
-        <h3 id="node-写接口"><a href="#node-写接口" class="headerlink" title="node 写接口"></a>node 写接口</h3><h4 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h4><h5 id="NestUS-官网：https-nestjs-bootcss-com-first-steps"><a href="#NestUS-官网：https-nestjs-bootcss-com-first-steps" class="headerlink" title="NestUS 官网：https://nestjs.bootcss.com/first-steps"></a>NestUS 官网：<a target="_blank" rel="noopener" href="https://nestjs.bootcss.com/first-steps">https://nestjs.bootcss.com/first-steps</a></h5><p>下载依赖</p>
+      <div class="post-content"><h3 id="node-写接口"><a href="#node-写接口" class="headerlink" title="node 写接口"></a>node 写接口</h3><h4 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h4><h5 id="NestUS-官网：https-nestjs-bootcss-com-first-steps"><a href="#NestUS-官网：https-nestjs-bootcss-com-first-steps" class="headerlink" title="NestUS 官网：https://nestjs.bootcss.com/first-steps"></a>NestUS 官网：<a target="_blank" rel="noopener" href="https://nestjs.bootcss.com/first-steps">https://nestjs.bootcss.com/first-steps</a></h5><p>下载依赖</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">npm i <span class="token operator">-</span>g @nestjs<span class="token operator">/</span>cli<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>创建项目</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">nest <span class="token keyword">new</span> <span class="token class-name">project</span><span class="token operator">-</span>name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -692,21 +682,17 @@
 <p>创建 get,post 请求<br><img src="/wly/api.jpg" class="lazyload placeholder" data-srcset="/wly/api.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"></p>
 <p>返回参数<br><img src="/wly/data.jpg" class="lazyload placeholder" data-srcset="/wly/data.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"></p>
 <p>快捷键<br><img src="/wly/nest.jpg" class="lazyload placeholder" data-srcset="/wly/nest.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"></p>
-
-      </div>
+</div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/wly/tags/node/" class="">
-              node
-            </a>
+          <a href="/wly/tags/node/" class=""> node </a>
           
         </div>
         
       </div>
-      
-        <div class="copyright">
+       <div class="copyright">
   <ul class="post-copyright">
     <li class="post-copyright-author">
     <strong>作者:  </strong>阳</a>
@@ -721,12 +707,10 @@
       许可协议。转载请注明出处!
     </li>
   </ul>
-<div>
-      
+<div> 
     </article>
     <!-- 上一篇文章和下一篇文章 -->
-    
-      <!-- 文章详情页的上一页和下一页 -->
+     <!-- 文章详情页的上一页和下一页 -->
 <div class="post-nav">
 
 
@@ -769,13 +753,10 @@
   </div>
 
 </div>
-
-    
-    
+ 
 
     <!-- 打赏 -->
-    
-      <div id="appDonate" class="post-donate">
+     <div id="appDonate" class="post-donate">
   <div id="donate_board" class="donate_bar center" ref="donate">
     <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
   </div>
@@ -856,12 +837,10 @@
     },
     created() {}
   })
-</script>
-    
+</script> 
 
     <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
+     <!-- https://github.com/overtrue/share.js -->
 <!-- 文章详情页的分享 -->
 <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
@@ -874,9 +853,8 @@
   }
 </style>
 
+ 
 
-    
-    
     <!-- 评论 -->
     <!-- 评论 -->
 
@@ -982,7 +960,6 @@
   </div>
 
 <!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
-
 
   </div>
 
@@ -1176,12 +1153,7 @@
 		width: 100%;
 		height: 100%;
 	}
-</style>
-
-
-
-
-  <script>
+</style>   <script>
   function loadMermaid() {
     if (document.getElementsByClassName('mermaid').length) {
       if (window.mermaidJsLoad) mermaid.init()
@@ -1207,7 +1179,7 @@
   })
   
 </script>
-
+ 
 
       </main>
     </div>

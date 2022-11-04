@@ -604,8 +604,7 @@
     
 </header>
         <!-- 内容区域 -->
-        
- <!-- prismjs 代码高亮 -->
+         <!-- prismjs 代码高亮 -->
  
     
     <link href="/wly/js/prism/prism-line-numbers.css" rel="stylesheet">
@@ -623,64 +622,55 @@
     </style>
   
 
+<div class="bg-dark-floor" style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: -1"></div>
 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+ <!-- 文章详情页顶部图片和标题 -->
+ 
 
-
-  <!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/wly/medias/6.jpg')">
+<div
+  class="post-detail-header"
+  id="thumbnail_canvas"
+  style="
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    background-image: url('/wly/medias/6.jpg');
+  "
+>
   <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
+  <canvas id="header_canvas" style="position: absolute; bottom: 0; pointer-events: none"></canvas>
+
   <div class="post-detail-header_info-box">
     <div class="title-box">
-      <span class="title">
-        前端笔记(vue篇)
-      </span>
+      <span class="title"> 前端笔记(vue篇) </span>
     </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2022-02-07 |
-        </span>
-      
 
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> 分类：
-          
-            <a href="/wly/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" class="post-detail-header_category">
-              前端笔记
-            </a>
-          
-        </span>
-      
-
-      
+     
+    <span class="post-detail-header_date">
+      <i class="fas fa-calendar"></i> 发表于：2022-02-07 |
+    </span>
     
+
+    <!-- 增添update时间 -->
+     
+    <span class="post-detail-header_categories">
+      <i class="iconfont iconbookmark1"></i> 分类： 
+      <a href="/wly/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" class="post-detail-header_category"> 前端笔记 </a>
+      
+    </span>
+      
   </div>
+
   
-  
-    <script src="/wly/js/bubble/bubble.js"></script>
+  <script src="/wly/js/bubble/bubble.js"></script>
   
 </div>
-
-
-
-
-
-<div class="post-detail-content row justify-position" 
-  style="padding-top: 0px;">
+  
+<div class="post-detail-content row justify-position" style="padding-top: 0px">
   <div class="main-content">
     <article class="post post-detail">
-      <div class="post-content">
-        <h1 id="vue笔记总结"><a href="#vue笔记总结" class="headerlink" title="vue笔记总结"></a>vue笔记总结</h1><h2 id="什么是Vue？"><a href="#什么是Vue？" class="headerlink" title="什么是Vue？"></a>什么是Vue？</h2><p>Vue是一套用于构建用户界面的渐进式JavaScript框架<br>形成Vue渐进式框架的核心概念为：<span class='p red'>组件化，MVVM，响应式和生命周期</span></p>
+      <div class="post-content"><h1 id="vue笔记总结"><a href="#vue笔记总结" class="headerlink" title="vue笔记总结"></a>vue笔记总结</h1><h2 id="什么是Vue？"><a href="#什么是Vue？" class="headerlink" title="什么是Vue？"></a>什么是Vue？</h2><p>Vue是一套用于构建用户界面的渐进式JavaScript框架<br>形成Vue渐进式框架的核心概念为：<span class='p red'>组件化，MVVM，响应式和生命周期</span></p>
 <h2 id="vue指令"><a href="#vue指令" class="headerlink" title="vue指令"></a>vue指令</h2><p>指令: <span class='p red'>v-on，v-model，v-cloak，v-once，v-pre，v-text，v-html，v-for，v-show，v-if， v-else，v-else-if</span></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">v<span class="token operator">-</span>on 是事件绑定，可以缩写为@
 常用的修饰符也有很多：
@@ -1257,21 +1247,17 @@ model将新的数据发送给view，用户得到反馈。所 信都是单向的�
 缺点：因为<span class="token keyword">await</span>将异步代码改造成了同步代码，如果多个异步代码都使用了<span class="token keyword">await</span>会导致性能上的降低。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="什么是宏任务和微任务，执行顺序是什么"><a href="#什么是宏任务和微任务，执行顺序是什么" class="headerlink" title="什么是宏任务和微任务，执行顺序是什么"></a>什么是宏任务和微任务，执行顺序是什么</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>、宏任务一般是：包括整体代码script，setTimeout，setInterval。
 <span class="token number">2</span><span class="token function">、微任务：Promise</span><span class="token punctuation">(</span>then、catch、finally<span class="token punctuation">)</span>，process<span class="token punctuation">.</span>nextTick（node<span class="token punctuation">.</span>js）。
-<span class="token number">3</span>、先执行主代码块，然后执行微任务，最后在执行宏任务（异步）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-      </div>
+<span class="token number">3</span>、先执行主代码块，然后执行微任务，最后在执行宏任务（异步）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/wly/tags/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" class="">
-              前端笔记
-            </a>
+          <a href="/wly/tags/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" class=""> 前端笔记 </a>
           
         </div>
         
       </div>
-      
-        <div class="copyright">
+       <div class="copyright">
   <ul class="post-copyright">
     <li class="post-copyright-author">
     <strong>作者:  </strong>阳</a>
@@ -1286,12 +1272,10 @@ model将新的数据发送给view，用户得到反馈。所 信都是单向的�
       许可协议。转载请注明出处!
     </li>
   </ul>
-<div>
-      
+<div> 
     </article>
     <!-- 上一篇文章和下一篇文章 -->
-    
-      <!-- 文章详情页的上一页和下一页 -->
+     <!-- 文章详情页的上一页和下一页 -->
 <div class="post-nav">
 
 
@@ -1336,13 +1320,10 @@ module.expor
   </div>
 
 </div>
-
-    
-    
+ 
 
     <!-- 打赏 -->
-    
-      <div id="appDonate" class="post-donate">
+     <div id="appDonate" class="post-donate">
   <div id="donate_board" class="donate_bar center" ref="donate">
     <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
   </div>
@@ -1423,12 +1404,10 @@ module.expor
     },
     created() {}
   })
-</script>
-    
+</script> 
 
     <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
+     <!-- https://github.com/overtrue/share.js -->
 <!-- 文章详情页的分享 -->
 <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
@@ -1441,9 +1420,8 @@ module.expor
   }
 </style>
 
+ 
 
-    
-    
     <!-- 评论 -->
     <!-- 评论 -->
 
@@ -1549,7 +1527,6 @@ module.expor
   </div>
 
 <!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
-
 
   </div>
 
@@ -1743,12 +1720,7 @@ module.expor
 		width: 100%;
 		height: 100%;
 	}
-</style>
-
-
-
-
-  <script>
+</style>   <script>
   function loadMermaid() {
     if (document.getElementsByClassName('mermaid').length) {
       if (window.mermaidJsLoad) mermaid.init()
@@ -1774,7 +1746,7 @@ module.expor
   })
   
 </script>
-
+ 
 
       </main>
     </div>

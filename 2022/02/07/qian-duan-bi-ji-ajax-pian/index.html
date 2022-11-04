@@ -604,8 +604,7 @@
     
 </header>
         <!-- 内容区域 -->
-        
- <!-- prismjs 代码高亮 -->
+         <!-- prismjs 代码高亮 -->
  
     
     <link href="/wly/js/prism/prism-line-numbers.css" rel="stylesheet">
@@ -623,64 +622,55 @@
     </style>
   
 
+<div class="bg-dark-floor" style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: -1"></div>
 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+ <!-- 文章详情页顶部图片和标题 -->
+ 
 
-
-  <!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/wly/medias/5.jpg')">
+<div
+  class="post-detail-header"
+  id="thumbnail_canvas"
+  style="
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    background-image: url('/wly/medias/5.jpg');
+  "
+>
   <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
+  <canvas id="header_canvas" style="position: absolute; bottom: 0; pointer-events: none"></canvas>
+
   <div class="post-detail-header_info-box">
     <div class="title-box">
-      <span class="title">
-        前端笔记(ajax篇)
-      </span>
+      <span class="title"> 前端笔记(ajax篇) </span>
     </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2022-02-07 |
-        </span>
-      
 
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> 分类：
-          
-            <a href="/wly/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" class="post-detail-header_category">
-              前端笔记
-            </a>
-          
-        </span>
-      
-
-      
+     
+    <span class="post-detail-header_date">
+      <i class="fas fa-calendar"></i> 发表于：2022-02-07 |
+    </span>
     
+
+    <!-- 增添update时间 -->
+     
+    <span class="post-detail-header_categories">
+      <i class="iconfont iconbookmark1"></i> 分类： 
+      <a href="/wly/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" class="post-detail-header_category"> 前端笔记 </a>
+      
+    </span>
+      
   </div>
+
   
-  
-    <script src="/wly/js/bubble/bubble.js"></script>
+  <script src="/wly/js/bubble/bubble.js"></script>
   
 </div>
-
-
-
-
-
-<div class="post-detail-content row justify-position" 
-  style="padding-top: 0px;">
+  
+<div class="post-detail-content row justify-position" style="padding-top: 0px">
   <div class="main-content">
     <article class="post post-detail">
-      <div class="post-content">
-        <h1 id="ajax笔记总结"><a href="#ajax笔记总结" class="headerlink" title="ajax笔记总结"></a>ajax笔记总结</h1><h2 id="什么是事件流"><a href="#什么是事件流" class="headerlink" title="什么是事件流"></a>什么是事件流</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">答</span><span class="token operator">:</span> 事件流是指事件传播的顺序<span class="token punctuation">,</span><span class="token parameter">由事件捕获</span> <span class="token operator">=></span> <span class="token parameter">目标事件</span> <span class="token operator">=></span> 事件冒泡<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+      <div class="post-content"><h1 id="ajax笔记总结"><a href="#ajax笔记总结" class="headerlink" title="ajax笔记总结"></a>ajax笔记总结</h1><h2 id="什么是事件流"><a href="#什么是事件流" class="headerlink" title="什么是事件流"></a>什么是事件流</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">答</span><span class="token operator">:</span> 事件流是指事件传播的顺序<span class="token punctuation">,</span><span class="token parameter">由事件捕获</span> <span class="token operator">=></span> <span class="token parameter">目标事件</span> <span class="token operator">=></span> 事件冒泡<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="如何阻止冒泡和默认行为"><a href="#如何阻止冒泡和默认行为" class="headerlink" title="如何阻止冒泡和默认行为"></a>如何阻止冒泡和默认行为</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">答</span><span class="token operator">:</span> 阻止冒泡和捕获  e<span class="token punctuation">.</span><span class="token function">stopPropagation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     阻止默认行为   e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token keyword">return</span> <span class="token boolean">false</span>
     注意：addEventListener注册的事件，在高浏览器版本中，
@@ -783,21 +773,17 @@ Javascript函数的调用，并且将服务器数据以该函数参数的形式�
 则证明Server端已正常关闭，那好，主机<span class="token number">1</span>也可以关闭连接了。
 
 （通俗：主机<span class="token number">1</span>告诉主机<span class="token number">2</span>，我没有数据要发送了，希望断开连接。主机<span class="token number">2</span>接到请求后说，同意断开。
-主机<span class="token number">2</span>告诉主机<span class="token number">1</span>可以关闭连接了。主机<span class="token number">1</span>接到可以关闭的指令后，关闭连接，四次挥手完成）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-      </div>
+主机<span class="token number">2</span>告诉主机<span class="token number">1</span>可以关闭连接了。主机<span class="token number">1</span>接到可以关闭的指令后，关闭连接，四次挥手完成）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/wly/tags/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" class="">
-              前端笔记
-            </a>
+          <a href="/wly/tags/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" class=""> 前端笔记 </a>
           
         </div>
         
       </div>
-      
-        <div class="copyright">
+       <div class="copyright">
   <ul class="post-copyright">
     <li class="post-copyright-author">
     <strong>作者:  </strong>阳</a>
@@ -812,12 +798,10 @@ Javascript函数的调用，并且将服务器数据以该函数参数的形式�
       许可协议。转载请注明出处!
     </li>
   </ul>
-<div>
-      
+<div> 
     </article>
     <!-- 上一篇文章和下一篇文章 -->
-    
-      <!-- 文章详情页的上一页和下一页 -->
+     <!-- 文章详情页的上一页和下一页 -->
 <div class="post-nav">
 
 
@@ -862,13 +846,10 @@ Javascript函数的调用，并且将服务器数据以该函数参数的形式�
   </div>
 
 </div>
-
-    
-    
+ 
 
     <!-- 打赏 -->
-    
-      <div id="appDonate" class="post-donate">
+     <div id="appDonate" class="post-donate">
   <div id="donate_board" class="donate_bar center" ref="donate">
     <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
   </div>
@@ -949,12 +930,10 @@ Javascript函数的调用，并且将服务器数据以该函数参数的形式�
     },
     created() {}
   })
-</script>
-    
+</script> 
 
     <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
+     <!-- https://github.com/overtrue/share.js -->
 <!-- 文章详情页的分享 -->
 <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
@@ -967,9 +946,8 @@ Javascript函数的调用，并且将服务器数据以该函数参数的形式�
   }
 </style>
 
+ 
 
-    
-    
     <!-- 评论 -->
     <!-- 评论 -->
 
@@ -1075,7 +1053,6 @@ Javascript函数的调用，并且将服务器数据以该函数参数的形式�
   </div>
 
 <!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
-
 
   </div>
 
@@ -1269,12 +1246,7 @@ Javascript函数的调用，并且将服务器数据以该函数参数的形式�
 		width: 100%;
 		height: 100%;
 	}
-</style>
-
-
-
-
-  <script>
+</style>   <script>
   function loadMermaid() {
     if (document.getElementsByClassName('mermaid').length) {
       if (window.mermaidJsLoad) mermaid.init()
@@ -1300,7 +1272,7 @@ Javascript函数的调用，并且将服务器数据以该函数参数的形式�
   })
   
 </script>
-
+ 
 
       </main>
     </div>
