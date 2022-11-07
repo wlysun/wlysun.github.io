@@ -655,7 +655,7 @@
     <!-- 增添update时间 -->
     
     <span class="post-detail-header_update">
-      <i class="fas fa-history"></i> 更新于：2022-11-04 |
+      <i class="fas fa-history"></i> 更新于：2022-11-07 |
     </span>
      
     <span class="post-detail-header_categories">
@@ -720,8 +720,9 @@ Ctrl+Shift+Q: 文字引用
 方法二：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>链接地址</span><span class="token punctuation">></span></span>
 例如：&lt;https://www.example.com/>
 
-![图片文字](图片地址 '图片描述')
-例如：![示例图片](https://www.example.com/example.PNG '示例图片')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#123;% asset_img 图片路径 图片描述 %&#125;
+post_asset_folder: true
+&#123;% asset_img example.jpg This is an example image %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="Front-matter-预定义参数"><a href="#Front-matter-预定义参数" class="headerlink" title="Front-matter 预定义参数"></a>Front-matter 预定义参数</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">配置选项 默认值 描述
 title Markdown 的文件标题 文章标题，强烈建议填写此选项
 

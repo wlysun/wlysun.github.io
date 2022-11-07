@@ -6,7 +6,7 @@
   <link href="https://github.com/wlysun/wly/atom.xml" rel="self"/>
   
   <link href="https://github.com/wlysun/wly/"/>
-  <updated>2022-11-03T02:23:39.759Z</updated>
+  <updated>2022-11-07T09:13:55.336Z</updated>
   <id>https://github.com/wlysun/wly/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>插件</title>
+    <link href="https://github.com/wlysun/wly/2022/11/07/cha-jian/"/>
+    <id>https://github.com/wlysun/wly/2022/11/07/cha-jian/</id>
+    <published>2022-11-07T07:01:26.000Z</published>
+    <updated>2022-11-07T09:13:55.336Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Addin&quot;&gt;&lt;a href=&quot;#Addin&quot; class=&quot;headerlink&quot; title=&quot;Addin&quot;&gt;&lt;/a&gt;Addin&lt;/h2&gt;&lt;h3 id=&quot;SvgIcon-图标&quot;&gt;&lt;a href=&quot;#SvgIcon-图标&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="插件" scheme="https://github.com/wlysun/wly/categories/%E6%8F%92%E4%BB%B6/"/>
+    
+    
+    <category term="插件" scheme="https://github.com/wlysun/wly/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>权限管理</title>
@@ -46,7 +71,7 @@
     <link href="https://github.com/wlysun/wly/2022/11/03/node.js/"/>
     <id>https://github.com/wlysun/wly/2022/11/03/node.js/</id>
     <published>2022-11-03T02:23:39.750Z</published>
-    <updated>2022-11-03T02:23:39.750Z</updated>
+    <updated>2022-11-07T09:13:44.542Z</updated>
     
     
       
@@ -94,7 +119,7 @@
     <link href="https://github.com/wlysun/wly/2022/03/15/xiang-mu-zong-jie/"/>
     <id>https://github.com/wlysun/wly/2022/03/15/xiang-mu-zong-jie/</id>
     <published>2022-03-15T11:22:17.000Z</published>
-    <updated>2022-11-04T06:34:13.431Z</updated>
+    <updated>2022-11-07T09:13:16.589Z</updated>
     
     
       
@@ -119,7 +144,7 @@
     <link href="https://github.com/wlysun/wly/2022/03/13/hexo-ming-ling/"/>
     <id>https://github.com/wlysun/wly/2022/03/13/hexo-ming-ling/</id>
     <published>2022-03-13T09:37:37.000Z</published>
-    <updated>2022-11-04T07:28:34.589Z</updated>
+    <updated>2022-11-07T09:16:42.803Z</updated>
     
     
       
@@ -290,11 +315,11 @@
   </entry>
   
   <entry>
-    <title>插件</title>
-    <link href="https://github.com/wlysun/wly/2022/01/14/cha-jian/"/>
-    <id>https://github.com/wlysun/wly/2022/01/14/cha-jian/</id>
+    <title>软件</title>
+    <link href="https://github.com/wlysun/wly/2022/01/14/ruan-jian/"/>
+    <id>https://github.com/wlysun/wly/2022/01/14/ruan-jian/</id>
     <published>2022-01-14T07:01:26.000Z</published>
-    <updated>2022-11-03T02:23:39.758Z</updated>
+    <updated>2022-11-07T06:20:45.721Z</updated>
     
     
       
@@ -310,7 +335,7 @@
     <category term="插件" scheme="https://github.com/wlysun/wly/categories/%E6%8F%92%E4%BB%B6/"/>
     
     
-    <category term="插件" scheme="https://github.com/wlysun/wly/tags/%E6%8F%92%E4%BB%B6/"/>
+    <category term="软件" scheme="https://github.com/wlysun/wly/tags/%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
@@ -319,7 +344,7 @@
     <link href="https://github.com/wlysun/wly/2022/01/09/ru-zhi-ji-ben-pei-zhi-1/"/>
     <id>https://github.com/wlysun/wly/2022/01/09/ru-zhi-ji-ben-pei-zhi-1/</id>
     <published>2022-01-09T08:03:02.000Z</published>
-    <updated>2022-11-03T02:23:39.755Z</updated>
+    <updated>2022-11-07T09:12:27.985Z</updated>
     
     
       
