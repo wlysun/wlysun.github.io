@@ -670,7 +670,7 @@
 <div class="post-detail-content row justify-position" style="padding-top: 0px">
   <div class="main-content">
     <article class="post post-detail">
-      <div class="post-content"><h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="Git下载"><a href="#Git下载" class="headerlink" title="Git下载"></a>Git下载</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">https</span><span class="token operator">:</span><span class="token operator">/</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">git-scm.com</span><span class="token regex-delimiter">/</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+      <div class="post-content"><h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="Git-下载"><a href="#Git-下载" class="headerlink" title="Git 下载"></a>Git 下载</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">https</span><span class="token operator">:</span><span class="token operator">/</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">git-scm.com</span><span class="token regex-delimiter">/</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">git init    版本库初始化
 git add <span class="token punctuation">.</span>   添加至暂存区
 git commit <span class="token operator">-</span>m <span class="token string">'fist'</span> 从暂存区存到仓储区
@@ -682,9 +682,9 @@ git push <span class="token operator">-</span>u origin <span class="token string
 git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>name <span class="token string">""</span>   配置用户名
 git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>email <span class="token string">""</span>  配置邮箱
 git branch     查看本地所有分支
-git branch <span class="token operator">-</span>r  查看远程分支 
-git branch <span class="token operator">-</span>a  查看本地和远程分支 
-git status     查看当前状态 
+git branch <span class="token operator">-</span>r  查看远程分支
+git branch <span class="token operator">-</span>a  查看本地和远程分支
+git status     查看当前状态
 
 删除分支
 git branch <span class="token operator">-</span>d 本地分支名             删除本地分支
@@ -694,9 +694,9 @@ git push origin <span class="token operator">--</span><span class="token keyword
 git log                             显示日志
 git log <span class="token operator">--</span>pretty <span class="token operator">=</span> online           简化日志
 git reflog                          显示版本号
-git reset –hard <span class="token constant">HEAD</span> <span class="token operator">^</span>              <span class="token punctuation">(</span> <span class="token operator">^</span> 表示回到上一个版本，以此类推 <span class="token punctuation">)</span>
-git reset –hard 版本号               回退指定版本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="git如何管理一个项目"><a href="#git如何管理一个项目" class="headerlink" title="git如何管理一个项目"></a>git如何管理一个项目</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">git init 初始化git仓库（新项目才有这一步）
+git reset <span class="token operator">--</span>hard <span class="token constant">HEAD</span> <span class="token operator">^</span>              <span class="token punctuation">(</span> <span class="token operator">^</span> 表示回到上一个版本，以此类推 <span class="token punctuation">)</span>
+git reset <span class="token operator">--</span>hard 版本号               回退指定版本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="git-如何管理一个项目"><a href="#git-如何管理一个项目" class="headerlink" title="git 如何管理一个项目"></a>git 如何管理一个项目</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">git init 初始化git仓库（新项目才有这一步）
 git clone 将远程仓库的项目资料下载下来
 git checkout <span class="token operator">-</span>b <span class="token function">dev</span> <span class="token punctuation">(</span>dev 为本地分支名）
 git add <span class="token punctuation">.</span> 将工作区文件存在暂存区
@@ -705,7 +705,7 @@ git checkout master切到master分支
 git merge dev 合并分支
 使用git push将其上传到远程仓库
 第二上班，先pull一下，更新最新代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="git秘钥"><a href="#git秘钥" class="headerlink" title="git秘钥"></a>git秘钥</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">设置账号和邮箱
+<h2 id="git-秘钥"><a href="#git-秘钥" class="headerlink" title="git 秘钥"></a>git 秘钥</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">设置账号和邮箱
 git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>name <span class="token string">"账号名"</span>
 git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>email <span class="token string">"邮箱"</span>
 
@@ -717,17 +717,17 @@ cat <span class="token operator">/</span>root<span class="token operator">/</spa
 windows生成的秘钥在用户文件夹下，例如：<span class="token constant">C</span><span class="token operator">:</span>\Users\Administrator<span class="token punctuation">.</span>ssh
 
 在gitlab网页上添加钥匙：User Setting <span class="token operator">>></span> <span class="token constant">SSH</span> Keys <span class="token operator">>></span> Add key<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">git branch 查看本地所有分支
-git status 查看当前状态 
-git commit 提交 
+<h2 id="Git-命令"><a href="#Git-命令" class="headerlink" title="Git 命令"></a>Git 命令</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">git branch 查看本地所有分支
+git status 查看当前状态
+git commit 提交
 git branch <span class="token operator">-</span>a 查看所有的分支
 git branch <span class="token operator">-</span>r 查看远程所有分支
-git commit <span class="token operator">-</span>am <span class="token string">"init"</span> 提交并且加注释 
+git commit <span class="token operator">-</span>am <span class="token string">"init"</span> 提交并且加注释
 git remote add origin git@<span class="token number">192.168</span><span class="token number">.1</span><span class="token number">.119</span><span class="token operator">:</span>ndshow
-git push origin master 将文件给推到服务器上 
-git remote show origin 显示远程库origin里的资源 
+git push origin master 将文件给推到服务器上
+git remote show origin 显示远程库origin里的资源
 git push origin master<span class="token operator">:</span>develop
-git push origin master<span class="token operator">:</span>hb<span class="token operator">-</span>dev 将本地库与服务器上的库进行关联 
+git push origin master<span class="token operator">:</span>hb<span class="token operator">-</span>dev 将本地库与服务器上的库进行关联
 git checkout <span class="token operator">--</span>track origin<span class="token operator">/</span>dev 切换到远程dev分支
 git branch <span class="token operator">-</span><span class="token constant">D</span> master develop 删除本地库develop
 git checkout <span class="token operator">-</span>b dev 建立一个新的本地分支dev
