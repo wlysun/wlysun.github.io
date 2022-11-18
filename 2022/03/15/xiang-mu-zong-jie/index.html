@@ -707,6 +707,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 git add <span class="token punctuation">.</span>
 git commit <span class="token operator">-</span>m <span class="token string">'first'</span>
 git pull<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h4><p>husky &gt; pre-commit hook failed (add –no-verify to bypass)<br>&#x2F;&#x2F; 代码不符合相应规则， 就会引发报错</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">git commit <span class="token operator">--</span>no<span class="token operator">-</span>verify <span class="token operator">-</span>m “<span class="token constant">XXX</span>”<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">FormData表单传值不能传递list<span class="token punctuation">,</span> 需转换Json格式<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 赋值回显</span>
 @change<span class="token operator">=</span><span class="token string">"$forceUpdate()"</span>
@@ -717,6 +719,37 @@ git pull<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 <span class="token comment">// el-input赋值回显校验未关闭解决办法</span>
 @input<span class="token operator">=</span><span class="token string">"$forceUpdate()"</span>
 <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span>model绑定的对象<span class="token punctuation">,</span> <span class="token string">'要赋的值'</span><span class="token punctuation">,</span> 声明的值<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 联想输入款</span>
+<span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">carseriesList</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token comment">//获取的车型车系数据</span>
+    <span class="token literal-property property">searchval</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span><span class="token comment">//输入框输入的值</span>
+    <span class="token literal-property property">newlist</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"张孟真"</span><span class="token punctuation">,</span> <span class="token literal-property property">radio</span><span class="token operator">:</span> <span class="token string">"a1"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"车系名称2"</span><span class="token punctuation">,</span> <span class="token literal-property property">radio</span><span class="token operator">:</span> <span class="token string">"a2"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"杨磊"</span><span class="token punctuation">,</span> <span class="token literal-property property">radio</span><span class="token operator">:</span> <span class="token string">"a3"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"张平"</span><span class="token punctuation">,</span> <span class="token literal-property property">radio</span><span class="token operator">:</span> <span class="token string">"a4"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"邱敏"</span><span class="token punctuation">,</span> <span class="token literal-property property">radio</span><span class="token operator">:</span> <span class="token string">"a5"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"陈强"</span><span class="token punctuation">,</span> <span class="token literal-property property">radio</span><span class="token operator">:</span> <span class="token string">"a6"</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">oldlist</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"张孟真"</span><span class="token punctuation">,</span> <span class="token literal-property property">radio</span><span class="token operator">:</span> <span class="token string">"a1"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"车系名称2"</span><span class="token punctuation">,</span> <span class="token literal-property property">radio</span><span class="token operator">:</span> <span class="token string">"a2"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"杨磊"</span><span class="token punctuation">,</span> <span class="token literal-property property">radio</span><span class="token operator">:</span> <span class="token string">"a3"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"张平"</span><span class="token punctuation">,</span> <span class="token literal-property property">radio</span><span class="token operator">:</span> <span class="token string">"a4"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"邱敏"</span><span class="token punctuation">,</span> <span class="token literal-property property">radio</span><span class="token operator">:</span> <span class="token string">"a5"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">&#123;</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"陈强"</span><span class="token punctuation">,</span> <span class="token literal-property property">radio</span><span class="token operator">:</span> <span class="token string">"a6"</span> <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token keyword">const</span> oldlist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>paperData<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 如果字符串中不包含目标字符会返回-1</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>paperData<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>paperCode<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    oldlist<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>paperData<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>oldlist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><h4 id="node-sassloader-版本过高所导致"><a href="#node-sassloader-版本过高所导致" class="headerlink" title="node-sassloader 版本过高所导致"></a>node-sassloader 版本过高所导致</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>tabs<span class="token punctuation">&#123;</span>
 <span class="token operator">^</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="CSS-样式"><a href="#CSS-样式" class="headerlink" title="CSS 样式"></a>CSS 样式</h3><h4 id="input-样式"><a href="#input-样式" class="headerlink" title="input 样式"></a>input 样式</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 去除 input 获取焦点边框</span>
@@ -767,16 +800,18 @@ value <span class="token operator">=</span> value<span class="token punctuation"
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/14.jpg" class="lazyload placeholder" data-srcset="/medias/14.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/2022/03/15/fang-dou-he-jie-liu/" class="post-nav-link">
+    <a href="/2022/03/15/node.js/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">防抖和节流</div>
+        <div class="title-text">node</div>
       </div>
       
       <!-- <div class="content">
-        防抖（Debounce）和节流（Throttle）都是用来控制某个函数在一定时间内触发次数，两者都是为了减少触发频率，以
+        noderequire // 引入
+module.exprots // 导出
+框架express官网：https://w
       </div> -->
     </a>
   </div>
