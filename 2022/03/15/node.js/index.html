@@ -684,12 +684,15 @@ module<span class="token punctuation">.</span>exprots <span class="token comment
 下个中间件执行完再接着执行上个中间件的next下面的代码
 <span class="token number">3</span><span class="token punctuation">.</span>koa把request，response封装到了同一个上下文对象 contenet
 <span class="token number">4</span><span class="token punctuation">.</span>koa2中间件都是异步函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="koa2-写接口"><a href="#koa2-写接口" class="headerlink" title="koa2 写接口"></a>koa2 写接口</h4><h4 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">npm i koa <span class="token operator">--</span>save
+<h4 id="koa2-写接口"><a href="#koa2-写接口" class="headerlink" title="koa2 写接口"></a>koa2 写接口</h4><h4 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 新建node.js,生成package.json文件</span>
+npm init <span class="token operator">-</span>y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">npm i koa <span class="token operator">--</span>save
 <span class="token comment">// 挂载</span>
 <span class="token keyword">const</span> Koa <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">;</span>
 <span class="token comment">// 3000 端口号</span>
-app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'http://localhost:3000'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>启动项目</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">npm i nodemon <span class="token operator">--</span>save
 <span class="token comment">// node.js 文件名</span>
@@ -704,7 +707,7 @@ app<span class="token punctuation">.</span><span class="token function">use</spa
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 返回前端格式</span>
 npm i koa<span class="token operator">-</span>json <span class="token operator">--</span>save
 <span class="token comment">// 挂载</span>
-<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa-json'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> json <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa-json'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <img src="/2022/03/15/node.js/1.png" class="lazyload placeholder" data-srcset="/2022/03/15/node.js/1.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" class>
 
