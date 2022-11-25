@@ -799,26 +799,75 @@ router<span class="token punctuation">.</span><span class="token function">post<
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> router<span class="token punctuation">.</span><span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="创建数据到数据库集合"><a href="#创建数据到数据库集合" class="headerlink" title="创建数据到数据库集合"></a>创建数据到数据库集合</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/register'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+<h4 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// name, password, openid需与模型定义字段一致</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/register'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">await</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'成功'</span>
-  <span class="token punctuation">&#125;</span>
+  <span class="token comment">// 增 &lt;Schema模型>.create(object)</span>
   <span class="token keyword">let</span> <span class="token punctuation">&#123;</span> name<span class="token punctuation">,</span> password<span class="token punctuation">,</span> openid <span class="token punctuation">&#125;</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>request<span class="token punctuation">.</span>body
   <span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Username</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
     <span class="token literal-property property">name</span><span class="token operator">:</span> name<span class="token punctuation">,</span>
     <span class="token literal-property property">password</span><span class="token operator">:</span> password<span class="token punctuation">,</span>
     <span class="token literal-property property">openid</span><span class="token operator">:</span> openid
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  <span class="token keyword">await</span> user<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> doc</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>doc<span class="token punctuation">)</span>
+  <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token keyword">await</span> Username<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'添加新用户成功'</span>
     <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'添加新用户失败'</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token comment">// 删 &lt;Schema模型>.deleteOne(object)</span>
+  <span class="token keyword">let</span> _id <span class="token operator">=</span> ctx<span class="token punctuation">.</span>request<span class="token punctuation">.</span>body<span class="token punctuation">.</span>openid
+  <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token keyword">await</span> Username<span class="token punctuation">.</span><span class="token function">deleteOne</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">openid</span><span class="token operator">:</span> _id <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'删除用户成功'</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'操作失败'</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token comment">// 改 &lt;Schema模型>.updateOne(&lt;filter筛选条件>,object)</span>
+  <span class="token keyword">let</span> openid <span class="token operator">=</span> ctx<span class="token punctuation">.</span>request<span class="token punctuation">.</span>body<span class="token punctuation">.</span>openid
+  <span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> ctx<span class="token punctuation">.</span>request<span class="token punctuation">.</span>body<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+    <span class="token literal-property property">password</span><span class="token operator">:</span> ctx<span class="token punctuation">.</span>request<span class="token punctuation">.</span>body<span class="token punctuation">.</span>password
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token keyword">await</span> Username<span class="token punctuation">.</span><span class="token function">updateOne</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">openid</span><span class="token operator">:</span> openid <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'更新用户成功'</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'更新用户失败'</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token comment">// 查 &lt;Schema模型>.find(object) / &lt;Schema模型>.findOne(object)</span>
+  <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token keyword">await</span> Username<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">data</span><span class="token operator">:</span> result<span class="token punctuation">,</span>
+      <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'获取用户信息成功'</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'操作失败'</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="koa2-报错总结"><a href="#koa2-报错总结" class="headerlink" title="koa2 报错总结"></a>koa2 报错总结</h4><p>save()，create() 报错 not authorized on admin to execute command</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 需要在dms里新建一个数据库，把代码里那个链接地址上的admin换成你新建数据库的命名</span>
 <span class="token comment">// 3717后面admin换成新建的数据库名即可</span>
