@@ -670,7 +670,7 @@
 <div class="post-detail-content row justify-position" style="padding-top: 0px">
   <div class="main-content">
     <article class="post post-detail">
-      <div class="post-content"><h1 id="ajax笔记总结"><a href="#ajax笔记总结" class="headerlink" title="ajax笔记总结"></a>ajax笔记总结</h1><h2 id="什么是事件流"><a href="#什么是事件流" class="headerlink" title="什么是事件流"></a>什么是事件流</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">答</span><span class="token operator">:</span> 事件流是指事件传播的顺序<span class="token punctuation">,</span><span class="token parameter">由事件捕获</span> <span class="token operator">=></span> <span class="token parameter">目标事件</span> <span class="token operator">=></span> 事件冒泡<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+      <div class="post-content"><h1 id="ajax-笔记总结"><a href="#ajax-笔记总结" class="headerlink" title="ajax 笔记总结"></a>ajax 笔记总结</h1><h2 id="什么是事件流"><a href="#什么是事件流" class="headerlink" title="什么是事件流"></a>什么是事件流</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">答</span><span class="token operator">:</span> 事件流是指事件传播的顺序<span class="token punctuation">,</span> <span class="token parameter">由事件捕获</span> <span class="token operator">=></span> <span class="token parameter">目标事件</span> <span class="token operator">=></span> 事件冒泡<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="如何阻止冒泡和默认行为"><a href="#如何阻止冒泡和默认行为" class="headerlink" title="如何阻止冒泡和默认行为"></a>如何阻止冒泡和默认行为</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">答</span><span class="token operator">:</span> 阻止冒泡和捕获  e<span class="token punctuation">.</span><span class="token function">stopPropagation</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     阻止默认行为   e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token keyword">return</span> <span class="token boolean">false</span>
     注意：addEventListener注册的事件，在高浏览器版本中，
@@ -678,15 +678,15 @@
 <h2 id="原生注册事件的方式有哪些？区别是什么"><a href="#原生注册事件的方式有哪些？区别是什么" class="headerlink" title="原生注册事件的方式有哪些？区别是什么"></a>原生注册事件的方式有哪些？区别是什么</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">注册方式
 <span class="token number">1.</span> on <span class="token operator">+</span> 事件名称
 <span class="token number">2.</span> addEventListener
-<span class="token literal-property property">区别</span><span class="token operator">:</span> 
+<span class="token literal-property property">区别</span><span class="token operator">:</span>
 <span class="token number">1.</span> 使用on注册事件<span class="token punctuation">,</span>同一个元素只能注册一个同类型事件<span class="token punctuation">,</span>否则会覆盖。
 <span class="token number">2.</span> addEventListener可以注册同一事件多次<span class="token punctuation">,</span>不会被覆盖。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="http和https的区别"><a href="#http和https的区别" class="headerlink" title="http和https的区别"></a>http和https的区别</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span><span class="token punctuation">.</span>https协议需要到<span class="token constant">CA</span>申请证书，一般免费证书较少，因而需要一定费用。
+<h2 id="http-和-https-的区别"><a href="#http-和-https-的区别" class="headerlink" title="http 和 https 的区别"></a>http 和 https 的区别</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span><span class="token punctuation">.</span>https协议需要到<span class="token constant">CA</span>申请证书，一般免费证书较少，因而需要一定费用。
 <span class="token number">2</span><span class="token punctuation">.</span>http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl<span class="token operator">/</span>tls加密传输协议。
 <span class="token number">3</span><span class="token punctuation">.</span>http和https使用的是完全不同的连接方式，用的端口也不一样，前者是<span class="token number">80</span>，后者是<span class="token number">443</span>。
 <span class="token number">4</span><span class="token punctuation">.</span>http的连接很简单，是无状态的；<span class="token constant">HTTPS</span>协议是由<span class="token constant">SSL</span><span class="token operator">/</span><span class="token constant">TLS</span><span class="token operator">+</span><span class="token constant">HTTP</span>协议构建的可进行加密传输、
 身份认证的网络协议，比http协议安全。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="get-和post的区别"><a href="#get-和post的区别" class="headerlink" title="get 和post的区别"></a>get 和post的区别</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">get</span>
+<h2 id="get-和-post-的区别"><a href="#get-和-post-的区别" class="headerlink" title="get 和 post 的区别"></a>get 和 post 的区别</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">get</span>
 <span class="token number">1.</span> 在url后面拼接参数<span class="token punctuation">,</span>只能以文本的形式传递数据
 <span class="token number">2.</span> 传递的数据量小<span class="token punctuation">,</span>4KB左右
 <span class="token number">3.</span> 安全性低<span class="token punctuation">,</span> 会将数据显示在地址栏
@@ -699,19 +699,19 @@ post
 <h2 id="项目中常遇到的状态码有哪些"><a href="#项目中常遇到的状态码有哪些" class="headerlink" title="项目中常遇到的状态码有哪些"></a>项目中常遇到的状态码有哪些</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">200</span>  请求成功<span class="token punctuation">,</span>  <span class="token number">2</span>开头的异步表示请求成功
 <span class="token number">304</span>  请求被允许<span class="token punctuation">,</span>但请求内容没有改变<span class="token punctuation">,</span> <span class="token number">3</span>开头的一般请求完成
 <span class="token number">400</span>  请求格式错误<span class="token punctuation">,</span>  <span class="token number">4</span>开头的一般表示请求错误
-<span class="token number">404</span>  <span class="token function">请求的资源</span><span class="token punctuation">(</span>网页<span class="token punctuation">)</span>不存在<span class="token punctuation">,</span>  
+<span class="token number">404</span>  <span class="token function">请求的资源</span><span class="token punctuation">(</span>网页<span class="token punctuation">)</span>不存在<span class="token punctuation">,</span>
 <span class="token number">500</span>  内部服务器错误<span class="token punctuation">,</span>  <span class="token number">5</span>开头的一般都是指服务器错误<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="jsonp的原理？以及优缺点"><a href="#jsonp的原理？以及优缺点" class="headerlink" title="jsonp的原理？以及优缺点"></a>jsonp的原理？以及优缺点</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">原理</span><span class="token operator">:</span> 利用script标签的src属性具有天然可跨域的特性，由服务端返回一个预先定义好的
+<h2 id="jsonp-的原理？以及优缺点"><a href="#jsonp-的原理？以及优缺点" class="headerlink" title="jsonp 的原理？以及优缺点"></a>jsonp 的原理？以及优缺点</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">原理</span><span class="token operator">:</span> 利用script标签的src属性具有天然可跨域的特性，由服务端返回一个预先定义好的
 Javascript函数的调用，并且将服务器数据以该函数参数的形式响应给浏览器<span class="token punctuation">.</span>
 <span class="token literal-property property">优点</span><span class="token operator">:</span> 完美解决在测试或者开发中获取不同域下的数据<span class="token punctuation">,</span>用户传递一个callback参数给服务端，
 然后服务端返回数据时会将这个callback参数作为函数名来包裹住<span class="token constant">JSON</span>数据，
 这样客户端就可以随意定制自己的函数来自动处理返回数据了。
 缺点：Jsonp只支持<span class="token keyword">get</span>请求而不支持post 请求<span class="token punctuation">,</span>也即是说如果想传给后台一个json 格式的数据<span class="token punctuation">,</span>
 此时问题就来了<span class="token punctuation">,</span> 浏览器会报一个http状态码<span class="token number">41</span>错误<span class="token punctuation">,</span>告诉你请求格式不正确<span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Json字符串和json对象怎么相互转换"><a href="#Json字符串和json对象怎么相互转换" class="headerlink" title="Json字符串和json对象怎么相互转换"></a>Json字符串和json对象怎么相互转换</h2><pre class="line-numbers language-none"><code class="language-none">答: JSON对象转JSON字符串: json.stringify(对象)
+<h2 id="Json-字符串和-json-对象怎么相互转换"><a href="#Json-字符串和-json-对象怎么相互转换" class="headerlink" title="Json 字符串和 json 对象怎么相互转换"></a>Json 字符串和 json 对象怎么相互转换</h2><pre class="line-numbers language-none"><code class="language-none">答: JSON对象转JSON字符串: json.stringify(对象)
     JSON字符串转JSON对象: json.parse(字符串)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="什么是同源策略？怎么解决跨域问题"><a href="#什么是同源策略？怎么解决跨域问题" class="headerlink" title="什么是同源策略？怎么解决跨域问题"></a>什么是同源策略？怎么解决跨域问题</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">同源策略</span><span class="token operator">:</span> 同源策略是浏览器的一种安全策略<span class="token punctuation">,</span> 所谓同源是指域名、协议、端口完全相同，不同源则跨域。
-<span class="token literal-property property">解决跨域的方法</span><span class="token operator">:</span> 
+<span class="token literal-property property">解决跨域的方法</span><span class="token operator">:</span>
 <span class="token number">1.</span> 通过jsonp跨域
 <span class="token number">2.</span> 跨域资源共享（<span class="token constant">CORS</span>  Access<span class="token operator">-</span>Control<span class="token operator">-</span>Allow<span class="token operator">-</span>Origin<span class="token operator">:</span> http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>api<span class="token punctuation">.</span>bob<span class="token punctuation">.</span>com）
 <span class="token number">3.</span> nginx代理跨域<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -722,7 +722,7 @@ Javascript函数的调用，并且将服务器数据以该函数参数的形式�
 同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；
 异步任务指的是，不进入主线程、而进入<span class="token string">"任务队列"</span>（task queue）的任务，
 只有等主线程任务执行完毕，<span class="token string">"任务队列"</span>开始通知主线程，请求执行任务，该任务才会进入主线程执行。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="你对WebSocket了解哪些"><a href="#你对WebSocket了解哪些" class="headerlink" title="你对WebSocket了解哪些"></a>你对WebSocket了解哪些</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">WebSocket 是<span class="token constant">HTML5</span>一种新的协议。它实现了浏览器与服务器全双工通信，能更好的节省
+<h2 id="你对-WebSocket-了解哪些"><a href="#你对-WebSocket-了解哪些" class="headerlink" title="你对 WebSocket 了解哪些"></a>你对 WebSocket 了解哪些</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">WebSocket 是<span class="token constant">HTML5</span>一种新的协议。它实现了浏览器与服务器全双工通信，能更好的节省
 服务器资源和带宽并达到实时通讯，它建立在<span class="token constant">TCP</span>之上，同<span class="token constant">HTTP</span>一样通过<span class="token constant">TCP</span>来传输数据，
 但是它和<span class="token constant">HTTP</span>最大不同是：
 <span class="token number">1.</span> WebSocket是一种双向通信协议，在建立连接后，WebSocket服务器和Browser<span class="token operator">/</span>Client Agent
@@ -736,9 +736,9 @@ Javascript函数的调用，并且将服务器数据以该函数参数的形式�
 <h2 id="原生-ajax-请求的步骤"><a href="#原生-ajax-请求的步骤" class="headerlink" title="原生 ajax 请求的步骤"></a>原生 ajax 请求的步骤</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">答：<span class="token number">1.</span>创建异步对象 <span class="token keyword">var</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HTMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token number">2.</span>设置请求行  xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token number">3.</span>设置请求头  xhr<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-	<span class="token keyword">get</span>请求没有请求头 
+	<span class="token keyword">get</span>请求没有请求头
     post请求多一个关键头信息
-    Content<span class="token operator">-</span>type<span class="token operator">:</span> application<span class="token operator">/</span>x<span class="token operator">-</span>www<span class="token operator">-</span>form<span class="token operator">-</span>urlencoded 
+    Content<span class="token operator">-</span>type<span class="token operator">:</span> application<span class="token operator">/</span>x<span class="token operator">-</span>www<span class="token operator">-</span>form<span class="token operator">-</span>urlencoded
     <span class="token number">4.</span>设置请求体  xhr<span class="token punctuation">.</span>send      <span class="token keyword">get</span>请求没有请求体<span class="token punctuation">,</span>参数为<span class="token keyword">null</span>
     <span class="token number">5.</span>监视异步对象的状态变化   xhr<span class="token punctuation">.</span><span class="token function">onreadystatechange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="怎么理解三次握手"><a href="#怎么理解三次握手" class="headerlink" title="怎么理解三次握手"></a>怎么理解三次握手</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">字段	      含义
@@ -819,7 +819,7 @@ Javascript函数的调用，并且将服务器数据以该函数参数的形式�
       </div>
       
       <!-- <div class="content">
-        vue笔记总结什么是Vue？Vue是一套用于构建用户界面的渐进式JavaScript框架形成Vue渐进式框架的核心概念为
+        vue 笔记总结什么是 Vue？Vue 是一套用于构建用户界面的渐进式 JavaScript 框架形成 Vue 渐进式框
       </div> -->
     </a>
   </div>
@@ -830,15 +830,17 @@ Javascript函数的调用，并且将服务器数据以该函数参数的形式�
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/10.jpg" class="lazyload placeholder" data-srcset="/medias/10.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/8.jpg" class="lazyload placeholder" data-srcset="/medias/8.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2022/02/07/vue-da-jian-xiang-mu/" class="post-nav-link">
+    <a href="/2022/02/07/git-gong-ju/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">vue搭建项目</div>
+        <div class="title-text">Git工具</div>
       </div>
       <!-- <div class="content">
-        搭建开发环境Vscode：https://code.visualstudio.com/Node：http://nodej
+        GitGit 下载https://git-scm.com/
+常用命令git init    版本库初始化
+git add
       </div> -->
     </a>
   </div>
