@@ -720,7 +720,9 @@ git pull<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 <span class="token punctuation">.</span>native 方法
 <span class="token comment">// el-input赋值回显校验未关闭解决办法</span>
 @input<span class="token operator">=</span><span class="token string">"$forceUpdate()"</span>
-<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span>model绑定的对象<span class="token punctuation">,</span> <span class="token string">'要赋的值'</span><span class="token punctuation">,</span> 声明的值<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span>model绑定的对象<span class="token punctuation">,</span> <span class="token string">'要赋的值'</span><span class="token punctuation">,</span> 声明的值<span class="token punctuation">)</span>
+<span class="token comment">// 键盘回车事件导致页面刷新的问题</span>
+@submit<span class="token punctuation">.</span>native<span class="token punctuation">.</span>prevent<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 联想输入款</span>
 <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>

@@ -655,7 +655,7 @@
     <!-- 增添update时间 -->
     
     <span class="post-detail-header_update">
-      <i class="fas fa-history"></i> 更新于：2022-11-04 |
+      <i class="fas fa-history"></i> 更新于：2022-12-02 |
     </span>
      
     <span class="post-detail-header_categories">
@@ -886,11 +886,21 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <p>使用 less 的地方添加 lang&#x3D;less</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>style lang<span class="token operator">=</span><span class="token string">"less"</span> <span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p>解决 vue 不能自动打开浏览器的问题：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1</span>）打开config <span class="token operator">==</span><span class="token operator">></span> index<span class="token punctuation">.</span>js
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// vue-cil2</span>
+<span class="token number">1</span>）打开config <span class="token operator">==</span><span class="token operator">></span> index<span class="token punctuation">.</span>js
 <span class="token number">2</span>）module<span class="token punctuation">.</span>exports配置中找到autoOpenBrowser，默认设置的是<span class="token boolean">false</span>
-<span class="token number">3</span><span class="token punctuation">)</span> 改为<span class="token boolean">true</span>重启一下，就能自动打开浏览器了<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span class="token number">3</span><span class="token punctuation">)</span> 改为<span class="token boolean">true</span>重启一下，就能自动打开浏览器了
+
+<span class="token comment">// vue-cil3</span>
+<span class="token number">1</span>）打开vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>js <span class="token comment">// 没有就在根目录新建一个</span>
+<span class="token number">2</span>）module<span class="token punctuation">.</span>exports配置中抒写
+<span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token function">getNetworkIp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token comment">// ip地址</span>
+    <span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">8080</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">open</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>为了避免端口冲突，也可以修改 port，打开目录同上</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">8010</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">8080</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>解决每次启动需改 IP 地址的问题：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> os <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'os'</span><span class="token punctuation">)</span>
 <span class="token comment">//自动获取本机局域网ip地址</span>
@@ -953,18 +963,17 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/8.jpg" class="lazyload placeholder" data-srcset="/medias/8.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/2022/02/07/git-gong-ju/" class="post-nav-link">
+    <a href="/2022/02/07/qian-duan-bi-ji-ajax-pian/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Git工具</div>
+        <div class="title-text">前端笔记(ajax篇)</div>
       </div>
       
       <!-- <div class="content">
-        GitGit 下载https://git-scm.com/
-常用命令git init    版本库初始化
-git add
+        ajax笔记总结什么是事件流答: 事件流是指事件传播的顺序,由事件捕获 => 目标事件 => 事件冒泡
+如何阻止冒泡和默
       </div> -->
     </a>
   </div>
@@ -975,16 +984,17 @@ git add
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/4.jpg" class="lazyload placeholder" data-srcset="/medias/4.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2022/02/07/webpack-da-bao/" class="post-nav-link">
+    <a href="/2022/01/23/qian-duan-bi-ji/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">webpack打包</div>
+        <div class="title-text">前端笔记(js篇)</div>
       </div>
       <!-- <div class="content">
-        webpack 打包webpack 在项目中的常见配置// webpack.config.js
-module.expor
+        js笔记总结盒子塌陷的原因？解决方式原因: 
+1. 浮动导致的塌陷,浮动会脱落标准流
+2. 嵌套的两个盒子,子盒子设置m
       </div> -->
     </a>
   </div>
