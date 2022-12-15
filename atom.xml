@@ -3,11 +3,11 @@
   <title>Sun</title>
   
   
-  <link href="https://github.com/wlysun/wlysun.github.io/atom.xml" rel="self"/>
+  <link href="https://gitee.com/wlysun/atom.xml" rel="self"/>
   
-  <link href="https://github.com/wlysun/wlysun.github.io/"/>
+  <link href="https://gitee.com/wlysun/"/>
   <updated>2022-12-02T07:03:47.126Z</updated>
-  <id>https://github.com/wlysun/wlysun.github.io/</id>
+  <id>https://gitee.com/wlysun/</id>
   
   <author>
     <name>阳</name>
@@ -18,25 +18,25 @@
   
   <entry>
     <title>vuex</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/12/02/vuex/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/12/02/vuex/</id>
+    <link href="https://gitee.com/wlysun/2022/12/02/vuex/"/>
+    <id>https://gitee.com/wlysun/2022/12/02/vuex/</id>
     <published>2022-12-01T16:00:00.000Z</published>
     <updated>2022-12-02T07:03:47.126Z</updated>
     
     
     
     
-    <category term="vue" scheme="https://github.com/wlysun/wlysun.github.io/categories/vue/"/>
+    <category term="vue" scheme="https://gitee.com/wlysun/categories/vue/"/>
     
     
-    <category term="vue知识点" scheme="https://github.com/wlysun/wlysun.github.io/tags/vue%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <category term="vue知识点" scheme="https://gitee.com/wlysun/tags/vue%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     
   </entry>
   
   <entry>
     <title>权限管理</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/11/08/quan-xian-guan-li/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/11/08/quan-xian-guan-li/</id>
+    <link href="https://gitee.com/wlysun/2022/11/08/quan-xian-guan-li/"/>
+    <id>https://gitee.com/wlysun/2022/11/08/quan-xian-guan-li/</id>
     <published>2022-11-08T07:59:02.227Z</published>
     <updated>2022-11-03T02:23:39.759Z</updated>
     
@@ -51,17 +51,17 @@
     
     
     
-    <category term="权限" scheme="https://github.com/wlysun/wlysun.github.io/categories/%E6%9D%83%E9%99%90/"/>
+    <category term="权限" scheme="https://gitee.com/wlysun/categories/%E6%9D%83%E9%99%90/"/>
     
     
-    <category term="权限分配" scheme="https://github.com/wlysun/wlysun.github.io/tags/%E6%9D%83%E9%99%90%E5%88%86%E9%85%8D/"/>
+    <category term="权限分配" scheme="https://gitee.com/wlysun/tags/%E6%9D%83%E9%99%90%E5%88%86%E9%85%8D/"/>
     
   </entry>
   
   <entry>
     <title>插件</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/11/07/cha-jian/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/11/07/cha-jian/</id>
+    <link href="https://gitee.com/wlysun/2022/11/07/cha-jian/"/>
+    <id>https://gitee.com/wlysun/2022/11/07/cha-jian/</id>
     <published>2022-11-06T16:00:00.000Z</published>
     <updated>2022-12-02T10:27:19.879Z</updated>
     
@@ -76,17 +76,17 @@
     
     
     
-    <category term="插件" scheme="https://github.com/wlysun/wlysun.github.io/categories/%E6%8F%92%E4%BB%B6/"/>
+    <category term="插件" scheme="https://gitee.com/wlysun/categories/%E6%8F%92%E4%BB%B6/"/>
     
     
-    <category term="插件" scheme="https://github.com/wlysun/wlysun.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
+    <category term="插件" scheme="https://gitee.com/wlysun/tags/%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>node</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/03/15/node.js/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/03/15/node.js/</id>
+    <link href="https://gitee.com/wlysun/2022/03/15/node.js/"/>
+    <id>https://gitee.com/wlysun/2022/03/15/node.js/</id>
     <published>2022-03-14T16:00:00.000Z</published>
     <updated>2022-12-02T10:25:18.730Z</updated>
     
@@ -101,17 +101,17 @@
     
     
     
-    <category term="node" scheme="https://github.com/wlysun/wlysun.github.io/categories/node/"/>
+    <category term="node" scheme="https://gitee.com/wlysun/categories/node/"/>
     
     
-    <category term="node" scheme="https://github.com/wlysun/wlysun.github.io/tags/node/"/>
+    <category term="node" scheme="https://gitee.com/wlysun/tags/node/"/>
     
   </entry>
   
   <entry>
     <title>防抖和节流</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/03/15/fang-dou-he-jie-liu/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/03/15/fang-dou-he-jie-liu/</id>
+    <link href="https://gitee.com/wlysun/2022/03/15/fang-dou-he-jie-liu/"/>
+    <id>https://gitee.com/wlysun/2022/03/15/fang-dou-he-jie-liu/</id>
     <published>2022-03-14T16:00:00.000Z</published>
     <updated>2022-12-02T10:27:25.055Z</updated>
     
@@ -126,15 +126,15 @@
     
     
     
-    <category term="项目" scheme="https://github.com/wlysun/wlysun.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
     
     
   </entry>
   
   <entry>
     <title>项目总结</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/03/15/xiang-mu-zong-jie/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/03/15/xiang-mu-zong-jie/</id>
+    <link href="https://gitee.com/wlysun/2022/03/15/xiang-mu-zong-jie/"/>
+    <id>https://gitee.com/wlysun/2022/03/15/xiang-mu-zong-jie/</id>
     <published>2022-03-14T16:00:00.000Z</published>
     <updated>2022-11-30T05:33:15.274Z</updated>
     
@@ -149,17 +149,17 @@
     
     
     
-    <category term="项目" scheme="https://github.com/wlysun/wlysun.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
     
     
-    <category term="项目总结" scheme="https://github.com/wlysun/wlysun.github.io/tags/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"/>
+    <category term="项目总结" scheme="https://gitee.com/wlysun/tags/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>Hexo命令</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/03/13/hexo-ming-ling/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/03/13/hexo-ming-ling/</id>
+    <link href="https://gitee.com/wlysun/2022/03/13/hexo-ming-ling/"/>
+    <id>https://gitee.com/wlysun/2022/03/13/hexo-ming-ling/</id>
     <published>2022-03-12T16:00:00.000Z</published>
     <updated>2022-12-02T10:28:04.045Z</updated>
     
@@ -174,17 +174,17 @@
     
     
     
-    <category term="hexo" scheme="https://github.com/wlysun/wlysun.github.io/categories/hexo/"/>
+    <category term="hexo" scheme="https://gitee.com/wlysun/categories/hexo/"/>
     
     
-    <category term="配置" scheme="https://github.com/wlysun/wlysun.github.io/tags/%E9%85%8D%E7%BD%AE/"/>
+    <category term="配置" scheme="https://gitee.com/wlysun/tags/%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
     <title>前端笔记(vue篇)</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/02/07/qian-duan-bi-ji-vue-pian/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/02/07/qian-duan-bi-ji-vue-pian/</id>
+    <link href="https://gitee.com/wlysun/2022/02/07/qian-duan-bi-ji-vue-pian/"/>
+    <id>https://gitee.com/wlysun/2022/02/07/qian-duan-bi-ji-vue-pian/</id>
     <published>2022-02-07T05:12:19.000Z</published>
     <updated>2022-12-02T10:24:24.688Z</updated>
     
@@ -199,17 +199,17 @@
     
     
     
-    <category term="前端笔记" scheme="https://github.com/wlysun/wlysun.github.io/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/"/>
+    <category term="前端笔记" scheme="https://gitee.com/wlysun/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="前端笔记" scheme="https://github.com/wlysun/wlysun.github.io/tags/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/"/>
+    <category term="前端笔记" scheme="https://gitee.com/wlysun/tags/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>前端笔记(ajax篇)</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/02/07/qian-duan-bi-ji-ajax-pian/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/02/07/qian-duan-bi-ji-ajax-pian/</id>
+    <link href="https://gitee.com/wlysun/2022/02/07/qian-duan-bi-ji-ajax-pian/"/>
+    <id>https://gitee.com/wlysun/2022/02/07/qian-duan-bi-ji-ajax-pian/</id>
     <published>2022-02-07T05:11:52.000Z</published>
     <updated>2022-12-02T10:24:16.519Z</updated>
     
@@ -224,17 +224,17 @@
     
     
     
-    <category term="前端笔记" scheme="https://github.com/wlysun/wlysun.github.io/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/"/>
+    <category term="前端笔记" scheme="https://gitee.com/wlysun/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="前端笔记" scheme="https://github.com/wlysun/wlysun.github.io/tags/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/"/>
+    <category term="前端笔记" scheme="https://gitee.com/wlysun/tags/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>Git工具</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/02/07/git-gong-ju/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/02/07/git-gong-ju/</id>
+    <link href="https://gitee.com/wlysun/2022/02/07/git-gong-ju/"/>
+    <id>https://gitee.com/wlysun/2022/02/07/git-gong-ju/</id>
     <published>2022-02-06T16:00:00.000Z</published>
     <updated>2022-12-02T10:27:13.657Z</updated>
     
@@ -249,17 +249,17 @@
     
     
     
-    <category term="管理工具" scheme="https://github.com/wlysun/wlysun.github.io/categories/%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/"/>
+    <category term="管理工具" scheme="https://gitee.com/wlysun/categories/%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="管理工具" scheme="https://github.com/wlysun/wlysun.github.io/tags/%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/"/>
+    <category term="管理工具" scheme="https://gitee.com/wlysun/tags/%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>vue搭建项目</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/02/07/vue-da-jian-xiang-mu/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/02/07/vue-da-jian-xiang-mu/</id>
+    <link href="https://gitee.com/wlysun/2022/02/07/vue-da-jian-xiang-mu/"/>
+    <id>https://gitee.com/wlysun/2022/02/07/vue-da-jian-xiang-mu/</id>
     <published>2022-02-06T16:00:00.000Z</published>
     <updated>2022-12-02T10:23:50.577Z</updated>
     
@@ -274,17 +274,17 @@
     
     
     
-    <category term="项目" scheme="https://github.com/wlysun/wlysun.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
     
     
-    <category term="项目搭建" scheme="https://github.com/wlysun/wlysun.github.io/tags/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
+    <category term="项目搭建" scheme="https://gitee.com/wlysun/tags/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   
   <entry>
     <title>webpack打包</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/02/07/webpack-da-bao/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/02/07/webpack-da-bao/</id>
+    <link href="https://gitee.com/wlysun/2022/02/07/webpack-da-bao/"/>
+    <id>https://gitee.com/wlysun/2022/02/07/webpack-da-bao/</id>
     <published>2022-02-06T16:00:00.000Z</published>
     <updated>2022-12-02T10:28:10.141Z</updated>
     
@@ -299,17 +299,17 @@
     
     
     
-    <category term="项目" scheme="https://github.com/wlysun/wlysun.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
     
     
-    <category term="项目打包" scheme="https://github.com/wlysun/wlysun.github.io/tags/%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/"/>
+    <category term="项目打包" scheme="https://gitee.com/wlysun/tags/%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/"/>
     
   </entry>
   
   <entry>
     <title>前端笔记(js篇)</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/01/23/qian-duan-bi-ji/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/01/23/qian-duan-bi-ji/</id>
+    <link href="https://gitee.com/wlysun/2022/01/23/qian-duan-bi-ji/"/>
+    <id>https://gitee.com/wlysun/2022/01/23/qian-duan-bi-ji/</id>
     <published>2022-01-23T05:49:18.000Z</published>
     <updated>2022-12-02T10:24:33.450Z</updated>
     
@@ -324,17 +324,17 @@
     
     
     
-    <category term="前端笔记" scheme="https://github.com/wlysun/wlysun.github.io/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/"/>
+    <category term="前端笔记" scheme="https://gitee.com/wlysun/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="前端笔记" scheme="https://github.com/wlysun/wlysun.github.io/tags/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/"/>
+    <category term="前端笔记" scheme="https://gitee.com/wlysun/tags/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>网址</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/01/14/wang-zhi/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/01/14/wang-zhi/</id>
+    <link href="https://gitee.com/wlysun/2022/01/14/wang-zhi/"/>
+    <id>https://gitee.com/wlysun/2022/01/14/wang-zhi/</id>
     <published>2022-01-13T16:00:00.000Z</published>
     <updated>2022-12-02T10:27:46.808Z</updated>
     
@@ -349,17 +349,17 @@
     
     
     
-    <category term="插件" scheme="https://github.com/wlysun/wlysun.github.io/categories/%E6%8F%92%E4%BB%B6/"/>
+    <category term="插件" scheme="https://gitee.com/wlysun/categories/%E6%8F%92%E4%BB%B6/"/>
     
     
-    <category term="网址" scheme="https://github.com/wlysun/wlysun.github.io/tags/%E7%BD%91%E5%9D%80/"/>
+    <category term="网址" scheme="https://gitee.com/wlysun/tags/%E7%BD%91%E5%9D%80/"/>
     
   </entry>
   
   <entry>
     <title>入职基本配置</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2022/01/09/ru-zhi-ji-ben-pei-zhi-1/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2022/01/09/ru-zhi-ji-ben-pei-zhi-1/</id>
+    <link href="https://gitee.com/wlysun/2022/01/09/ru-zhi-ji-ben-pei-zhi-1/"/>
+    <id>https://gitee.com/wlysun/2022/01/09/ru-zhi-ji-ben-pei-zhi-1/</id>
     <published>2022-01-08T16:00:00.000Z</published>
     <updated>2022-12-02T10:27:38.368Z</updated>
     
@@ -374,17 +374,17 @@
     
     
     
-    <category term="配置" scheme="https://github.com/wlysun/wlysun.github.io/categories/%E9%85%8D%E7%BD%AE/"/>
+    <category term="配置" scheme="https://gitee.com/wlysun/categories/%E9%85%8D%E7%BD%AE/"/>
     
     
-    <category term="配置" scheme="https://github.com/wlysun/wlysun.github.io/tags/%E9%85%8D%E7%BD%AE/"/>
+    <category term="配置" scheme="https://gitee.com/wlysun/tags/%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://github.com/wlysun/wlysun.github.io/2021/02/07/hello-world/"/>
-    <id>https://github.com/wlysun/wlysun.github.io/2021/02/07/hello-world/</id>
+    <link href="https://gitee.com/wlysun/2021/02/07/hello-world/"/>
+    <id>https://gitee.com/wlysun/2021/02/07/hello-world/</id>
     <published>2021-02-06T16:00:00.000Z</published>
     <updated>2022-12-02T10:27:55.878Z</updated>
     
@@ -399,7 +399,7 @@
     
     
     
-    <category term="hexo" scheme="https://github.com/wlysun/wlysun.github.io/categories/hexo/"/>
+    <category term="hexo" scheme="https://gitee.com/wlysun/categories/hexo/"/>
     
     
   </entry>
