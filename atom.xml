@@ -6,7 +6,7 @@
   <link href="https://gitee.com/wlysun/atom.xml" rel="self"/>
   
   <link href="https://gitee.com/wlysun/"/>
-  <updated>2022-12-02T07:03:47.126Z</updated>
+  <updated>2022-12-16T09:35:01.329Z</updated>
   <id>https://gitee.com/wlysun/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>跨域</title>
+    <link href="https://gitee.com/wlysun/2022/12/15/kua-yu/"/>
+    <id>https://gitee.com/wlysun/2022/12/15/kua-yu/</id>
+    <published>2022-12-14T16:00:00.000Z</published>
+    <updated>2022-12-16T09:35:01.329Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;跨域：JavaScript-出于安全方面的考虑，不允许跨域调用其他页面的对象。&quot;&gt;&lt;a href=&quot;#跨域：JavaScript-出于安全方面的考虑，不允许跨域调用其他页面的对象。&quot; class=&quot;headerlink&quot; title=&quot;跨域：JavaScript</summary>
+        
+      
+    
+    
+    
+    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="vue知识点" scheme="https://gitee.com/wlysun/tags/vue%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    
+  </entry>
   
   <entry>
     <title>vuex</title>
