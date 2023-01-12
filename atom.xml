@@ -6,7 +6,7 @@
   <link href="https://gitee.com/wlysun/atom.xml" rel="self"/>
   
   <link href="https://gitee.com/wlysun/"/>
-  <updated>2022-12-16T09:35:01.329Z</updated>
+  <updated>2023-01-12T12:34:12.819Z</updated>
   <id>https://gitee.com/wlysun/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ERP后端</title>
+    <link href="https://gitee.com/wlysun/2022/12/15/erp-zhi-xiang/"/>
+    <id>https://gitee.com/wlysun/2022/12/15/erp-zhi-xiang/</id>
+    <published>2022-12-14T16:00:00.000Z</published>
+    <updated>2023-01-12T12:34:12.819Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;技术栈：node-koa2-mysql&quot;&gt;&lt;a href=&quot;#技术栈：node-koa2-mysql&quot; class=&quot;headerlink&quot; title=&quot;技术栈：node + koa2 + mysql&quot;&gt;&lt;/a&gt;技术栈：node + koa2 +</summary>
+        
+      
+    
+    
+    
+    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="node接口" scheme="https://gitee.com/wlysun/tags/node%E6%8E%A5%E5%8F%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>跨域</title>
@@ -113,14 +138,14 @@
     <link href="https://gitee.com/wlysun/2022/03/15/node.js/"/>
     <id>https://gitee.com/wlysun/2022/03/15/node.js/</id>
     <published>2022-03-14T16:00:00.000Z</published>
-    <updated>2023-01-11T10:33:23.696Z</updated>
+    <updated>2023-01-12T12:28:00.542Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;node&quot;&gt;&lt;a href=&quot;#node&quot; class=&quot;headerlink&quot; title=&quot;node&quot;&gt;&lt;/a&gt;node&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-javascript&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;node&quot;&gt;&lt;a href=&quot;#node&quot; class=&quot;headerlink&quot; title=&quot;node&quot;&gt;&lt;/a&gt;node&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-javascript&quot;</summary>
         
       
     
@@ -130,29 +155,6 @@
     
     
     <category term="node" scheme="https://gitee.com/wlysun/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>防抖和节流</title>
-    <link href="https://gitee.com/wlysun/2022/03/15/fang-dou-he-jie-liu/"/>
-    <id>https://gitee.com/wlysun/2022/03/15/fang-dou-he-jie-liu/</id>
-    <published>2022-03-14T16:00:00.000Z</published>
-    <updated>2022-12-02T10:27:25.055Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;防抖（Debounce）和节流（Throttle）都是用来控制某个函数在一定时间内触发次数，两者都是为了减少触发频率，以便提高性能或者说避免资源浪费。&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
     
   </entry>
   
@@ -178,6 +180,29 @@
     
     
     <category term="项目总结" scheme="https://gitee.com/wlysun/tags/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>防抖和节流</title>
+    <link href="https://gitee.com/wlysun/2022/03/15/fang-dou-he-jie-liu/"/>
+    <id>https://gitee.com/wlysun/2022/03/15/fang-dou-he-jie-liu/</id>
+    <published>2022-03-14T16:00:00.000Z</published>
+    <updated>2022-12-02T10:27:25.055Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;防抖（Debounce）和节流（Throttle）都是用来控制某个函数在一定时间内触发次数，两者都是为了减少触发频率，以便提高性能或者说避免资源浪费。&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
     
   </entry>
   
@@ -282,31 +307,6 @@
   </entry>
   
   <entry>
-    <title>vue搭建项目</title>
-    <link href="https://gitee.com/wlysun/2022/02/07/vue-da-jian-xiang-mu/"/>
-    <id>https://gitee.com/wlysun/2022/02/07/vue-da-jian-xiang-mu/</id>
-    <published>2022-02-06T16:00:00.000Z</published>
-    <updated>2022-12-02T10:23:50.577Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;搭建开发环境&quot;&gt;&lt;a href=&quot;#搭建开发环境&quot; class=&quot;headerlink&quot; title=&quot;搭建开发环境&quot;&gt;&lt;/a&gt;搭建开发环境&lt;/h2&gt;&lt;p&gt;Vscode：&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-    <category term="项目搭建" scheme="https://gitee.com/wlysun/tags/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
     <title>webpack打包</title>
     <link href="https://gitee.com/wlysun/2022/02/07/webpack-da-bao/"/>
     <id>https://gitee.com/wlysun/2022/02/07/webpack-da-bao/</id>
@@ -328,6 +328,31 @@
     
     
     <category term="项目打包" scheme="https://gitee.com/wlysun/tags/%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue搭建项目</title>
+    <link href="https://gitee.com/wlysun/2022/02/07/vue-da-jian-xiang-mu/"/>
+    <id>https://gitee.com/wlysun/2022/02/07/vue-da-jian-xiang-mu/</id>
+    <published>2022-02-06T16:00:00.000Z</published>
+    <updated>2022-12-02T10:23:50.577Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;搭建开发环境&quot;&gt;&lt;a href=&quot;#搭建开发环境&quot; class=&quot;headerlink&quot; title=&quot;搭建开发环境&quot;&gt;&lt;/a&gt;搭建开发环境&lt;/h2&gt;&lt;p&gt;Vscode：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="项目搭建" scheme="https://gitee.com/wlysun/tags/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   

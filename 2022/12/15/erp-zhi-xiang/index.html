@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Git工具 | Sun</title>
+  <title>ERP后端 | Sun</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -635,7 +635,7 @@
     background-size: cover;
     background-position: center center;
     position: relative;
-    background-image: url('/medias/8.jpg');
+    background-image: url('/medias/19.jpg');
   "
 >
   <div class="post-detail-header-mask"></div>
@@ -643,20 +643,24 @@
 
   <div class="post-detail-header_info-box">
     <div class="title-box">
-      <span class="title"> Git工具 </span>
+      <span class="title"> ERP后端 </span>
     </div>
 
      
     <span class="post-detail-header_date">
-      <i class="fas fa-calendar"></i> 发表于：2022-02-07 |
+      <i class="fas fa-calendar"></i> 发表于：2022-12-15 |
     </span>
     
 
     <!-- 增添update时间 -->
+    
+    <span class="post-detail-header_update">
+      <i class="fas fa-history"></i> 更新于：2023-01-12 |
+    </span>
      
     <span class="post-detail-header_categories">
       <i class="iconfont iconbookmark1"></i> 分类： 
-      <a href="/categories/%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" class="post-detail-header_category"> 管理工具 </a>
+      <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="post-detail-header_category"> 项目 </a>
       
     </span>
       
@@ -670,135 +674,234 @@
 <div class="post-detail-content row justify-position" style="padding-top: 0px">
   <div class="main-content">
     <article class="post post-detail">
-      <div class="post-content"><h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="Git-下载"><a href="#Git-下载" class="headerlink" title="Git 下载"></a>Git 下载</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">https</span><span class="token operator">:</span><span class="token operator">/</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">git-scm.com</span><span class="token regex-delimiter">/</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">git init    版本库初始化
-git add <span class="token punctuation">.</span>   添加至暂存区
-git commit <span class="token operator">-</span>m <span class="token string">'fist'</span> 从暂存区存到仓储区
-git checkout <span class="token operator">-</span>b dev  创建本地分支
-git checkout master  切到master分支
-git merge dev        合并分支
-git remote add origin 地址         配置地址
-git push <span class="token operator">-</span>u origin <span class="token string">"master"</span>        提交分支
-git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>name <span class="token string">""</span>   配置用户名
-git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>email <span class="token string">""</span>  配置邮箱
-git branch     查看本地所有分支
-git branch <span class="token operator">-</span>r  查看远程分支
-git branch <span class="token operator">-</span>a  查看本地和远程分支
-git status     查看当前状态
+      <div class="post-content"><h1 id="技术栈：node-koa2-mysql"><a href="#技术栈：node-koa2-mysql" class="headerlink" title="技术栈：node + koa2 + mysql"></a>技术栈：node + koa2 + mysql</h1><h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><h3 id="所有依赖"><a href="#所有依赖" class="headerlink" title="所有依赖"></a>所有依赖</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 生成package.json文件</span>
+npm init <span class="token operator">-</span>y
+<span class="token comment">// 下载koa2框架</span>
+npm i koa <span class="token operator">--</span>save
+<span class="token comment">// 自动启动项目</span>
+npm i nodemon <span class="token operator">--</span>save
+<span class="token comment">// 路由下载</span>
+npm i koa<span class="token operator">-</span>router <span class="token operator">--</span>save
+<span class="token comment">// 返回前端格式</span>
+npm i koa<span class="token operator">-</span>json <span class="token operator">--</span>save
+npm i koa<span class="token operator">-</span>bodyparser <span class="token operator">--</span>save
+<span class="token comment">// 生成token</span>
+npm i jsonwebtoken <span class="token operator">--</span>save
+<span class="token comment">// mysql</span>
+npm i mysql <span class="token operator">--</span>save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="下载相关依赖并挂载"><a href="#下载相关依赖并挂载" class="headerlink" title="下载相关依赖并挂载"></a>下载相关依赖并挂载</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 新建node.js文件</span>
+<span class="token comment">// 生成package.json文件</span>
+npm init <span class="token operator">-</span>y
+<span class="token comment">// 下载koa2框架</span>
+npm i koa <span class="token operator">--</span>save
+<span class="token comment">// 挂载</span>
+<span class="token keyword">const</span> Koa <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">;</span>
+<span class="token comment">// 3000 端口号</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'http://localhost:3000'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 自启项目</span>
+npm i nodemon <span class="token operator">--</span>save
+<span class="token comment">// node.js 文件名</span>
+nodemon node<span class="token punctuation">.</span>js
+npm run test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 路由下载</span>
+npm i koa<span class="token operator">-</span>router <span class="token operator">--</span>save
+<span class="token comment">// 挂载</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa-router'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">.</span><span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">.</span><span class="token function">allowedMethods</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 返回前端格式</span>
+npm i koa<span class="token operator">-</span>json <span class="token operator">--</span>save
+npm i koa<span class="token operator">-</span>bodyparser <span class="token operator">--</span>save
+<span class="token comment">// 挂载</span>
+<span class="token keyword">const</span> json <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa-json'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> bodyparser <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa-bodyparser'</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">bodyparser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="连接-mysql-数据库"><a href="#连接-mysql-数据库" class="headerlink" title="连接 mysql 数据库"></a>连接 mysql 数据库</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// mysql依赖</span>
+npm i mysql <span class="token operator">--</span>save
+<span class="token comment">// 挂载</span>
+<span class="token keyword">const</span> mysql <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mysql'</span><span class="token punctuation">)</span>
+<span class="token comment">// 连接mysql数据库</span>
+<span class="token keyword">var</span> coonnection <span class="token operator">=</span> mysql<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span> <span class="token comment">// 端口号</span>
+  <span class="token literal-property property">user</span><span class="token operator">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span> <span class="token comment">// 账户</span>
+  <span class="token literal-property property">password</span><span class="token operator">:</span> <span class="token string">'253547'</span><span class="token punctuation">,</span> <span class="token comment">// 密码</span>
+  <span class="token literal-property property">database</span><span class="token operator">:</span> <span class="token string">'node'</span> <span class="token comment">// 表名</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+coonnection<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'连接失败'</span> <span class="token operator">+</span> err<span class="token punctuation">.</span>stack<span class="token punctuation">)</span>
+    <span class="token keyword">return</span>
+  <span class="token punctuation">&#125;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'连接成功'</span> <span class="token operator">+</span> coonnection<span class="token punctuation">.</span>threadId<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="封装连接池"><a href="#封装连接池" class="headerlink" title="封装连接池"></a>封装连接池</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 新建models/mysql.js</span>
+<span class="token keyword">const</span> mysql <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mysql'</span><span class="token punctuation">)</span>
 
-删除远程提交
-git remote rm origin  删除远程提交
-git remote add origin git@github<span class="token punctuation">.</span>com<span class="token operator">:</span>wlysun<span class="token operator">/</span><span class="token number">111</span><span class="token punctuation">.</span>git 远程仓库名  重新提交
+<span class="token comment">// 创建数据库连接池</span>
+<span class="token keyword">const</span> pool <span class="token operator">=</span> mysql<span class="token punctuation">.</span><span class="token function">createPool</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span> <span class="token comment">// 端口号</span>
+  <span class="token literal-property property">user</span><span class="token operator">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span> <span class="token comment">// 账户</span>
+  <span class="token literal-property property">password</span><span class="token operator">:</span> <span class="token string">'253547'</span><span class="token punctuation">,</span> <span class="token comment">// 密码</span>
+  <span class="token literal-property property">database</span><span class="token operator">:</span> <span class="token string">'node'</span> <span class="token comment">// 表名</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 
-删除分支
-git branch <span class="token operator">-</span>d 本地分支名             删除本地分支
-git push origin <span class="token operator">--</span><span class="token keyword">delete</span> 远程分支名  删除远程分支
+<span class="token comment">// 封装异步操作</span>
+<span class="token keyword">let</span> <span class="token function-variable function">query</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">sql<span class="token punctuation">,</span> values</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    pool<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> connection</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        connection<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span>sql<span class="token punctuation">,</span> values<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> rows</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+          <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">resolve</span><span class="token punctuation">(</span>rows<span class="token punctuation">)</span>
+          <span class="token punctuation">&#125;</span>
+          connection<span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
 
-版本回退
-git log                             显示日志
-git log <span class="token operator">--</span>pretty <span class="token operator">=</span> online           简化日志
-git reflog                          显示版本号
-git reset <span class="token operator">--</span>hard <span class="token constant">HEAD</span> <span class="token operator">^</span>              <span class="token punctuation">(</span> <span class="token operator">^</span> 表示回到上一个版本，以此类推 <span class="token punctuation">)</span>
-git reset <span class="token operator">--</span>hard 版本号               回退指定版本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="git-如何管理一个项目"><a href="#git-如何管理一个项目" class="headerlink" title="git 如何管理一个项目"></a>git 如何管理一个项目</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">git init 初始化git仓库（新项目才有这一步）
-git clone 将远程仓库的项目资料下载下来
-git checkout <span class="token operator">-</span>b <span class="token function">dev</span> <span class="token punctuation">(</span>dev 为本地分支名）
-git add <span class="token punctuation">.</span> 将工作区文件存在暂存区
-git commit <span class="token operator">-</span>m  <span class="token string">""</span> 从暂存区存到仓储区
-git checkout master切到master分支
-git merge dev 合并分支
-使用git push将其上传到远程仓库
-第二上班，先pull一下，更新最新代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="git-秘钥"><a href="#git-秘钥" class="headerlink" title="git 秘钥"></a>git 秘钥</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">设置账号和邮箱
-git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>name <span class="token string">"账号名"</span>
-git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>email <span class="token string">"邮箱"</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span> query <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="生成-token"><a href="#生成-token" class="headerlink" title="生成 token"></a>生成 token</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 生成token</span>
+npm i jsonwebtoken <span class="token operator">--</span>save
+<span class="token comment">// 新建文件夹utils/token.js</span>
+<span class="token keyword">const</span> jwt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'jsonwebtoken'</span><span class="token punctuation">)</span>
+<span class="token comment">// token生成的密匙，根据自己需求定义</span>
+<span class="token keyword">const</span> jwtKey <span class="token operator">=</span> <span class="token string">'didicar'</span>
+<span class="token comment">// token生成函数(jwtSign)，有效时间为一个小时</span>
+<span class="token keyword">const</span> <span class="token function-variable function">jwtSign</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> token <span class="token operator">=</span> jwt<span class="token punctuation">.</span><span class="token function">sign</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> jwtKey<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">expiresIn</span><span class="token operator">:</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> token
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// token验证函数---解析token是否有效----其他请求方法</span>
+<span class="token keyword">const</span> <span class="token function-variable function">jwtCheck</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">//前端headers传来的token值:</span>
+  <span class="token keyword">const</span> token <span class="token operator">=</span> req<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>authorization
+  jwt<span class="token punctuation">.</span><span class="token function">verify</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> jwtKey<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'token失效了'</span><span class="token punctuation">)</span>
+      res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'登录过期，请重新登录！'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">201</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      req<span class="token punctuation">.</span>jwtInfo <span class="token operator">=</span> data
+      <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">/*
+    后台登录验证 : token
+    token : token值
+    jwtKey : 密钥
+ */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">verifyToken</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">token<span class="token punctuation">,</span> jwtKey</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> info <span class="token operator">=</span> jwt<span class="token punctuation">.</span><span class="token function">verify</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> jwtKey<span class="token punctuation">)</span>
+      <span class="token function">resolve</span><span class="token punctuation">(</span>info<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'后台报错了'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  jwtSign<span class="token punctuation">,</span>
+  jwtCheck<span class="token punctuation">,</span>
+  verifyToken
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="处理响应"><a href="#处理响应" class="headerlink" title="处理响应"></a>处理响应</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 新建utils/init.js</span>
+<span class="token keyword">class</span> <span class="token class-name">initdata</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> message <span class="token operator">=</span> <span class="token string">'success'</span><span class="token punctuation">,</span> data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> code <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ctx <span class="token operator">=</span> ctx
+    <span class="token keyword">this</span><span class="token punctuation">.</span>message <span class="token operator">=</span> message
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> data
+    <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code
+  <span class="token punctuation">&#125;</span>
 
-生成秘钥
-ssh<span class="token operator">-</span>keygen <span class="token operator">-</span>t rsa <span class="token operator">-</span><span class="token constant">C</span> <span class="token string">"邮箱"</span> #不用设置密码，按三次回车即可
+  <span class="token comment">//200</span>
+  <span class="token function">listing</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>code<span class="token punctuation">,</span>
+      <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>message<span class="token punctuation">,</span>
+      <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span>status <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>code
+  <span class="token punctuation">&#125;</span>
 
-查看秘钥，并复制到gitlab的ssh里
-cat <span class="token operator">/</span>root<span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa<span class="token punctuation">.</span>pub
-windows生成的秘钥在用户文件夹下，例如：<span class="token constant">C</span><span class="token operator">:</span>\Users\Administrator<span class="token punctuation">.</span>ssh
+  <span class="token comment">// 参数不对</span>
+  <span class="token function">tips</span><span class="token punctuation">(</span><span class="token parameter">tipmessage<span class="token punctuation">,</span> codes</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">message</span><span class="token operator">:</span> tipmessage
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span>status <span class="token operator">=</span> codes
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> initdata<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 新建router/index.js</span>
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span> log <span class="token punctuation">&#125;</span> <span class="token operator">=</span> console <span class="token comment">//打印</span>
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span> query <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../models/mySql'</span><span class="token punctuation">)</span> <span class="token comment">//引入mySql</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa-router'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//路由</span>
 
-在gitlab网页上添加钥匙：User Setting <span class="token operator">>></span> <span class="token constant">SSH</span> Keys <span class="token operator">>></span> Add key<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Git-命令"><a href="#Git-命令" class="headerlink" title="Git 命令"></a>Git 命令</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">git branch 查看本地所有分支
-git status 查看当前状态
-git commit 提交
-git branch <span class="token operator">-</span>a 查看所有的分支
-git branch <span class="token operator">-</span>r 查看远程所有分支
-git commit <span class="token operator">-</span>am <span class="token string">"init"</span> 提交并且加注释
-git remote add origin git@<span class="token number">192.168</span><span class="token number">.1</span><span class="token number">.119</span><span class="token operator">:</span>ndshow
-git push origin master 将文件给推到服务器上
-git remote show origin 显示远程库origin里的资源
-git push origin master<span class="token operator">:</span>develop
-git push origin master<span class="token operator">:</span>hb<span class="token operator">-</span>dev 将本地库与服务器上的库进行关联
-git checkout <span class="token operator">--</span>track origin<span class="token operator">/</span>dev 切换到远程dev分支
-git branch <span class="token operator">-</span><span class="token constant">D</span> master develop 删除本地库develop
-git checkout <span class="token operator">-</span>b dev 建立一个新的本地分支dev
-git merge origin<span class="token operator">/</span>dev 将分支dev与当前分支进行合并
-git checkout dev 切换到本地dev分支
-git remote show 查看远程库
-git add <span class="token punctuation">.</span>
-git rm <span class="token function">文件名</span><span class="token punctuation">(</span>包括路径<span class="token punctuation">)</span> 从git中删除指定文件
-git clone git<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>schacon<span class="token operator">/</span>grit<span class="token punctuation">.</span>git 从服务器上将代码给拉下来
-git config <span class="token operator">--</span>list 看所有用户
-git ls<span class="token operator">-</span>files 看已经被提交的
-git rm <span class="token punctuation">[</span>file name<span class="token punctuation">]</span> 删除一个文件
-git commit <span class="token operator">-</span>a 提交当前repos的所有的改变
-git add <span class="token punctuation">[</span>file name<span class="token punctuation">]</span> 添加一个文件到git index
-git commit <span class="token operator">-</span>v 当你用－v参数的时候可以看commit的差异
-git commit <span class="token operator">-</span>m <span class="token string">"This is the message describing the commit"</span> 添加commit信息
-git commit <span class="token operator">-</span>a <span class="token operator">-</span>a是代表add，把所有的change加到git index里然后再commit
-git commit <span class="token operator">-</span>a <span class="token operator">-</span>v 一般提交命令
-git log 看你commit的日志
-git diff 查看尚未暂存的更新
-git rm a<span class="token punctuation">.</span>a <span class="token function">移除文件</span><span class="token punctuation">(</span>从暂存区和工作区中删除<span class="token punctuation">)</span>
-git rm <span class="token operator">--</span>cached a<span class="token punctuation">.</span>a <span class="token function">移除文件</span><span class="token punctuation">(</span>只从暂存区中删除<span class="token punctuation">)</span>
-git commit <span class="token operator">-</span>m <span class="token string">"remove"</span> <span class="token function">移除文件</span><span class="token punctuation">(</span>从Git中删除<span class="token punctuation">)</span>
-git rm <span class="token operator">-</span>f a<span class="token punctuation">.</span>a <span class="token function">强行移除修改后文件</span><span class="token punctuation">(</span>从暂存区和工作区中删除<span class="token punctuation">)</span>
-git diff <span class="token operator">--</span>cached 或 $ git diff <span class="token operator">--</span>staged 查看尚未提交的更新
-git stash push 将文件给push到一个临时空间中
-git stash pop 将文件从临时空间pop下来
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-git remote add origin git@github<span class="token punctuation">.</span>com<span class="token operator">:</span>username<span class="token operator">/</span>Hello<span class="token operator">-</span>World<span class="token punctuation">.</span>git
-git push origin master 将本地项目给提交到服务器中
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-git pull 本地与服务器端同步
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-git <span class="token function">push</span> <span class="token punctuation">(</span>远程仓库名<span class="token punctuation">)</span> <span class="token punctuation">(</span>分支名<span class="token punctuation">)</span> 将本地分支推送到服务器上去。
-git push origin serverfix<span class="token operator">:</span>awesomebranch
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
-git fetch 相当于是从远程获取最新版本到本地，不会自动merge
-git commit <span class="token operator">-</span>a <span class="token operator">-</span>m <span class="token string">"log_message"</span> <span class="token punctuation">(</span><span class="token operator">-</span>a是提交所有改动，<span class="token operator">-</span>m是加入log信息<span class="token punctuation">)</span> 本地修改同步至服务器端 ：
-git branch branch_0<span class="token punctuation">.</span><span class="token number">1</span> master 从主分支master创建branch_0<span class="token punctuation">.</span><span class="token number">1</span>分支
-git branch <span class="token operator">-</span>m branch_0<span class="token punctuation">.</span><span class="token number">1</span> branch_1<span class="token punctuation">.</span><span class="token number">0</span> 将branch_0<span class="token punctuation">.</span><span class="token number">1</span>重命名为branch_1<span class="token punctuation">.</span><span class="token number">0</span>
-git checkout branch_1<span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">/</span>master 切换到branch_1<span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">/</span>master分支
-du <span class="token operator">-</span>hs
-
-git branch 删除远程branch
-git push origin <span class="token operator">:</span>branch_remote_name
-git branch <span class="token operator">-</span>r <span class="token operator">-</span>d branch_remote_name
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
-
-初始化版本库，并提交到远程服务器端
-mkdir WebApp
-cd WebApp
-git init 本地初始化
-touch <span class="token constant">README</span>
-git add <span class="token constant">README</span> 添加文件
-git commit <span class="token operator">-</span>m <span class="token string">'first commit'</span>
-git remote add origin git@github<span class="token punctuation">.</span>com<span class="token operator">:</span>daixu<span class="token operator">/</span>WebApp<span class="token punctuation">.</span>git
-
-增加一个远程服务器端
-
-上面的命令会增加<span class="token constant">URL</span>地址为<span class="token string">'git@github.com:daixu/WebApp.git'</span>，名称为origin的远程服务器库，以后提交代码的时候只需要使用 origin别名即可<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/halaoda/article/details/78661334">https://blog.csdn.net/halaoda/article/details/78661334</a></p>
-</div>
+<span class="token comment">// 查 `SELECT * FROM 表名 WHERE 字段 = '$&#123;参数&#125;'`</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> <span class="token punctuation">&#123;</span> username<span class="token punctuation">,</span> password <span class="token punctuation">&#125;</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>request<span class="token punctuation">.</span>body
+  <span class="token comment">// 校验</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>username <span class="token operator">===</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>password <span class="token operator">===</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">new</span> <span class="token class-name">initdata</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">tips</span><span class="token punctuation">(</span><span class="token string">'用户名和密码不能为空'</span><span class="token punctuation">,</span> <span class="token number">202</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>username <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>password <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">new</span> <span class="token class-name">initdata</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">tips</span><span class="token punctuation">(</span><span class="token string">'参数填写不正确'</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>username <span class="token operator">!==</span> <span class="token string">'admin'</span> <span class="token operator">||</span> password <span class="token operator">!==</span> <span class="token string">'admin'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 用户名校验</span>
+    <span class="token keyword">let</span> phone <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^1[3456789]\d&#123;9&#125;$</span><span class="token regex-delimiter">/</span></span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>phone<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">new</span> <span class="token class-name">initdata</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">tips</span><span class="token punctuation">(</span><span class="token string">'手机号码不正确'</span><span class="token punctuation">,</span> <span class="token number">202</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">// 密码校验</span>
+    <span class="token keyword">let</span> reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).&#123;6,20&#125;$</span><span class="token regex-delimiter">/</span></span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">new</span> <span class="token class-name">initdata</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">tips</span><span class="token punctuation">(</span><span class="token string">'密码必须由6~20位数字和字母的组合'</span><span class="token punctuation">,</span> <span class="token number">202</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token comment">// 查询集合</span>
+  <span class="token keyword">let</span> sql <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">SELECT * FROM user WHERE username = '</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>username<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">'</span><span class="token template-punctuation string">`</span></span>
+  <span class="token keyword">let</span> listdata <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">query</span><span class="token punctuation">(</span>sql<span class="token punctuation">)</span>
+  <span class="token comment">// 用引入的jwtSign方法生成token并返回</span>
+  <span class="token keyword">const</span> token <span class="token operator">=</span> <span class="token function">jwtSign</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token comment">// 返回</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>listdata<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">new</span> <span class="token class-name">initdata</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">tips</span><span class="token punctuation">(</span><span class="token string">'账号或密码错误'</span><span class="token punctuation">,</span> <span class="token number">202</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">pageItems</span><span class="token operator">:</span> token<span class="token punctuation">,</span>
+        <span class="token literal-property property">total</span><span class="token operator">:</span> <span class="token number">1</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'success'</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> router<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-          <a href="/tags/%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" class=""> 管理工具 </a>
+          <a href="/tags/node%E6%8E%A5%E5%8F%A3/" class=""> node接口 </a>
           
         </div>
         
@@ -810,7 +913,7 @@ git remote add origin git@github<span class="token punctuation">.</span>com<span
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2022/02/07/git-gong-ju/" target="_blank" title="Git工具">https://gitee.com/wlysun/2022/02/07/git-gong-ju/</a>
+    <a href="/2022/12/15/erp-zhi-xiang/" target="_blank" title="ERP后端">https://gitee.com/wlysun/2022/12/15/erp-zhi-xiang/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -826,41 +929,21 @@ git remote add origin git@github<span class="token punctuation">.</span>com<span
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/5.jpg" class="lazyload placeholder" data-srcset="/medias/5.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2022/02/07/qian-duan-bi-ji-ajax-pian/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">前端笔记(ajax篇)</div>
-      </div>
-      
-      <!-- <div class="content">
-        ajax 笔记总结什么是事件流答: 事件流是指事件传播的顺序, 由事件捕获 => 目标事件 => 事件冒泡
-如何阻止冒泡
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/17.jpg" class="lazyload placeholder" data-srcset="/medias/17.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2022/02/07/webpack-da-bao/" class="post-nav-link">
+    <a href="/2022/12/15/kua-yu/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">webpack打包</div>
+        <div class="title-text">跨域</div>
       </div>
       <!-- <div class="content">
-        webpack 打包webpack 在项目中的常见配置// webpack.config.js
-module.expor
+        跨域：JavaScript 出于安全方面的考虑，不允许跨域调用其他页面的对象。跨域并不是请求发不出去，请求能发出去，服务
       </div> -->
     </a>
   </div>
