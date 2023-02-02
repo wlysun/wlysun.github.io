@@ -674,20 +674,338 @@
 <div class="post-detail-content row justify-position" style="padding-top: 0px">
   <div class="main-content">
     <article class="post post-detail">
-      <div class="post-content"><h1 id="技术栈：vue-vuex-webpack-axios-sass"><a href="#技术栈：vue-vuex-webpack-axios-sass" class="headerlink" title="技术栈：vue + vuex + webpack + axios + sass"></a>技术栈：vue + vuex + webpack + axios + sass</h1><h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><h3 id="所有依赖"><a href="#所有依赖" class="headerlink" title="所有依赖"></a>所有依赖</h3><p>安装过程可参考 &lt;&gt;</p>
+      <div class="post-content"><h1 id="技术栈：vue-vuex-webpack-axios-sass"><a href="#技术栈：vue-vuex-webpack-axios-sass" class="headerlink" title="技术栈：vue + vuex + webpack + axios + sass"></a>技术栈：vue + vuex + webpack + axios + sass</h1><h2 id="项目框架"><a href="#项目框架" class="headerlink" title="项目框架"></a>项目框架</h2><h3 id="相关依赖"><a href="#相关依赖" class="headerlink" title="相关依赖"></a>相关依赖</h3><p>安装过程可参考<br><a target="_blank" rel="noopener" href="https://wlysun.github.io/2022/02/07/vue-da-jian-xiang-mu/">https://wlysun.github.io/2022/02/07/vue-da-jian-xiang-mu/</a><br><a target="_blank" rel="noopener" href="https://wlysun.github.io/2022/02/07/da-jian-xiang-mu-xiang-xi/">https://wlysun.github.io/2022/02/07/da-jian-xiang-mu-xiang-xi/</a></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 安装vue-cli3脚手架</span>
 npm install <span class="token operator">-</span>g @vue<span class="token operator">/</span>cli
 <span class="token comment">// 创建项目</span>
 vue create mytest <span class="token comment">// mytest 是项目名称</span>
 <span class="token comment">// 初始化并运行</span>
 npm install
-npm run serve<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="下载相关依赖并挂载"><a href="#下载相关依赖并挂载" class="headerlink" title="下载相关依赖并挂载"></a>下载相关依赖并挂载</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// axios</span>
+npm run serve
+<span class="token comment">// 项目地址</span>
+<span class="token literal-property property">http</span><span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>localhost<span class="token operator">:</span><span class="token number">8080</span><span class="token operator">/</span>#<span class="token operator">/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>所有依赖</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// axios</span>
 npm i axios <span class="token operator">--</span>save
 <span class="token comment">// element</span>
 npm install element<span class="token operator">-</span>ui <span class="token operator">--</span>save
 <span class="token comment">// sass</span>
-npm install node<span class="token operator">-</span>sass sass<span class="token operator">-</span>loader <span class="token operator">--</span>save<span class="token operator">-</span>dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+npm install node<span class="token operator">-</span>sass sass<span class="token operator">-</span>loader <span class="token operator">--</span>save<span class="token operator">-</span>dev
+<span class="token comment">// svg图标</span>
+npm i svg<span class="token operator">-</span>sprite<span class="token operator">-</span>loader <span class="token operator">--</span>save<span class="token operator">-</span>dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>main.js 挂载</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 引入axios</span>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span>
+<span class="token comment">// 引入element-ui当中的所有组件</span>
+<span class="token keyword">import</span> ElementUI <span class="token keyword">from</span> <span class="token string">'element-ui'</span>
+<span class="token comment">// 引入element-ui的所有样式</span>
+<span class="token keyword">import</span> <span class="token string">'element-ui/lib/theme-chalk/index.css'</span>
+<span class="token comment">// 引入icons图标</span>
+<span class="token keyword">import</span> SvgIcon <span class="token keyword">from</span> <span class="token string">'@/icons'</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>SvgIcon<span class="token punctuation">)</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>ElementUI<span class="token punctuation">)</span>
+
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$http <span class="token operator">=</span> axios<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>文件夹</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 新建</span>
+scr 下新建文件夹
+api    <span class="token comment">// 存放接口</span>
+icons  <span class="token comment">// svg图标</span>
+lang   <span class="token comment">// 语言汉化</span>
+layout <span class="token comment">// 界面布局</span>
+styles <span class="token comment">// 全局样式</span>
+utils  <span class="token comment">// 公共函数方法</span>
+
+<span class="token comment">// 删除</span>
+AboutView<span class="token punctuation">.</span>vue
+HomeView<span class="token punctuation">.</span>vue
+components<span class="token operator">/</span>HelloWorld<span class="token punctuation">.</span>vue
+
+App<span class="token punctuation">.</span>vue文件下
+<span class="token operator">&lt;</span>nav<span class="token operator">></span>
+    <span class="token operator">&lt;</span>router<span class="token operator">-</span>link to<span class="token operator">=</span><span class="token string">"/"</span><span class="token operator">></span>Home<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span> <span class="token operator">|</span>
+    <span class="token operator">&lt;</span>router<span class="token operator">-</span>link to<span class="token operator">=</span><span class="token string">"/about"</span><span class="token operator">></span>About<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>nav<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="登入首页"><a href="#登入首页" class="headerlink" title="登入首页"></a>登入首页</h3><p>views 下新建<br>login&#x2F;index.vue<br>dashboard&#x2F;index.vue</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// login 代码</span>
+<span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"login-container"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"login-right"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"login-title"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"login-img"</span><span class="token operator">></span>
+          <span class="token operator">&lt;</span>img
+            src<span class="token operator">=</span><span class="token string">"../../assets/imges/carton_logo.png"</span>
+            alt<span class="token operator">=</span><span class="token string">""</span>
+            style<span class="token operator">=</span><span class="token string">"width:160px;height:40px"</span>
+          <span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>el<span class="token operator">-</span>tabs
+          v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"activeName"</span>
+          @tab<span class="token operator">-</span>click<span class="token operator">=</span><span class="token string">"handleClick"</span>
+          <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"login-data"</span>
+        <span class="token operator">></span>
+          <span class="token operator">&lt;</span>el<span class="token operator">-</span>tab<span class="token operator">-</span>pane
+            label<span class="token operator">=</span><span class="token string">"密码登录"</span>
+            name<span class="token operator">=</span><span class="token string">"login"</span>
+          <span class="token operator">></span>
+            <span class="token operator">&lt;</span>el<span class="token operator">-</span>form
+              ref<span class="token operator">=</span><span class="token string">"dataForm"</span>
+              <span class="token operator">:</span>model<span class="token operator">=</span><span class="token string">"dataForm"</span>
+              <span class="token operator">:</span>rules<span class="token operator">=</span><span class="token string">"dataRule"</span>
+              @keyup<span class="token punctuation">.</span>enter<span class="token punctuation">.</span>native<span class="token operator">=</span><span class="token string">"dataFormSubmit()"</span>
+            <span class="token operator">></span>
+              <span class="token operator">&lt;</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item prop<span class="token operator">=</span><span class="token string">"username"</span><span class="token operator">></span>
+                <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"svg-container"</span><span class="token operator">></span>
+                  <span class="token operator">&lt;</span>svg<span class="token operator">-</span>icon icon<span class="token operator">-</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"user"</span> <span class="token operator">/</span><span class="token operator">></span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+                <span class="token operator">&lt;</span>el<span class="token operator">-</span>input
+                  v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"dataForm.username"</span>
+                  placeholder<span class="token operator">=</span><span class="token string">"帐号"</span>
+                <span class="token operator">/</span><span class="token operator">></span>
+              <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item<span class="token operator">></span>
+              <span class="token operator">&lt;</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item prop<span class="token operator">=</span><span class="token string">"password"</span><span class="token operator">></span>
+                <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"svg-container"</span><span class="token operator">></span>
+                  <span class="token operator">&lt;</span>svg<span class="token operator">-</span>icon icon<span class="token operator">-</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"password"</span> <span class="token operator">/</span><span class="token operator">></span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+                <span class="token operator">&lt;</span>el<span class="token operator">-</span>input
+                  v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"dataForm.password"</span>
+                  type<span class="token operator">=</span><span class="token string">"password"</span>
+                  show<span class="token operator">-</span>password
+                  placeholder<span class="token operator">=</span><span class="token string">"密码"</span>
+                <span class="token operator">/</span><span class="token operator">></span>
+              <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item<span class="token operator">></span>
+              <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"centel"</span><span class="token operator">></span>
+                <span class="token operator">&lt;</span>span style<span class="token operator">=</span><span class="token string">"color:blue;cursor: pointer;"</span><span class="token operator">></span>忘记密码<span class="token operator">?</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+                <span class="token operator">&lt;</span>span<span class="token operator">></span>没有账号<span class="token operator">?</span> <span class="token operator">&lt;</span>span style<span class="token operator">=</span><span class="token string">"color:blue;cursor: pointer;"</span><span class="token operator">></span>去注册<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span> <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+              <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+              <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"centel"</span><span class="token operator">></span>
+                <span class="token operator">&lt;</span>el<span class="token operator">-</span>button
+                  <span class="token operator">:</span>loading<span class="token operator">=</span><span class="token string">"loading"</span>
+                  <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"right-btn-submit"</span>
+                  type<span class="token operator">=</span><span class="token string">"primary"</span>
+                  style<span class="token operator">=</span><span class="token string">"width:50%;height:47px;"</span>
+                  @click<span class="token punctuation">.</span>native<span class="token punctuation">.</span>prevent<span class="token operator">=</span><span class="token string">"dataFormSubmit()"</span>
+                <span class="token operator">></span>登录<span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>button<span class="token operator">></span>
+                <span class="token operator">&lt;</span>el<span class="token operator">-</span>button
+                  <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"right-btn-submit"</span>
+                  type<span class="token operator">=</span><span class="token string">"primary"</span>
+                  plain
+                  style<span class="token operator">=</span><span class="token string">"width:50%;height:47px;"</span>
+                  @click<span class="token punctuation">.</span>native<span class="token punctuation">.</span>prevent<span class="token operator">=</span><span class="token string">"handleReset()"</span>
+                <span class="token operator">></span>重置<span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>button<span class="token operator">></span>
+              <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>form<span class="token operator">></span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>tab<span class="token operator">-</span>pane<span class="token operator">></span>
+          <span class="token operator">&lt;</span>el<span class="token operator">-</span>tab<span class="token operator">-</span>pane
+            label<span class="token operator">=</span><span class="token string">"验证码登录"</span>
+            name<span class="token operator">=</span><span class="token string">"loginByPhone"</span>
+          <span class="token operator">></span>验证码登录<span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>tab<span class="token operator">-</span>pane<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>tabs<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Login'</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">activeName</span><span class="token operator">:</span> <span class="token string">'login'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">loading</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">dialogVisible</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token comment">// 重定向</span>
+      <span class="token literal-property property">redirect</span><span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">otherQuery</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">dataForm</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">username</span><span class="token operator">:</span> <span class="token string">'admin'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">password</span><span class="token operator">:</span> <span class="token string">'admin'</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">dataRule</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">username</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">&#123;</span> <span class="token literal-property property">required</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'帐号不能为空'</span><span class="token punctuation">,</span> <span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">'blur'</span> <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">password</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">&#123;</span> <span class="token literal-property property">required</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'密码不能为空'</span><span class="token punctuation">,</span> <span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">'blur'</span> <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 提交表单</span>
+    <span class="token function">dataFormSubmit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">[</span><span class="token string">'dataForm'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">validate</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">valid</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>valid<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>loading <span class="token operator">=</span> <span class="token boolean">true</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'user/login'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>dataForm<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>code <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>dataForm<span class="token punctuation">.</span>username<span class="token punctuation">)</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/dashboard'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>loading <span class="token operator">=</span> <span class="token boolean">false</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+              <span class="token keyword">this</span><span class="token punctuation">.</span>loading <span class="token operator">=</span> <span class="token boolean">false</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'error submit!!'</span><span class="token punctuation">)</span>
+          <span class="token keyword">return</span> <span class="token boolean">false</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token comment">// 重置</span>
+    <span class="token function">handleReset</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>dataForm<span class="token punctuation">.</span>username <span class="token operator">=</span> <span class="token string">''</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>dataForm<span class="token punctuation">.</span>password <span class="token operator">=</span> <span class="token string">''</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token comment">// 页签</span>
+    <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token parameter">tab<span class="token punctuation">,</span> event</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>tab<span class="token punctuation">,</span> event<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>style lang<span class="token operator">=</span><span class="token string">"scss"</span><span class="token operator">></span>
+a <span class="token punctuation">&#123;</span>
+  text<span class="token operator">-</span>decoration<span class="token operator">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>style lang<span class="token operator">=</span><span class="token string">"scss"</span> scoped<span class="token operator">></span>
+<span class="token punctuation">.</span>centel <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">display</span><span class="token operator">:</span> flex<span class="token punctuation">;</span>
+  font<span class="token operator">-</span>size<span class="token operator">:</span> 14px<span class="token punctuation">;</span>
+  align<span class="token operator">-</span>items<span class="token operator">:</span> center<span class="token punctuation">;</span>
+  justify<span class="token operator">-</span>content<span class="token operator">:</span> space<span class="token operator">-</span>between<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">.</span>login<span class="token operator">-</span>container <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">position</span><span class="token operator">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token literal-property property">top</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token literal-property property">right</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token literal-property property">bottom</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token literal-property property">left</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  background<span class="token operator">-</span>color<span class="token operator">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">38</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token literal-property property">overflow</span><span class="token operator">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token literal-property property">display</span><span class="token operator">:</span> flex<span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span><span class="token operator">:</span>before <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">position</span><span class="token operator">:</span> fixed<span class="token punctuation">;</span>
+    <span class="token literal-property property">top</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">left</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">background</span><span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'../../assets/imges/loginBackground.jpg'</span><span class="token punctuation">)</span> no<span class="token operator">-</span>repeat<span class="token punctuation">;</span>
+    background<span class="token operator">-</span>size<span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">.</span>login<span class="token operator">-</span>right <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">flex</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+  <span class="token literal-property property">position</span><span class="token operator">:</span> relative<span class="token punctuation">;</span>
+  <span class="token literal-property property">display</span><span class="token operator">:</span> flex<span class="token punctuation">;</span>
+  margin<span class="token operator">-</span>right<span class="token operator">:</span> <span class="token number">5</span><span class="token operator">%</span><span class="token punctuation">;</span>
+  justify<span class="token operator">-</span>content<span class="token operator">:</span> flex<span class="token operator">-</span>end<span class="token punctuation">;</span>
+  align<span class="token operator">-</span>items<span class="token operator">:</span> center<span class="token punctuation">;</span>
+  <span class="token punctuation">.</span>login<span class="token operator">-</span>title <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">height</span><span class="token operator">:</span> 550px<span class="token punctuation">;</span>
+    <span class="token literal-property property">width</span><span class="token operator">:</span> 370px<span class="token punctuation">;</span>
+    <span class="token literal-property property">padding</span><span class="token operator">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">.</span>login<span class="token operator">-</span>img <span class="token punctuation">&#123;</span>
+    font<span class="token operator">-</span>size<span class="token operator">:</span> 28px<span class="token punctuation">;</span>
+    text<span class="token operator">-</span>align<span class="token operator">:</span> center<span class="token punctuation">;</span>
+    margin<span class="token operator">-</span>bottom<span class="token operator">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">.</span>right<span class="token operator">-</span>btn<span class="token operator">-</span>submit <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    margin<span class="token operator">-</span>top<span class="token operator">:</span> 22px<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">.</span>login<span class="token operator">-</span>data <span class="token punctuation">&#123;</span>
+  background<span class="token operator">-</span>color<span class="token operator">:</span> #fff<span class="token punctuation">;</span>
+  <span class="token literal-property property">padding</span><span class="token operator">:</span> 20px<span class="token punctuation">;</span>
+  border<span class="token operator">-</span>radius<span class="token operator">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">.</span>svg<span class="token operator">-</span>container <span class="token punctuation">&#123;</span>
+  vertical<span class="token operator">-</span>align<span class="token operator">:</span> middle<span class="token punctuation">;</span>
+  <span class="token literal-property property">color</span><span class="token operator">:</span> #889aa4<span class="token punctuation">;</span>
+  <span class="token literal-property property">display</span><span class="token operator">:</span> inline<span class="token operator">-</span>block<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>input <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">85</span><span class="token operator">%</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>input__inner <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">border</span><span class="token operator">:</span> none <span class="token operator">!</span>important<span class="token punctuation">;</span>
+  box<span class="token operator">-</span>shadow<span class="token operator">:</span> none <span class="token operator">!</span>important<span class="token punctuation">;</span>
+  background<span class="token operator">-</span>color<span class="token operator">:</span> #f7f8f7<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item__content <span class="token punctuation">&#123;</span>
+  background<span class="token operator">-</span>color<span class="token operator">:</span> #f7f8f7<span class="token punctuation">;</span>
+  border<span class="token operator">-</span>radius<span class="token operator">:</span> 7px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>tabs__header <span class="token punctuation">&#123;</span>
+  margin<span class="token operator">-</span>bottom<span class="token operator">:</span> 25px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>tabs__nav <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span> <span class="token operator">!</span>important<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>tabs__item <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
+  font<span class="token operator">-</span>size<span class="token operator">:</span> 16px<span class="token punctuation">;</span>
+  text<span class="token operator">-</span>align<span class="token operator">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>tabs__active<span class="token operator">-</span>bar <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">50</span><span class="token operator">%</span> <span class="token operator">!</span>important<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item__error <span class="token punctuation">&#123;</span>
+  margin<span class="token operator">-</span>top<span class="token operator">:</span> 5px <span class="token operator">!</span>important<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="全局布局"><a href="#全局布局" class="headerlink" title="全局布局"></a>全局布局</h3><p>router&#x2F;index.js 代码</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
+<span class="token keyword">import</span> Layout <span class="token keyword">from</span> <span class="token string">'@/layout'</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Router<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> constantRoutes <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/login'</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'@/views/login/index'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">hidden</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">component</span><span class="token operator">:</span> Layout<span class="token punctuation">,</span>
+    <span class="token literal-property property">redirect</span><span class="token operator">:</span> <span class="token string">'/dashboard'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'dashboard'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Dashboard'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'@/views/dashboard/index'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Dashboard'</span><span class="token punctuation">,</span> <span class="token literal-property property">icon</span><span class="token operator">:</span> <span class="token string">'dashboard'</span> <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">createRouter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+  <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// mode: 'history', // 路径显示 #</span>
+    <span class="token literal-property property">routes</span><span class="token operator">:</span> constantRoutes
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 重置路由</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">createRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">resetRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> newRouter <span class="token operator">=</span> <span class="token function">createRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  router<span class="token punctuation">.</span>matcher <span class="token operator">=</span> newRouter<span class="token punctuation">.</span>matcher
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> router<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>layout&#x2F;index.vue 代码</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
       <div class="post-tags-categories">
         
         <div class="tags">
