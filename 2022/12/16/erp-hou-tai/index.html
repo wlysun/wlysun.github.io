@@ -674,7 +674,8 @@
 <div class="post-detail-content row justify-position" style="padding-top: 0px">
   <div class="main-content">
     <article class="post post-detail">
-      <div class="post-content"><h1 id="技术栈：vue-vuex-webpack-axios-sass"><a href="#技术栈：vue-vuex-webpack-axios-sass" class="headerlink" title="技术栈：vue + vuex + webpack + axios + sass"></a>技术栈：vue + vuex + webpack + axios + sass</h1><h2 id="项目框架"><a href="#项目框架" class="headerlink" title="项目框架"></a>项目框架</h2><h3 id="相关依赖"><a href="#相关依赖" class="headerlink" title="相关依赖"></a>相关依赖</h3><p>安装过程可参考<br><a target="_blank" rel="noopener" href="https://wlysun.github.io/2022/02/07/vue-da-jian-xiang-mu/">https://wlysun.github.io/2022/02/07/vue-da-jian-xiang-mu/</a><br><a target="_blank" rel="noopener" href="https://wlysun.github.io/2022/02/07/da-jian-xiang-mu-xiang-xi/">https://wlysun.github.io/2022/02/07/da-jian-xiang-mu-xiang-xi/</a></p>
+      <div class="post-content"><h1 id="技术栈：vue-vuex-webpack-axios-sass"><a href="#技术栈：vue-vuex-webpack-axios-sass" class="headerlink" title="技术栈：vue + vuex + webpack + axios + sass"></a>技术栈：vue + vuex + webpack + axios + sass</h1><h2 id="项目框架"><a href="#项目框架" class="headerlink" title="项目框架"></a>项目框架</h2><p>搭建开发环境<br>Vscode：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a><br>Node：<a target="_blank" rel="noopener" href="http://nodejs.cn/">http://nodejs.cn/</a><br>Git：<a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a><br>npm 淘宝镜像:<a target="_blank" rel="noopener" href="http://npm.taobao.org/">http://npm.taobao.org/</a></p>
+<h3 id="相关依赖"><a href="#相关依赖" class="headerlink" title="相关依赖"></a>相关依赖</h3><p>安装过程可参考<a target="_blank" rel="noopener" href="https://wlysun.github.io/2022/02/07/da-jian-xiang-mu-xiang-xi/">https://wlysun.github.io/2022/02/07/da-jian-xiang-mu-xiang-xi/</a></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 安装vue-cli3脚手架</span>
 npm install <span class="token operator">-</span>g @vue<span class="token operator">/</span>cli
 <span class="token comment">// 创建项目</span>
@@ -684,17 +685,27 @@ npm install
 npm run serve
 <span class="token comment">// 项目地址</span>
 <span class="token literal-property property">http</span><span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>localhost<span class="token operator">:</span><span class="token number">8080</span><span class="token operator">/</span>#<span class="token operator">/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>所有依赖</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// axios</span>
+<h4 id="所有依赖"><a href="#所有依赖" class="headerlink" title="所有依赖"></a>所有依赖</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// axios</span>
 npm i axios <span class="token operator">--</span>save
 <span class="token comment">// element</span>
-npm install element<span class="token operator">-</span>ui <span class="token operator">--</span>save
-<span class="token comment">// sass</span>
-npm install node<span class="token operator">-</span>sass sass<span class="token operator">-</span>loader <span class="token operator">--</span>save<span class="token operator">-</span>dev
+npm i element<span class="token operator">-</span>ui <span class="token operator">--</span>save
+<span class="token comment">// cookie</span>
+npm i js<span class="token operator">-</span>cookie <span class="token operator">--</span>save
+<span class="token comment">// 初始化css</span>
+npm i normalize<span class="token punctuation">.</span>css <span class="token operator">--</span>save
+<span class="token comment">// path</span>
+npm i path<span class="token operator">-</span>browserify <span class="token operator">--</span>save<span class="token operator">-</span>dev
 <span class="token comment">// svg图标</span>
-npm i svg<span class="token operator">-</span>sprite<span class="token operator">-</span>loader <span class="token operator">--</span>save<span class="token operator">-</span>dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>main.js 挂载</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 引入axios</span>
+npm i svg<span class="token operator">-</span>sprite<span class="token operator">-</span>loader <span class="token operator">--</span>save<span class="token operator">-</span>dev
+<span class="token comment">// 输入的url输出为匹配规则</span>
+npm i path<span class="token operator">-</span>to<span class="token operator">-</span>regexp <span class="token operator">--</span>save<span class="token operator">-</span>dev
+<span class="token comment">// sass</span>
+npm i sass@<span class="token number">1.26</span><span class="token number">.8</span> <span class="token operator">--</span>save<span class="token operator">-</span>dev
+npm i sass<span class="token operator">-</span>loader@<span class="token number">8.0</span><span class="token number">.2</span> <span class="token operator">--</span>save<span class="token operator">-</span>dev
+<span class="token comment">// eslint</span>
+npm i babel<span class="token operator">-</span>eslint <span class="token operator">--</span>save<span class="token operator">-</span>dev
+npm i @vue<span class="token operator">/</span>cli<span class="token operator">-</span>plugin<span class="token operator">-</span>eslint@<span class="token number">3.5</span><span class="token number">.1</span> <span class="token operator">--</span>save<span class="token operator">-</span>dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="main-js-挂载"><a href="#main-js-挂载" class="headerlink" title="main.js 挂载"></a>main.js 挂载</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 引入axios</span>
 <span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span>
 <span class="token comment">// 引入element-ui当中的所有组件</span>
 <span class="token keyword">import</span> ElementUI <span class="token keyword">from</span> <span class="token string">'element-ui'</span>
@@ -706,17 +717,103 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>ElementUI<span class="token punctuation">)</span>
 
 <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$http <span class="token operator">=</span> axios<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>文件夹</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 新建</span>
-scr 下新建文件夹
-api    <span class="token comment">// 存放接口</span>
-icons  <span class="token comment">// svg图标</span>
-lang   <span class="token comment">// 语言汉化</span>
+<h4 id="新建文件"><a href="#新建文件" class="headerlink" title="新建文件"></a>新建文件</h4><p>scr 下新建文件夹</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">api <span class="token comment">// 存放接口</span>
+icons <span class="token comment">// svg图标</span>
+lang <span class="token comment">// 语言汉化</span>
 layout <span class="token comment">// 界面布局</span>
 styles <span class="token comment">// 全局样式</span>
-utils  <span class="token comment">// 公共函数方法</span>
+utils <span class="token comment">// 公共函数方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>.editorconfig 和.eslintignore.js（没有可以自己创建,src 同级）</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// .editorconfig（编辑代码规范）</span>
+# http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>editorconfig<span class="token punctuation">.</span>org
+root <span class="token operator">=</span> <span class="token boolean">true</span>
 
-<span class="token comment">// 删除</span>
+<span class="token punctuation">[</span><span class="token operator">*</span><span class="token punctuation">]</span>
+charset <span class="token operator">=</span> utf<span class="token operator">-</span><span class="token number">8</span>
+indent_style <span class="token operator">=</span> space
+indent_size <span class="token operator">=</span> <span class="token number">2</span>
+end_of_line <span class="token operator">=</span> lf
+insert_final_newline <span class="token operator">=</span> <span class="token boolean">true</span>
+trim_trailing_whitespace <span class="token operator">=</span> <span class="token boolean">true</span>
+
+<span class="token punctuation">[</span><span class="token operator">*</span><span class="token punctuation">.</span>md<span class="token punctuation">]</span>
+insert_final_newline <span class="token operator">=</span> <span class="token boolean">false</span>
+trim_trailing_whitespace <span class="token operator">=</span> <span class="token boolean">false</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// .eslintignore(排除检查目录)</span>
+build<span class="token comment">/*.js
+src/assets
+public
+dist</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>.env.development 或.env.production，全局环境变量配置</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// .env.development</span>
+# just a flag
+<span class="token constant">ENV</span> <span class="token operator">=</span> <span class="token string">'development'</span>
+
+# base api
+<span class="token constant">VUE_APP_BASE_API</span> <span class="token operator">=</span> <span class="token string">'/dev-api'</span>
+
+# port
+<span class="token constant">PORT</span> <span class="token operator">=</span> <span class="token number">9101</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// .env.production</span>
+# just a flag
+<span class="token constant">ENV</span> <span class="token operator">=</span> <span class="token string">'production'</span>
+
+# base api
+<span class="token constant">VUE_APP_BASE_API</span> <span class="token operator">=</span> <span class="token string">'/prod-api'</span>
+
+# port
+<span class="token constant">PORT</span> <span class="token operator">=</span> <span class="token number">9201</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>vue.config.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token parameter">dir</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> dir<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">publicPath</span><span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">outputDir</span><span class="token operator">:</span> <span class="token string">'dist'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">assetsDir</span><span class="token operator">:</span> <span class="token string">'static'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">productionSourceMap</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">9210</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">configureWebpack</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">resolve</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">alias</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token string-property property">'@'</span><span class="token operator">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'src'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>.eslintrc.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">root</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">env</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">node</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'plugin:vue/essential'</span><span class="token punctuation">,</span> <span class="token string">'eslint:recommended'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">parserOptions</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">parser</span><span class="token operator">:</span> <span class="token string">'@babel/eslint-parser'</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token string-property property">'no-console'</span><span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span> <span class="token operator">?</span> <span class="token string">'warn'</span> <span class="token operator">:</span> <span class="token string">'off'</span><span class="token punctuation">,</span>
+    <span class="token string-property property">'no-debugger'</span><span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span> <span class="token operator">?</span> <span class="token string">'warn'</span> <span class="token operator">:</span> <span class="token string">'off'</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>jsconfig.json</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">&#123;</span>
+  <span class="token string-property property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token string-property property">"baseUrl"</span><span class="token operator">:</span> <span class="token string">"./"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"paths"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token string-property property">"@/*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/*"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"node_modules"</span><span class="token punctuation">,</span> <span class="token string">"dist"</span><span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 删除</span>
 AboutView<span class="token punctuation">.</span>vue
 HomeView<span class="token punctuation">.</span>vue
 components<span class="token operator">/</span>HelloWorld<span class="token punctuation">.</span>vue
@@ -725,7 +822,7 @@ App<span class="token punctuation">.</span>vue文件下
 <span class="token operator">&lt;</span>nav<span class="token operator">></span>
     <span class="token operator">&lt;</span>router<span class="token operator">-</span>link to<span class="token operator">=</span><span class="token string">"/"</span><span class="token operator">></span>Home<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span> <span class="token operator">|</span>
     <span class="token operator">&lt;</span>router<span class="token operator">-</span>link to<span class="token operator">=</span><span class="token string">"/about"</span><span class="token operator">></span>About<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>nav<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token operator">&lt;</span><span class="token operator">/</span>nav<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="登入首页"><a href="#登入首页" class="headerlink" title="登入首页"></a>登入首页</h3><p>views 下新建<br>login&#x2F;index.vue<br>dashboard&#x2F;index.vue</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// login 代码</span>
 <span class="token operator">&lt;</span>template<span class="token operator">></span>
@@ -932,33 +1029,33 @@ a <span class="token punctuation">&#123;</span>
   <span class="token literal-property property">color</span><span class="token operator">:</span> #889aa4<span class="token punctuation">;</span>
   <span class="token literal-property property">display</span><span class="token operator">:</span> inline<span class="token operator">-</span>block<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
-<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>input <span class="token punctuation">&#123;</span>
+<span class="token operator">>>></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>input <span class="token punctuation">&#123;</span>
   <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">85</span><span class="token operator">%</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
-<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>input__inner <span class="token punctuation">&#123;</span>
+<span class="token operator">>>></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>input__inner <span class="token punctuation">&#123;</span>
   <span class="token literal-property property">border</span><span class="token operator">:</span> none <span class="token operator">!</span>important<span class="token punctuation">;</span>
   box<span class="token operator">-</span>shadow<span class="token operator">:</span> none <span class="token operator">!</span>important<span class="token punctuation">;</span>
   background<span class="token operator">-</span>color<span class="token operator">:</span> #f7f8f7<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
-<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item__content <span class="token punctuation">&#123;</span>
+<span class="token operator">>>></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item__content <span class="token punctuation">&#123;</span>
   background<span class="token operator">-</span>color<span class="token operator">:</span> #f7f8f7<span class="token punctuation">;</span>
   border<span class="token operator">-</span>radius<span class="token operator">:</span> 7px<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
-<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>tabs__header <span class="token punctuation">&#123;</span>
+<span class="token operator">>>></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>tabs__header <span class="token punctuation">&#123;</span>
   margin<span class="token operator">-</span>bottom<span class="token operator">:</span> 25px<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
-<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>tabs__nav <span class="token punctuation">&#123;</span>
+<span class="token operator">>>></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>tabs__nav <span class="token punctuation">&#123;</span>
   <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span> <span class="token operator">!</span>important<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
-<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>tabs__item <span class="token punctuation">&#123;</span>
+<span class="token operator">>>></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>tabs__item <span class="token punctuation">&#123;</span>
   <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
   font<span class="token operator">-</span>size<span class="token operator">:</span> 16px<span class="token punctuation">;</span>
   text<span class="token operator">-</span>align<span class="token operator">:</span> center<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
-<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>tabs__active<span class="token operator">-</span>bar <span class="token punctuation">&#123;</span>
+<span class="token operator">>>></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>tabs__active<span class="token operator">-</span>bar <span class="token punctuation">&#123;</span>
   <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">50</span><span class="token operator">%</span> <span class="token operator">!</span>important<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
-<span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item__error <span class="token punctuation">&#123;</span>
+<span class="token operator">>>></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>form<span class="token operator">-</span>item__error <span class="token punctuation">&#123;</span>
   margin<span class="token operator">-</span>top<span class="token operator">:</span> 5px <span class="token operator">!</span>important<span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
