@@ -674,7 +674,12 @@
 <div class="post-detail-content row justify-position" style="padding-top: 0px">
   <div class="main-content">
     <article class="post post-detail">
-      <div class="post-content"><h2 id="path"><a href="#path" class="headerlink" title="path"></a>path</h2><img src="/2023/01/13/chuang-jian-xiang-mu-bug/1.png" class="lazyload placeholder" data-srcset="/2023/01/13/chuang-jian-xiang-mu-bug/1.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" class>
+      <div class="post-content"><h2 id="侧边栏"><a href="#侧边栏" class="headerlink" title="侧边栏"></a>侧边栏</h2><img src="/2023/01/13/chuang-jian-xiang-mu-bug/4.png" class="lazyload placeholder" data-srcset="/2023/01/13/chuang-jian-xiang-mu-bug/4.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" class>
+
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// Webpack 4以上不生效</span>
+<span class="token comment">// variables.scss 重命名为 variables.module.scss</span>
+<span class="token keyword">import</span> variables <span class="token keyword">from</span> <span class="token string">'@/styles/variables.module.scss'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="path"><a href="#path" class="headerlink" title="path"></a>path</h2><img src="/2023/01/13/chuang-jian-xiang-mu-bug/1.png" class="lazyload placeholder" data-srcset="/2023/01/13/chuang-jian-xiang-mu-bug/1.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" class>
 
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 下载依赖</span>
 npm i path<span class="token operator">-</span>browserify <span class="token operator">--</span>save<span class="token operator">-</span>dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -688,7 +693,47 @@ npm i path<span class="token operator">-</span>browserify <span class="token ope
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="eslint"><a href="#eslint" class="headerlink" title="eslint"></a>eslint</h2><img src="/2023/01/13/chuang-jian-xiang-mu-bug/1.png" class="lazyload placeholder" data-srcset="/2023/01/13/chuang-jian-xiang-mu-bug/1.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" class>
+<h2 id="Breadcrumb"><a href="#Breadcrumb" class="headerlink" title="Breadcrumb"></a>Breadcrumb</h2><img src="/2023/01/13/chuang-jian-xiang-mu-bug/3.png" class="lazyload placeholder" data-srcset="/2023/01/13/chuang-jian-xiang-mu-bug/3.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" class>
+
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Router<span class="token punctuation">)</span>
+<span class="token comment">/* Layout */</span>
+<span class="token keyword">import</span> Layout <span class="token keyword">from</span> <span class="token string">'@/layout'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> constantRoutes <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token operator">...</span><span class="token operator">...</span><span class="token operator">...</span><span class="token operator">...</span><span class="token operator">...</span><span class="token operator">...</span><span class="token operator">...</span><span class="token operator">...</span><span class="token punctuation">.</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">let</span> originPush <span class="token operator">=</span> <span class="token class-name">Router</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>push
+<span class="token keyword">let</span> originReplace <span class="token operator">=</span> <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>originReplace
+
+<span class="token class-name">Router</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">push</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">location<span class="token punctuation">,</span> res<span class="token punctuation">,</span> rej</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>res <span class="token operator">&amp;&amp;</span> rej<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">originPush</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> location<span class="token punctuation">,</span> res<span class="token punctuation">,</span> rej<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">originPush</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> location<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token class-name">Router</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">replace</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">location<span class="token punctuation">,</span> res<span class="token punctuation">,</span> rej</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>res <span class="token operator">&amp;&amp;</span> rej<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">originReplace</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> location<span class="token punctuation">,</span> res<span class="token punctuation">,</span> rej<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">originReplace</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> location<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">createRouter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+  <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    <span class="token function-variable function">scrollBehavior</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">routes</span><span class="token operator">:</span> constantRoutes
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">createRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> router<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="eslint"><a href="#eslint" class="headerlink" title="eslint"></a>eslint</h2><h3 id="mock-报错"><a href="#mock-报错" class="headerlink" title="mock 报错"></a>mock 报错</h3><img src="/2023/01/13/chuang-jian-xiang-mu-bug/2.png" class="lazyload placeholder" data-srcset="/2023/01/13/chuang-jian-xiang-mu-bug/2.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" class>
 
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 'config' is defined but never used</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>confing<span class="token punctuation">)</span>
