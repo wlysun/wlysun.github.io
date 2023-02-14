@@ -703,15 +703,40 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token function">alert</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token comment">//true 为空， false 不为空</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="js-字符串方法"><a href="#js-字符串方法" class="headerlink" title="js 字符串方法"></a>js 字符串方法</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 替换</span>
 params<span class="token punctuation">.</span>sort<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'_1'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><img src="/2022/03/15/xiang-mu-zong-jie/Git_pull.jpg" class="lazyload placeholder" data-srcset="/2022/03/15/xiang-mu-zong-jie/Git_pull.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" class>
+<h2 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h2><pre class="line-numbers language-mackdown" data-language="mackdown"><code class="language-mackdown">&lt;input v-model&#x3D;&quot;searchVal&quot; placeholder&#x3D;&quot;搜索&quot;&gt;&lt;&#x2F;input&gt;
 
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 重新提交即可</span>
-git add <span class="token punctuation">.</span>
-git commit <span class="token operator">-</span>m <span class="token string">'first'</span>
-git pull<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h3><p>husky &gt; pre-commit hook failed (add –no-verify to bypass)<br>husky&gt;pre-commit(node v14.16.6)<br>&#x2F;&#x2F; 代码不符合相应规则， 就会引发报错</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">git commit <span class="token operator">--</span>no<span class="token operator">-</span>verify <span class="token operator">-</span>m “<span class="token constant">XXX</span>”<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">FormData表单传值不能传递list<span class="token punctuation">,</span> 需转换Json格式<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+const data &#x3D; [
+  &#123;
+    name: &#39;小明&#39;,
+    value: &#39;01&#39;
+  &#125;,
+  &#123;
+    name: &#39;小明1&#39;,
+    value: &#39;02&#39;
+  &#125;,
+  &#123;
+    name: &#39;小小&#39;,
+    value: &#39;03&#39;
+  &#125;,
+  &#123;
+    name: &#39;小小红&#39;,
+    value: &#39;04&#39;
+  &#125;
+]
+const list &#x3D; data.filter(e &#x3D;&gt; &#123;
+  return e.name.indexOf(this.searchVal) !&#x3D;&#x3D; -1
+&#125;)
+console.log(list)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="查找下标"><a href="#查找下标" class="headerlink" title="查找下标"></a>查找下标</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'01'</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'02'</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span>
+<span class="token keyword">const</span> index <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> item<span class="token punctuation">.</span>value <span class="token operator">===</span> <span class="token string">'02'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'index: '</span><span class="token punctuation">,</span> index<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 赋值回显</span>
 @change<span class="token operator">=</span><span class="token string">"$forceUpdate()"</span>
 <span class="token comment">// 赋值回显校验未关闭</span>
@@ -754,6 +779,15 @@ git pull<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>oldlist<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><img src="/2022/03/15/xiang-mu-zong-jie/Git_pull.jpg" class="lazyload placeholder" data-srcset="/2022/03/15/xiang-mu-zong-jie/Git_pull.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" class>
+
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 重新提交即可</span>
+git add <span class="token punctuation">.</span>
+git commit <span class="token operator">-</span>m <span class="token string">'first'</span>
+git pull<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h3><p>husky &gt; pre-commit hook failed (add –no-verify to bypass)<br>husky&gt;pre-commit(node v14.16.6)<br>&#x2F;&#x2F; 代码不符合相应规则， 就会引发报错</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">git commit <span class="token operator">--</span>no<span class="token operator">-</span>verify <span class="token operator">-</span>m “<span class="token constant">XXX</span>”<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">FormData表单传值不能传递list<span class="token punctuation">,</span> 需转换Json格式<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><h3 id="node-sassloader-版本过高所导致"><a href="#node-sassloader-版本过高所导致" class="headerlink" title="node-sassloader 版本过高所导致"></a>node-sassloader 版本过高所导致</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">deep</span><span class="token regex-delimiter">/</span></span> <span class="token punctuation">.</span>el<span class="token operator">-</span>tabs<span class="token punctuation">&#123;</span>
 <span class="token operator">^</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="CSS-样式"><a href="#CSS-样式" class="headerlink" title="CSS 样式"></a>CSS 样式</h2><h3 id="input-样式"><a href="#input-样式" class="headerlink" title="input 样式"></a>input 样式</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 去除 input 获取焦点边框</span>
