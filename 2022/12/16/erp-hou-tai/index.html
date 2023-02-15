@@ -707,6 +707,8 @@ npm i normalize<span class="token punctuation">.</span>css <span class="token op
 npm i nprogress <span class="token operator">--</span>save
 <span class="token comment">// 模糊查询</span>
 npm i fuse<span class="token punctuation">.</span>js@<span class="token number">3.4</span><span class="token number">.4</span> <span class="token operator">--</span>save
+<span class="token comment">// 屏幕放大</span>
+npm i screenfull@<span class="token number">4.2</span><span class="token number">.0</span> <span class="token operator">--</span>save
 <span class="token comment">// 输入的url输出为匹配规则</span>
 npm i path<span class="token operator">-</span>to<span class="token operator">-</span>regexp <span class="token operator">--</span>save
 <span class="token comment">// mockjs</span>
@@ -723,7 +725,7 @@ npm i eslint<span class="token operator">-</span>plugin<span class="token operat
 npm i @vue<span class="token operator">/</span>cli<span class="token operator">-</span>plugin<span class="token operator">-</span>eslint@<span class="token number">4.4</span><span class="token number">.4</span>  <span class="token operator">--</span>save<span class="token operator">-</span>dev
 <span class="token comment">// sass</span>
 npm i sass@<span class="token number">1.26</span><span class="token number">.8</span> <span class="token operator">--</span>save<span class="token operator">-</span>dev
-npm i sass<span class="token operator">-</span>loader@<span class="token number">8.0</span><span class="token number">.2</span> <span class="token operator">--</span>save<span class="token operator">-</span>dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+npm i sass<span class="token operator">-</span>loader@<span class="token number">8.0</span><span class="token number">.2</span> <span class="token operator">--</span>save<span class="token operator">-</span>dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
               </div>
             </details>
 
@@ -4223,7 +4225,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 
 <h4 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h4><details green><summary pointer> 搜索框 </summary>
               <div class="content">
-              <p>下载依赖：npm i <a href="mailto:&#x66;&#x75;&#x73;&#x65;&#46;&#106;&#x73;&#x40;&#x33;&#46;&#x34;&#46;&#x34;">&#x66;&#x75;&#x73;&#x65;&#46;&#106;&#x73;&#x40;&#x33;&#46;&#x34;&#46;&#x34;</a> –save<br>新增 search.svg</p><details green><summary pointer> 新增文件：src/components/HeaderSearch/index.vue </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+              <p>新增 search.svg,下载依赖：npm i <a href="mailto:&#102;&#x75;&#x73;&#101;&#46;&#106;&#x73;&#x40;&#51;&#x2e;&#x34;&#46;&#52;">&#102;&#x75;&#x73;&#101;&#46;&#106;&#x73;&#x40;&#51;&#x2e;&#x34;&#46;&#52;</a> –save</p><details green><summary pointer> 新增文件：src/components/HeaderSearch/index.vue </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div
     <span class="token operator">:</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"&#123;'show':show&#125;"</span>
     <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"header-search"</span>
@@ -4420,9 +4422,9 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
     <span class="token operator">/</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>breadcrumb <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"breadcrumb-container"</span> <span class="token operator">/</span><span class="token operator">></span>
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"right-menu"</span><span class="token operator">></span>
-      <span class="token operator">&lt;</span>HeaderSearch
+      <span class="token operator">&lt;</span>search
         id<span class="token operator">=</span><span class="token string">"header-search"</span>
-        <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"right-menu-item"</span>
+        <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"right-menu-item hover-effect"</span>
       <span class="token operator">/</span><span class="token operator">></span>
       <span class="token operator">&lt;</span>el<span class="token operator">-</span>dropdown
         <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"avatar-container"</span>
@@ -4461,13 +4463,13 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> mapGetters <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span>
 <span class="token keyword">import</span> Hamburger <span class="token keyword">from</span> <span class="token string">'@/components/Hamburger/index'</span>
 <span class="token keyword">import</span> Breadcrumb <span class="token keyword">from</span> <span class="token string">'@/components/Breadcrumb/index'</span>
-<span class="token keyword">import</span> HeaderSearch <span class="token keyword">from</span> <span class="token string">'@/components/HeaderSearch/index'</span>
+<span class="token keyword">import</span> search <span class="token keyword">from</span> <span class="token string">'@/components/HeaderSearch/index'</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
   <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Navbar'</span><span class="token punctuation">,</span>
   <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
     Hamburger<span class="token punctuation">,</span>
-    HeaderSearch<span class="token punctuation">,</span>
+    search<span class="token punctuation">,</span>
     Breadcrumb
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -4571,6 +4573,236 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>              </div>            </details>
+              </div>
+            </details>
+
+<h4 id="screenfull"><a href="#screenfull" class="headerlink" title="screenfull"></a>screenfull</h4><details green><summary pointer> 屏幕放大 </summary>
+              <div class="content">
+              <p>新增 fullscreen.svg 和 exit-fullscreen.svg<br>下载依赖：npm i <a href="mailto:&#x73;&#99;&#x72;&#101;&#101;&#110;&#x66;&#117;&#x6c;&#108;&#64;&#52;&#46;&#x32;&#x2e;&#48;">&#x73;&#99;&#x72;&#101;&#101;&#110;&#x66;&#117;&#x6c;&#108;&#64;&#52;&#46;&#x32;&#x2e;&#48;</a> –save</p><details green><summary pointer> 新增文件：src/components/Screenfull/index.vue </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>svg<span class="token operator">-</span>icon <span class="token operator">:</span>icon<span class="token operator">-</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"isFullscreen?'exit-fullscreen':'fullscreen'"</span> @click<span class="token operator">=</span><span class="token string">"click"</span> <span class="token operator">/</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">import</span> screenfull <span class="token keyword">from</span> <span class="token string">'screenfull'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Screenfull'</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">isFullscreen</span><span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function">beforeDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>screenfull<span class="token punctuation">.</span>enabled<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$message</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+          <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'you browser can not work'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'warning'</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+      <span class="token punctuation">&#125;</span>
+      screenfull<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">change</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>isFullscreen <span class="token operator">=</span> screenfull<span class="token punctuation">.</span>isFullscreen
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>screenfull<span class="token punctuation">.</span>enabled<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        screenfull<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>change<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>screenfull<span class="token punctuation">.</span>enabled<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        screenfull<span class="token punctuation">.</span><span class="token function">off</span><span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>change<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>style scoped<span class="token operator">></span>
+<span class="token punctuation">.</span>screenfull<span class="token operator">-</span>svg <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">display</span><span class="token operator">:</span> inline<span class="token operator">-</span>block<span class="token punctuation">;</span>
+  <span class="token literal-property property">cursor</span><span class="token operator">:</span> pointer<span class="token punctuation">;</span>
+  <span class="token literal-property property">fill</span><span class="token operator">:</span> #5a5e66<span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token literal-property property">width</span><span class="token operator">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token literal-property property">height</span><span class="token operator">:</span> 20px<span class="token punctuation">;</span>
+  vertical<span class="token operator">-</span>align<span class="token operator">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>              </div>            </details><details green><summary pointer> 修改文件：src/layout/components/Navbar.vue </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"navbar"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>hamburger
+      <span class="token operator">:</span>is<span class="token operator">-</span>active<span class="token operator">=</span><span class="token string">"sidebar.opened"</span>
+      <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"hamburger-container"</span>
+      @toggleClick<span class="token operator">=</span><span class="token string">"toggleSideBar"</span>
+    <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>breadcrumb <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"breadcrumb-container"</span> <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"right-menu"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>search
+        id<span class="token operator">=</span><span class="token string">"header-search"</span>
+        <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"right-menu-item hover-effect"</span>
+      <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>screenfull
+        id<span class="token operator">=</span><span class="token string">"screenfull"</span>
+        <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"right-menu-item hover-effect"</span>
+      <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>el<span class="token operator">-</span>dropdown
+        <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"avatar-container hover-effect"</span>
+        trigger<span class="token operator">=</span><span class="token string">"click"</span>
+      <span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"avatar-wrapper "</span><span class="token operator">></span>
+          <span class="token operator">&lt;</span>img
+            <span class="token operator">:</span>src<span class="token operator">=</span><span class="token string">"'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif?imageView2/1/w/80/h/80'"</span>
+            <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"user-avatar"</span>
+          <span class="token operator">></span>
+          <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"el-icon-caret-bottom"</span> <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>el<span class="token operator">-</span>dropdown<span class="token operator">-</span>menu
+          slot<span class="token operator">=</span><span class="token string">"dropdown"</span>
+          <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"user-dropdown"</span>
+        <span class="token operator">></span>
+          <span class="token operator">&lt;</span>router<span class="token operator">-</span>link to<span class="token operator">=</span><span class="token string">"/"</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>el<span class="token operator">-</span>dropdown<span class="token operator">-</span>item<span class="token operator">></span>
+              首页
+            <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>dropdown<span class="token operator">-</span>item<span class="token operator">></span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span>
+          <span class="token operator">&lt;</span>el<span class="token operator">-</span>dropdown<span class="token operator">-</span>item
+            divided
+            @click<span class="token punctuation">.</span>native<span class="token operator">=</span><span class="token string">"logout"</span>
+          <span class="token operator">></span>
+            <span class="token operator">&lt;</span>span style<span class="token operator">=</span><span class="token string">"display:block;"</span><span class="token operator">></span>退出<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>dropdown<span class="token operator">-</span>item<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>dropdown<span class="token operator">-</span>menu<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>dropdown<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">import</span> logo <span class="token keyword">from</span> <span class="token string">'@/assets/logo.png'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> mapGetters <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span>
+<span class="token keyword">import</span> Hamburger <span class="token keyword">from</span> <span class="token string">'@/components/Hamburger/index'</span>
+<span class="token keyword">import</span> Breadcrumb <span class="token keyword">from</span> <span class="token string">'@/components/Breadcrumb/index'</span>
+<span class="token keyword">import</span> search <span class="token keyword">from</span> <span class="token string">'@/components/HeaderSearch/index'</span>
+<span class="token keyword">import</span> Screenfull <span class="token keyword">from</span> <span class="token string">'@/components/Screenfull/index'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Navbar'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    Hamburger<span class="token punctuation">,</span>
+    Screenfull<span class="token punctuation">,</span>
+    search<span class="token punctuation">,</span>
+    Breadcrumb
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">img</span><span class="token operator">:</span> logo
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">computed</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token operator">...</span><span class="token function">mapGetters</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+      <span class="token string">'sidebar'</span><span class="token punctuation">,</span>
+      <span class="token string">'avatar'</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">toggleSideBar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'app/toggleSideBar'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token keyword">async</span> <span class="token function">logout</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'user/logout'</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/login?redirect=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>fullPath<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>style lang<span class="token operator">=</span><span class="token string">"scss"</span> scoped<span class="token operator">></span>
+<span class="token punctuation">.</span>navbar <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">height</span><span class="token operator">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token literal-property property">overflow</span><span class="token operator">:</span> hidden<span class="token punctuation">;</span>
+  <span class="token literal-property property">position</span><span class="token operator">:</span> relative<span class="token punctuation">;</span>
+  <span class="token literal-property property">background</span><span class="token operator">:</span> #fff<span class="token punctuation">;</span>
+  box<span class="token operator">-</span>shadow<span class="token operator">:</span> <span class="token number">0</span> 1px 4px <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">0.08</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token punctuation">.</span>hamburger<span class="token operator">-</span>container <span class="token punctuation">&#123;</span>
+    line<span class="token operator">-</span>height<span class="token operator">:</span> 46px<span class="token punctuation">;</span>
+    <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">float</span><span class="token operator">:</span> left<span class="token punctuation">;</span>
+    <span class="token literal-property property">cursor</span><span class="token operator">:</span> pointer<span class="token punctuation">;</span>
+    <span class="token literal-property property">transition</span><span class="token operator">:</span> background <span class="token number">0</span><span class="token punctuation">.</span>3s<span class="token punctuation">;</span>
+    <span class="token operator">-</span>webkit<span class="token operator">-</span>tap<span class="token operator">-</span>highlight<span class="token operator">-</span>color<span class="token operator">:</span> transparent<span class="token punctuation">;</span>
+
+    <span class="token operator">&amp;</span><span class="token operator">:</span>hover <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">background</span><span class="token operator">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.025</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token punctuation">.</span>breadcrumb<span class="token operator">-</span>container <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">float</span><span class="token operator">:</span> left<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token punctuation">.</span>right<span class="token operator">-</span>menu <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">float</span><span class="token operator">:</span> right<span class="token punctuation">;</span>
+    <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    line<span class="token operator">-</span>height<span class="token operator">:</span> 50px<span class="token punctuation">;</span>
+
+    <span class="token operator">&amp;</span><span class="token operator">:</span>focus <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">outline</span><span class="token operator">:</span> none<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token punctuation">.</span>right<span class="token operator">-</span>menu<span class="token operator">-</span>item <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">display</span><span class="token operator">:</span> inline<span class="token operator">-</span>block<span class="token punctuation">;</span>
+      <span class="token literal-property property">padding</span><span class="token operator">:</span> <span class="token number">0</span> 8px<span class="token punctuation">;</span>
+      <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+      font<span class="token operator">-</span>size<span class="token operator">:</span> 18px<span class="token punctuation">;</span>
+      <span class="token literal-property property">color</span><span class="token operator">:</span> #5a5e66<span class="token punctuation">;</span>
+      vertical<span class="token operator">-</span>align<span class="token operator">:</span> text<span class="token operator">-</span>bottom<span class="token punctuation">;</span>
+
+      <span class="token operator">&amp;</span><span class="token punctuation">.</span>hover<span class="token operator">-</span>effect <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">cursor</span><span class="token operator">:</span> pointer<span class="token punctuation">;</span>
+        <span class="token literal-property property">transition</span><span class="token operator">:</span> background <span class="token number">0</span><span class="token punctuation">.</span>3s<span class="token punctuation">;</span>
+
+        <span class="token operator">&amp;</span><span class="token operator">:</span>hover <span class="token punctuation">&#123;</span>
+          <span class="token literal-property property">background</span><span class="token operator">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.025</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token punctuation">.</span>avatar<span class="token operator">-</span>container <span class="token punctuation">&#123;</span>
+      margin<span class="token operator">-</span>right<span class="token operator">:</span> 30px<span class="token punctuation">;</span>
+
+      <span class="token punctuation">.</span>avatar<span class="token operator">-</span>wrapper <span class="token punctuation">&#123;</span>
+        margin<span class="token operator">-</span>top<span class="token operator">:</span> 5px<span class="token punctuation">;</span>
+        <span class="token literal-property property">position</span><span class="token operator">:</span> relative<span class="token punctuation">;</span>
+
+        <span class="token punctuation">.</span>user<span class="token operator">-</span>avatar <span class="token punctuation">&#123;</span>
+          <span class="token literal-property property">cursor</span><span class="token operator">:</span> pointer<span class="token punctuation">;</span>
+          <span class="token literal-property property">width</span><span class="token operator">:</span> 40px<span class="token punctuation">;</span>
+          <span class="token literal-property property">height</span><span class="token operator">:</span> 40px<span class="token punctuation">;</span>
+          border<span class="token operator">-</span>radius<span class="token operator">:</span> 10px<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token punctuation">.</span>el<span class="token operator">-</span>icon<span class="token operator">-</span>caret<span class="token operator">-</span>bottom <span class="token punctuation">&#123;</span>
+          <span class="token literal-property property">cursor</span><span class="token operator">:</span> pointer<span class="token punctuation">;</span>
+          <span class="token literal-property property">position</span><span class="token operator">:</span> absolute<span class="token punctuation">;</span>
+          <span class="token literal-property property">right</span><span class="token operator">:</span> <span class="token operator">-</span>20px<span class="token punctuation">;</span>
+          <span class="token literal-property property">top</span><span class="token operator">:</span> 25px<span class="token punctuation">;</span>
+          font<span class="token operator">-</span>size<span class="token operator">:</span> 12px<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>              </div>            </details>
               </div>
             </details>
 </div>
