@@ -4225,7 +4225,8 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 
 <h4 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h4><details green><summary pointer> 搜索框 </summary>
               <div class="content">
-              <p>新增 search.svg,下载依赖：npm i <a href="mailto:&#102;&#x75;&#x73;&#101;&#x2e;&#106;&#115;&#x40;&#51;&#46;&#x34;&#x2e;&#x34;">&#102;&#x75;&#x73;&#101;&#x2e;&#106;&#115;&#x40;&#51;&#46;&#x34;&#x2e;&#x34;</a> –save</p><details green><summary pointer> 新增文件：src/components/HeaderSearch/index.vue </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">新增 search<span class="token punctuation">.</span>svg
+下载依赖：npm i fuse<span class="token punctuation">.</span>js@<span class="token number">3.4</span><span class="token number">.4</span> <span class="token operator">--</span>save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><details green><summary pointer> 新增文件：src/components/HeaderSearch/index.vue </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div
     <span class="token operator">:</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"&#123;'show':show&#125;"</span>
     <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"header-search"</span>
@@ -4424,7 +4425,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"right-menu"</span><span class="token operator">></span>
       <span class="token operator">&lt;</span>search
         id<span class="token operator">=</span><span class="token string">"header-search"</span>
-        <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"right-menu-item hover-effect"</span>
+        <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"right-menu-item"</span>
       <span class="token operator">/</span><span class="token operator">></span>
       <span class="token operator">&lt;</span>el<span class="token operator">-</span>dropdown
         <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"avatar-container"</span>
@@ -4578,7 +4579,8 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
 
 <h4 id="screenfull"><a href="#screenfull" class="headerlink" title="screenfull"></a>screenfull</h4><details green><summary pointer> 屏幕放大 </summary>
               <div class="content">
-              <p>新增 fullscreen.svg 和 exit-fullscreen.svg<br>下载依赖：npm i <a href="mailto:&#115;&#x63;&#114;&#x65;&#x65;&#110;&#x66;&#x75;&#x6c;&#x6c;&#64;&#52;&#x2e;&#50;&#46;&#x30;">&#115;&#x63;&#114;&#x65;&#x65;&#110;&#x66;&#x75;&#x6c;&#x6c;&#64;&#52;&#x2e;&#50;&#46;&#x30;</a> –save</p><details green><summary pointer> 新增文件：src/components/Screenfull/index.vue </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">新增 fullscreen<span class="token punctuation">.</span>svg 和 exit<span class="token operator">-</span>fullscreen<span class="token punctuation">.</span>svg
+下载依赖：npm i screenfull@<span class="token number">4.2</span><span class="token number">.0</span> <span class="token operator">--</span>save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><details green><summary pointer> 新增文件：src/components/Screenfull/index.vue </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
   <span class="token operator">&lt;</span>div<span class="token operator">></span>
     <span class="token operator">&lt;</span>svg<span class="token operator">-</span>icon <span class="token operator">:</span>icon<span class="token operator">-</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"isFullscreen?'exit-fullscreen':'fullscreen'"</span> @click<span class="token operator">=</span><span class="token string">"click"</span> <span class="token operator">/</span><span class="token operator">></span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
@@ -4648,7 +4650,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"right-menu"</span><span class="token operator">></span>
       <span class="token operator">&lt;</span>search
         id<span class="token operator">=</span><span class="token string">"header-search"</span>
-        <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"right-menu-item hover-effect"</span>
+        <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"right-menu-item"</span>
       <span class="token operator">/</span><span class="token operator">></span>
       <span class="token operator">&lt;</span>screenfull
         id<span class="token operator">=</span><span class="token string">"screenfull"</span>
