@@ -676,6 +676,7 @@ git add <span class="token punctuation">.</span>   添加至暂存区
 git commit <span class="token operator">-</span>m <span class="token string">'fist'</span> 从暂存区存到仓储区
 git checkout <span class="token operator">-</span>b dev  创建本地分支
 git checkout master  切到master分支
+git clone <span class="token operator">-</span>b dev http<span class="token operator">...</span><span class="token punctuation">.</span><span class="token punctuation">.</span>  拉取并创建本地dev分支
 git merge dev        合并分支
 git remote add origin 地址         配置地址
 git push <span class="token operator">-</span>u origin <span class="token string">"master"</span>        提交分支
@@ -699,7 +700,8 @@ git log                             显示日志
 git log <span class="token operator">--</span>pretty <span class="token operator">=</span> online           简化日志
 git reflog                          显示版本号
 git reset <span class="token operator">--</span>hard <span class="token constant">HEAD</span> <span class="token operator">^</span>              <span class="token punctuation">(</span> <span class="token operator">^</span> 表示回到上一个版本，以此类推 <span class="token punctuation">)</span>
-git reset <span class="token operator">--</span>hard 版本号               回退指定版本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+git reset <span class="token operator">--</span>hard 版本号               回退指定版本
+git git push <span class="token operator">-</span>f origin master        强制push远程master分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="git-如何管理一个项目"><a href="#git-如何管理一个项目" class="headerlink" title="git 如何管理一个项目"></a>git 如何管理一个项目</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">git init 初始化git仓库（新项目才有这一步）
 git clone 将远程仓库的项目资料下载下来
 git checkout <span class="token operator">-</span>b <span class="token function">dev</span> <span class="token punctuation">(</span>dev 为本地分支名）
