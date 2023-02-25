@@ -709,6 +709,8 @@ npm i nprogress <span class="token operator">--</span>save
 npm i fuse<span class="token punctuation">.</span>js@<span class="token number">3.4</span><span class="token number">.4</span> <span class="token operator">--</span>save
 <span class="token comment">// 屏幕放大</span>
 npm i screenfull@<span class="token number">4.2</span><span class="token number">.0</span> <span class="token operator">--</span>save
+<span class="token comment">// 汉化</span>
+npm i vue<span class="token operator">-</span>i18n@<span class="token number">7.3</span><span class="token number">.2</span>  <span class="token operator">--</span>save
 <span class="token comment">// 输入的url输出为匹配规则</span>
 npm i path<span class="token operator">-</span>to<span class="token operator">-</span>regexp <span class="token operator">--</span>save
 <span class="token comment">// mockjs</span>
@@ -725,7 +727,7 @@ npm i eslint<span class="token operator">-</span>plugin<span class="token operat
 npm i @vue<span class="token operator">/</span>cli<span class="token operator">-</span>plugin<span class="token operator">-</span>eslint@<span class="token number">4.4</span><span class="token number">.4</span>  <span class="token operator">--</span>save<span class="token operator">-</span>dev
 <span class="token comment">// sass</span>
 npm i sass@<span class="token number">1.26</span><span class="token number">.8</span> <span class="token operator">--</span>save<span class="token operator">-</span>dev
-npm i sass<span class="token operator">-</span>loader@<span class="token number">8.0</span><span class="token number">.2</span> <span class="token operator">--</span>save<span class="token operator">-</span>dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+npm i sass<span class="token operator">-</span>loader@<span class="token number">8.0</span><span class="token number">.2</span> <span class="token operator">--</span>save<span class="token operator">-</span>dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
               </div>
             </details>
 
@@ -1260,25 +1262,25 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
             <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'menu1-1'</span><span class="token punctuation">,</span>
             <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'@/views/nested/menu1/menu1-1'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
             <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Menu1-1'</span><span class="token punctuation">,</span>
-            <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Menu1-1'</span> <span class="token punctuation">&#125;</span>
+            <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Menu1_1'</span><span class="token punctuation">,</span> <span class="token literal-property property">noCache</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">&#125;</span>
           <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
           <span class="token punctuation">&#123;</span>
             <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'menu1-2'</span><span class="token punctuation">,</span>
             <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'@/views/nested/menu1/menu1-2'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
             <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Menu1-2'</span><span class="token punctuation">,</span>
-            <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Menu1-2'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Menu1_2'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
             <span class="token literal-property property">children</span><span class="token operator">:</span> <span class="token punctuation">[</span>
               <span class="token punctuation">&#123;</span>
                 <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'menu1-2-1'</span><span class="token punctuation">,</span>
                 <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'@/views/nested/menu1/menu1-2/menu1-2-1'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
                 <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Menu1-2-1'</span><span class="token punctuation">,</span>
-                <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Menu1-2-1'</span> <span class="token punctuation">&#125;</span>
+                <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Menu1_2_1'</span> <span class="token punctuation">&#125;</span>
               <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
               <span class="token punctuation">&#123;</span>
                 <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'menu1-2-2'</span><span class="token punctuation">,</span>
                 <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'@/views/nested/menu1/menu1-2/menu1-2-2'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
                 <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Menu1-2-2'</span><span class="token punctuation">,</span>
-                <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Menu1-2-2'</span> <span class="token punctuation">&#125;</span>
+                <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Menu1_2_2'</span> <span class="token punctuation">&#125;</span>
               <span class="token punctuation">&#125;</span>
             <span class="token punctuation">]</span>
           <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
@@ -1286,7 +1288,7 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
             <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'menu1-3'</span><span class="token punctuation">,</span>
             <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'@/views/nested/menu1/menu1-3'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
             <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Menu1-3'</span><span class="token punctuation">,</span>
-            <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Menu1-3'</span> <span class="token punctuation">&#125;</span>
+            <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Menu1_3'</span> <span class="token punctuation">&#125;</span>
           <span class="token punctuation">&#125;</span>
         <span class="token punctuation">]</span>
       <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
@@ -4805,6 +4807,824 @@ Vue<span class="token punctuation">.</span><span class="token function">use</spa
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>              </div>            </details>
+              </div>
+            </details>
+
+<h4 id="i18n"><a href="#i18n" class="headerlink" title="i18n"></a>i18n</h4><details green><summary pointer> 语言汉化 </summary>
+              <div class="content">
+              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 下载依赖</span>
+npm i vue<span class="token operator">-</span>i18n@<span class="token number">7.3</span><span class="token number">.2</span>  <span class="token operator">--</span>save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><details green><summary pointer> 新增文件：src/lang/en.js </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">route</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">dashboard</span><span class="token operator">:</span> <span class="token string">'Dashboard'</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>              </div>            </details><details green><summary pointer> 新增文件：src/lang/zh.js </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">route</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">Dashboard</span><span class="token operator">:</span> <span class="token string">'首页'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">Nested</span><span class="token operator">:</span> <span class="token string">'路由嵌套'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">Menu1</span><span class="token operator">:</span> <span class="token string">'菜单一'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">Menu2</span><span class="token operator">:</span> <span class="token string">'菜单二'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">Menu1_1</span><span class="token operator">:</span> <span class="token string">'分组一'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">Menu1_2</span><span class="token operator">:</span> <span class="token string">'分组二'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">Menu1_3</span><span class="token operator">:</span> <span class="token string">'分组三'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">Menu1_2_1</span><span class="token operator">:</span> <span class="token string">'选项一'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">Menu1_2_2</span><span class="token operator">:</span> <span class="token string">'选项二'</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>              </div>            </details><details green><summary pointer> 新增文件：src/lang/index.js </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span> <span class="token comment">// 引入vue</span>
+<span class="token keyword">import</span> VueI18n <span class="token keyword">from</span> <span class="token string">'vue-i18n'</span> <span class="token comment">// 引入i18n模块</span>
+<span class="token keyword">import</span> elementEnLocale <span class="token keyword">from</span> <span class="token string">'element-ui/lib/locale/lang/en'</span> <span class="token comment">// element-ui英文包</span>
+<span class="token keyword">import</span> elementZhLocale <span class="token keyword">from</span> <span class="token string">'element-ui/lib/locale/lang/zh-CN'</span> <span class="token comment">// element-ui中文包</span>
+<span class="token keyword">import</span> locale <span class="token keyword">from</span> <span class="token string">'element-ui/lib/locale'</span> <span class="token comment">// 引入elementuiui语言包模块</span>
+<span class="token keyword">import</span> enLocale <span class="token keyword">from</span> <span class="token string">'./en'</span> <span class="token comment">// 本地英文包</span>
+<span class="token keyword">import</span> zhLocale <span class="token keyword">from</span> <span class="token string">'./zh'</span> <span class="token comment">// 本地中文包</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueI18n<span class="token punctuation">)</span> <span class="token comment">// vue使用i18n模块</span>
+<span class="token comment">// 引入本地</span>
+<span class="token keyword">const</span> messages <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">en</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token operator">...</span>enLocale<span class="token punctuation">,</span> <span class="token comment">// es6的拓展运算符，相当于解析出每个对象</span>
+    <span class="token operator">...</span>elementEnLocale
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">zh</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token operator">...</span>zhLocale<span class="token punctuation">,</span>
+    <span class="token operator">...</span>elementZhLocale
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 把中英文设置存储在本地缓存中方便动态更改</span>
+<span class="token keyword">let</span> language <span class="token operator">=</span> sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'theLanguage'</span><span class="token punctuation">)</span> <span class="token operator">?</span> sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'theLanguage'</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token string">'zh'</span>
+<span class="token comment">// 创建国际化实例</span>
+<span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueI18n</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">locale</span><span class="token operator">:</span> language<span class="token punctuation">,</span> <span class="token comment">// set locale，默认中文</span>
+  messages <span class="token comment">// set locale messages。语言包</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+locale<span class="token punctuation">.</span><span class="token function">i18n</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">key<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token operator">=></span> i18n<span class="token punctuation">.</span><span class="token function">t</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> i18n<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>              </div>            </details><details green><summary pointer> 新增文件：src/utils/il8n.js </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// translate router.meta.title, be used in breadcrumb sidebar tagsview</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">generateTitle</span><span class="token punctuation">(</span><span class="token parameter">title</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> hasKey <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$te</span><span class="token punctuation">(</span><span class="token string">'route.'</span> <span class="token operator">+</span> title<span class="token punctuation">)</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>hasKey<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// $t :this method from vue-i18n, inject in @/lang/index.js</span>
+    <span class="token keyword">const</span> translatedTitle <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$t</span><span class="token punctuation">(</span><span class="token string">'route.'</span> <span class="token operator">+</span> title<span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> translatedTitle
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">return</span> title
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>              </div>            </details><details green><summary pointer> 修改文件：src/utils/get-page-title.js </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> defaultSettings <span class="token keyword">from</span> <span class="token string">'@/settings'</span>
+<span class="token keyword">import</span> i18n <span class="token keyword">from</span> <span class="token string">'@/lang'</span>
+
+<span class="token keyword">const</span> title <span class="token operator">=</span> defaultSettings<span class="token punctuation">.</span>title <span class="token operator">||</span> <span class="token string">'Vue Element Admin'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">getPageTitle</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> hasKey <span class="token operator">=</span> i18n<span class="token punctuation">.</span><span class="token function">te</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">route.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>key<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>hasKey<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> pageName <span class="token operator">=</span> i18n<span class="token punctuation">.</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">route.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>key<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>pageName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>title<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>title<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>              </div>            </details><details green><summary pointer> 修改文件：src/main.js </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App.vue'</span>
+<span class="token keyword">import</span> router <span class="token keyword">from</span> <span class="token string">'./router'</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'./store'</span>
+
+<span class="token comment">// 引入icons图标</span>
+<span class="token keyword">import</span> <span class="token string">'@/icons'</span>
+<span class="token comment">// 引入axios</span>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span>
+<span class="token comment">// 引入element-ui当中的所有组件</span>
+<span class="token keyword">import</span> ElementUI <span class="token keyword">from</span> <span class="token string">'element-ui'</span>
+<span class="token comment">// 引入element-ui的所有样式</span>
+<span class="token keyword">import</span> <span class="token string">'element-ui/lib/theme-chalk/index.css'</span>
+<span class="token comment">// 全局css</span>
+<span class="token keyword">import</span> <span class="token string">'@/styles/index.scss'</span>
+<span class="token comment">// 初始化</span>
+<span class="token keyword">import</span> <span class="token string">'normalize.css/normalize.css'</span>
+<span class="token comment">// 路由拦截</span>
+<span class="token keyword">import</span> <span class="token string">'@/permission'</span>
+<span class="token comment">// 国际汉化</span>
+<span class="token keyword">import</span> i18n <span class="token keyword">from</span> <span class="token string">'./lang/index'</span>
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span> mockXHR <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../mock'</span><span class="token punctuation">)</span>
+<span class="token function">mockXHR</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>ElementUI<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">size</span><span class="token operator">:</span> <span class="token string">'mini'</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">i18n</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">key<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token operator">=></span> i18n<span class="token punctuation">.</span><span class="token function">t</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+Vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>productionTip <span class="token operator">=</span> <span class="token boolean">false</span>
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$http <span class="token operator">=</span> axios
+
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  router<span class="token punctuation">,</span>
+  store<span class="token punctuation">,</span>
+  i18n<span class="token punctuation">,</span>
+  <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token parameter">h</span> <span class="token operator">=></span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>              </div>            </details><details green><summary pointer> 修改文件：src/components/Breadcrumb/index.vue </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>el<span class="token operator">-</span>breadcrumb
+    <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"app-breadcrumb"</span>
+    separator<span class="token operator">=</span><span class="token string">"/"</span>
+  <span class="token operator">></span>
+    <span class="token operator">&lt;</span>transition<span class="token operator">-</span>group name<span class="token operator">=</span><span class="token string">"breadcrumb"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>el<span class="token operator">-</span>breadcrumb<span class="token operator">-</span>item
+        v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(item,index) in levelList"</span>
+        <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"item.path"</span>
+      <span class="token operator">></span>
+        <span class="token operator">&lt;</span>span
+          v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"item.redirect==='noRedirect'||index==levelList.length-1"</span>
+          <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"no-redirect"</span>
+        <span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> <span class="token function">generateTitle</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>title<span class="token punctuation">)</span> <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+        <span class="token operator">&lt;</span>a
+          v<span class="token operator">-</span><span class="token keyword">else</span>
+          @click<span class="token punctuation">.</span>prevent<span class="token operator">=</span><span class="token string">"handleLink(item)"</span>
+        <span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> <span class="token function">generateTitle</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>title<span class="token punctuation">)</span> <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>breadcrumb<span class="token operator">-</span>item<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>transition<span class="token operator">-</span>group<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>breadcrumb<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> generateTitle <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/utils/il8n'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">levelList</span><span class="token operator">:</span> <span class="token keyword">null</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">watch</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">$route</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getBreadcrumb</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getBreadcrumb</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    generateTitle<span class="token punctuation">,</span>
+    <span class="token function">getBreadcrumb</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token comment">// only show routes with meta.title</span>
+      <span class="token keyword">let</span> matched <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>matched<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> item<span class="token punctuation">.</span>meta <span class="token operator">&amp;&amp;</span> item<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>title<span class="token punctuation">)</span>
+      <span class="token keyword">const</span> first <span class="token operator">=</span> matched<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isDashboard</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        matched <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/dashboard'</span><span class="token punctuation">,</span> <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Dashboard'</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>matched<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+
+      <span class="token keyword">this</span><span class="token punctuation">.</span>levelList <span class="token operator">=</span> matched<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> item<span class="token punctuation">.</span>meta <span class="token operator">&amp;&amp;</span> item<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>title <span class="token operator">&amp;&amp;</span> item<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>breadcrumb <span class="token operator">!==</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">isDashboard</span><span class="token punctuation">(</span><span class="token parameter">route</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> name <span class="token operator">=</span> route <span class="token operator">&amp;&amp;</span> route<span class="token punctuation">.</span>name
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">return</span> name<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLocaleLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'Dashboard'</span><span class="token punctuation">.</span><span class="token function">toLocaleLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">pathCompile</span><span class="token punctuation">(</span><span class="token parameter">path</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">var</span> pathToRegexp <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path-to-regexp'</span><span class="token punctuation">)</span>
+      <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> params <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route
+      <span class="token keyword">var</span> toPath <span class="token operator">=</span> pathToRegexp<span class="token punctuation">.</span><span class="token function">compile</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token function">toPath</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">handleLink</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> redirect<span class="token punctuation">,</span> path <span class="token punctuation">&#125;</span> <span class="token operator">=</span> item
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>redirect<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>redirect<span class="token punctuation">)</span>
+        <span class="token keyword">return</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">pathCompile</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>style lang<span class="token operator">=</span><span class="token string">"scss"</span> scoped<span class="token operator">></span>
+<span class="token punctuation">.</span>app<span class="token operator">-</span>breadcrumb<span class="token punctuation">.</span>el<span class="token operator">-</span>breadcrumb <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">display</span><span class="token operator">:</span> inline<span class="token operator">-</span>block<span class="token punctuation">;</span>
+  font<span class="token operator">-</span>size<span class="token operator">:</span> 14px<span class="token punctuation">;</span>
+  line<span class="token operator">-</span>height<span class="token operator">:</span> 50px<span class="token punctuation">;</span>
+  margin<span class="token operator">-</span>left<span class="token operator">:</span> 8px<span class="token punctuation">;</span>
+
+  <span class="token punctuation">.</span>no<span class="token operator">-</span>redirect <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">color</span><span class="token operator">:</span> #97a8be<span class="token punctuation">;</span>
+    <span class="token literal-property property">cursor</span><span class="token operator">:</span> text<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>              </div>            </details><details green><summary pointer> 修改文件：src/components/HeaderSearch/index.vue </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div
+    <span class="token operator">:</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"&#123;'show':show&#125;"</span>
+    <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"header-search"</span>
+  <span class="token operator">></span>
+    <span class="token operator">&lt;</span>svg<span class="token operator">-</span>icon
+      <span class="token keyword">class</span><span class="token operator">-</span>name<span class="token operator">=</span><span class="token string">"search-icon"</span>
+      icon<span class="token operator">-</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"search"</span>
+      @click<span class="token punctuation">.</span>stop<span class="token operator">=</span><span class="token string">"click"</span>
+    <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>el<span class="token operator">-</span>select
+      ref<span class="token operator">=</span><span class="token string">"headerSearchSelect"</span>
+      v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"search"</span>
+      <span class="token operator">:</span>remote<span class="token operator">-</span>method<span class="token operator">=</span><span class="token string">"querySearch"</span>
+      filterable
+      <span class="token keyword">default</span><span class="token operator">-</span>first<span class="token operator">-</span>option
+      remote
+      placeholder<span class="token operator">=</span><span class="token string">"Search"</span>
+      <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"header-search-select"</span>
+      @change<span class="token operator">=</span><span class="token string">"change"</span>
+    <span class="token operator">></span>
+      <span class="token operator">&lt;</span>el<span class="token operator">-</span>option
+        v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"item in options"</span>
+        <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"item.path"</span>
+        <span class="token operator">:</span>value<span class="token operator">=</span><span class="token string">"item"</span>
+        <span class="token operator">:</span>label<span class="token operator">=</span><span class="token string">"item.title.join(' > ')"</span>
+      <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>select<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">import</span> Fuse <span class="token keyword">from</span> <span class="token string">'fuse.js'</span>
+<span class="token keyword">import</span> path <span class="token keyword">from</span> <span class="token string">'path'</span>
+<span class="token keyword">import</span> i18n <span class="token keyword">from</span> <span class="token string">'@/lang'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'HeaderSearch'</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">search</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">searchPool</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">fuse</span><span class="token operator">:</span> <span class="token keyword">undefined</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">computed</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span>options<span class="token punctuation">.</span>routes
+      <span class="token comment">// return this.$store.getters.permission_routes</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">watch</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>searchPool <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">generateRoutes</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>routes<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">searchPool</span><span class="token punctuation">(</span><span class="token parameter">list</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initFuse</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">show</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>close<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>close<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>searchPool <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">generateRoutes</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>routes<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>show <span class="token operator">=</span> <span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>show
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>show<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>headerSearchSelect <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>headerSearchSelect<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>headerSearchSelect <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>headerSearchSelect<span class="token punctuation">.</span><span class="token function">blur</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>show <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">change</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>val<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>search <span class="token operator">=</span> <span class="token string">''</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>show <span class="token operator">=</span> <span class="token boolean">false</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">initFuse</span><span class="token punctuation">(</span><span class="token parameter">list</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>fuse <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Fuse</span><span class="token punctuation">(</span>list<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">shouldSort</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">threshold</span><span class="token operator">:</span> <span class="token number">0.4</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">location</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">distance</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">maxPatternLength</span><span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">minMatchCharLength</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">keys</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'title'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">weight</span><span class="token operator">:</span> <span class="token number">0.7</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+          <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'path'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">weight</span><span class="token operator">:</span> <span class="token number">0.3</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">generateRoutes</span><span class="token punctuation">(</span>routes<span class="token punctuation">,</span> basePath <span class="token operator">=</span> <span class="token string">'/'</span><span class="token punctuation">,</span> prefixTitle <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> router <span class="token keyword">of</span> routes<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// skip hidden router</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>router<span class="token punctuation">.</span>hidden<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">continue</span> <span class="token punctuation">&#125;</span>
+
+        <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+          <span class="token literal-property property">path</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>basePath<span class="token punctuation">,</span> router<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token operator">...</span>prefixTitle<span class="token punctuation">]</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>router<span class="token punctuation">.</span>meta <span class="token operator">&amp;&amp;</span> router<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>title<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token comment">// generate internationalized title</span>
+          <span class="token keyword">const</span> i18ntitle <span class="token operator">=</span> i18n<span class="token punctuation">.</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">route.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>router<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>title<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+
+          data<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>data<span class="token punctuation">.</span>title<span class="token punctuation">,</span> i18ntitle<span class="token punctuation">]</span>
+
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>router<span class="token punctuation">.</span>redirect <span class="token operator">!==</span> <span class="token string">'noRedirect'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// only push the routes with title</span>
+            <span class="token comment">// special case: need to exclude parent router without redirect</span>
+            res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+          <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token comment">// recursive child routes</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>router<span class="token punctuation">.</span>children<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">const</span> tempRoutes <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">generateRoutes</span><span class="token punctuation">(</span>router<span class="token punctuation">.</span>children<span class="token punctuation">,</span> data<span class="token punctuation">.</span>path<span class="token punctuation">,</span> data<span class="token punctuation">.</span>title<span class="token punctuation">)</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>tempRoutes<span class="token punctuation">.</span>length <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>res<span class="token punctuation">,</span> <span class="token operator">...</span>tempRoutes<span class="token punctuation">]</span>
+          <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">return</span> res
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">querySearch</span><span class="token punctuation">(</span><span class="token parameter">query</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>query <span class="token operator">!==</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>fuse<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>style lang<span class="token operator">=</span><span class="token string">"scss"</span> scoped<span class="token operator">></span>
+<span class="token punctuation">.</span>header<span class="token operator">-</span>search <span class="token punctuation">&#123;</span>
+  font<span class="token operator">-</span>size<span class="token operator">:</span> <span class="token number">0</span> <span class="token operator">!</span>important<span class="token punctuation">;</span>
+
+  <span class="token punctuation">.</span>search<span class="token operator">-</span>icon <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">cursor</span><span class="token operator">:</span> pointer<span class="token punctuation">;</span>
+    font<span class="token operator">-</span>size<span class="token operator">:</span> 18px<span class="token punctuation">;</span>
+    vertical<span class="token operator">-</span>align<span class="token operator">:</span> middle<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token punctuation">.</span>header<span class="token operator">-</span>search<span class="token operator">-</span>select <span class="token punctuation">&#123;</span>
+    font<span class="token operator">-</span>size<span class="token operator">:</span> 18px<span class="token punctuation">;</span>
+    <span class="token literal-property property">transition</span><span class="token operator">:</span> width <span class="token number">0</span><span class="token punctuation">.</span>2s<span class="token punctuation">;</span>
+    <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">overflow</span><span class="token operator">:</span> hidden<span class="token punctuation">;</span>
+    <span class="token literal-property property">background</span><span class="token operator">:</span> transparent<span class="token punctuation">;</span>
+    border<span class="token operator">-</span>radius<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">display</span><span class="token operator">:</span> inline<span class="token operator">-</span>block<span class="token punctuation">;</span>
+    vertical<span class="token operator">-</span>align<span class="token operator">:</span> middle<span class="token punctuation">;</span>
+
+    <span class="token operator">:</span><span class="token operator">:</span>v<span class="token operator">-</span>deep <span class="token punctuation">.</span>el<span class="token operator">-</span>input__inner <span class="token punctuation">&#123;</span>
+      border<span class="token operator">-</span>radius<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token literal-property property">border</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      padding<span class="token operator">-</span>left<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      padding<span class="token operator">-</span>right<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      box<span class="token operator">-</span>shadow<span class="token operator">:</span> none <span class="token operator">!</span>important<span class="token punctuation">;</span>
+      border<span class="token operator">-</span>bottom<span class="token operator">:</span> 1px solid #d9d9d9<span class="token punctuation">;</span>
+      vertical<span class="token operator">-</span>align<span class="token operator">:</span> middle<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token operator">&amp;</span><span class="token punctuation">.</span>show <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">.</span>header<span class="token operator">-</span>search<span class="token operator">-</span>select <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">width</span><span class="token operator">:</span> 210px<span class="token punctuation">;</span>
+      margin<span class="token operator">-</span>left<span class="token operator">:</span> 10px<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>              </div>            </details><details green><summary pointer> 修改文件：src/layout/components/Sidebar/Sidebarlitm.vue </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"!item.hidden"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>template v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span>"<span class="token function">hasOneShowingChild</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>children<span class="token punctuation">,</span>item<span class="token punctuation">)</span>
+        <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token operator">!</span>onlyOneChild<span class="token punctuation">.</span>children<span class="token operator">||</span>onlyOneChild<span class="token punctuation">.</span>noShowingChildren<span class="token punctuation">)</span>
+        <span class="token operator">&amp;&amp;</span><span class="token operator">!</span>item<span class="token punctuation">.</span>alwaysShow"<span class="token operator">></span>
+      <span class="token operator">&lt;</span>app<span class="token operator">-</span>link
+        v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"onlyOneChild.meta"</span>
+        <span class="token operator">:</span>to<span class="token operator">=</span><span class="token string">"resolvePath(onlyOneChild.path)"</span>
+      <span class="token operator">></span>
+        <span class="token operator">&lt;</span>el<span class="token operator">-</span>menu<span class="token operator">-</span>item
+          <span class="token operator">:</span>index<span class="token operator">=</span><span class="token string">"resolvePath(onlyOneChild.path)"</span>
+          <span class="token operator">:</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"&#123;'submenu-title-noDropdown':!isNest&#125;"</span>
+        <span class="token operator">></span>
+          <span class="token operator">&lt;</span>item
+            <span class="token operator">:</span>icon<span class="token operator">=</span><span class="token string">"onlyOneChild.meta.icon||(item.meta&amp;&amp;item.meta.icon)"</span>
+            <span class="token operator">:</span>title<span class="token operator">=</span><span class="token string">"generateTitle(onlyOneChild.meta.title)"</span>
+          <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>menu<span class="token operator">-</span>item<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>app<span class="token operator">-</span>link<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+
+    <span class="token operator">&lt;</span>el<span class="token operator">-</span>submenu
+      v<span class="token operator">-</span><span class="token keyword">else</span>
+      ref<span class="token operator">=</span><span class="token string">"subMenu"</span>
+      <span class="token operator">:</span>index<span class="token operator">=</span><span class="token string">"resolvePath(item.path)"</span>
+      popper<span class="token operator">-</span>append<span class="token operator">-</span>to<span class="token operator">-</span>body
+    <span class="token operator">></span>
+      <span class="token operator">&lt;</span>template slot<span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>item
+          v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"item.meta"</span>
+          <span class="token operator">:</span>icon<span class="token operator">=</span><span class="token string">"item.meta &amp;&amp; item.meta.icon"</span>
+          <span class="token operator">:</span>title<span class="token operator">=</span><span class="token string">"generateTitle(item.meta.title)"</span>
+        <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+      <span class="token operator">&lt;</span>sidebar<span class="token operator">-</span>item
+        v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"child in item.children"</span>
+        <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"child.path"</span>
+        <span class="token operator">:</span>is<span class="token operator">-</span>nest<span class="token operator">=</span><span class="token string">"true"</span>
+        <span class="token operator">:</span>item<span class="token operator">=</span><span class="token string">"child"</span>
+        <span class="token operator">:</span>base<span class="token operator">-</span>path<span class="token operator">=</span><span class="token string">"resolvePath(child.path)"</span>
+        <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"nest-menu"</span>
+      <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>submenu<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">import</span> path <span class="token keyword">from</span> <span class="token string">'path'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> isExternal <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/utils/validate'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> generateTitle <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/utils/il8n'</span>
+<span class="token keyword">import</span> Item <span class="token keyword">from</span> <span class="token string">'@/layout/components/Sidebar/Item'</span>
+<span class="token keyword">import</span> appLink <span class="token keyword">from</span> <span class="token string">'@/layout/components/Sidebar/Link'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'SidebarItem'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> Item<span class="token punctuation">,</span> appLink <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">item</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> Object<span class="token punctuation">,</span>
+      <span class="token literal-property property">required</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">isNest</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> Boolean<span class="token punctuation">,</span>
+      <span class="token keyword">default</span><span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">basePath</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> String<span class="token punctuation">,</span>
+      <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">''</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// this.onlyOneChild = null</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">onlyOneChild</span><span class="token operator">:</span> <span class="token keyword">null</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    generateTitle<span class="token punctuation">,</span>
+    <span class="token function">hasOneShowingChild</span><span class="token punctuation">(</span><span class="token parameter">children <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> parent</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> showingChildren <span class="token operator">=</span> children<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>hidden<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">return</span> <span class="token boolean">false</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+          <span class="token comment">// Temp set(will be used if only has one showing child)</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>onlyOneChild <span class="token operator">=</span> item
+          <span class="token keyword">return</span> <span class="token boolean">true</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+      <span class="token comment">// When there is only one child router, the child router is displayed by default</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>showingChildren<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span>
+      <span class="token punctuation">&#125;</span>
+
+      <span class="token comment">// Show parent if there are no child router to display</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>showingChildren<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>onlyOneChild <span class="token operator">=</span> <span class="token punctuation">&#123;</span> <span class="token operator">...</span>parent<span class="token punctuation">,</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token literal-property property">noShowingChildren</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span>
+      <span class="token punctuation">&#125;</span>
+
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">resolvePath</span><span class="token punctuation">(</span><span class="token parameter">routePath</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isExternal</span><span class="token punctuation">(</span>routePath<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> routePath
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isExternal</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>basePath<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>basePath
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">return</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>basePath<span class="token punctuation">,</span> routePath<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>              </div>            </details><details green><summary pointer> 修改文件：src/layout/components/TagsView/index.vue </summary>              <div class="content">              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div
+    id<span class="token operator">=</span><span class="token string">"tags-view-container"</span>
+    <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"tags-view-container"</span>
+  <span class="token operator">></span>
+    <span class="token operator">&lt;</span>scroll<span class="token operator">-</span>pane
+      ref<span class="token operator">=</span><span class="token string">"scrollPane"</span>
+      <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"tags-view-wrapper"</span>
+      @scroll<span class="token operator">=</span><span class="token string">"handleScroll"</span>
+    <span class="token operator">></span>
+      <span class="token operator">&lt;</span>router<span class="token operator">-</span>link
+        v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"tag in visitedViews"</span>
+        ref<span class="token operator">=</span><span class="token string">"tag"</span>
+        <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"tag.path"</span>
+        <span class="token operator">:</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"isActive(tag)?'active':''"</span>
+        <span class="token operator">:</span>to<span class="token operator">=</span><span class="token string">"&#123; path: tag.path, query: tag.query, fullPath: tag.fullPath &#125;"</span>
+        tag<span class="token operator">=</span><span class="token string">"span"</span>
+        <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"tags-view-item"</span>
+        @click<span class="token punctuation">.</span>middle<span class="token punctuation">.</span>native<span class="token operator">=</span><span class="token string">"!isAffix(tag)?closeSelectedTag(tag):''"</span>
+        @contextmenu<span class="token punctuation">.</span>prevent<span class="token punctuation">.</span>native<span class="token operator">=</span><span class="token string">"openMenu(tag,$event)"</span>
+      <span class="token operator">></span>
+        <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> <span class="token function">generateTitle</span><span class="token punctuation">(</span>tag<span class="token punctuation">.</span>title<span class="token punctuation">)</span> <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+        <span class="token operator">&lt;</span>span
+          v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"!isAffix(tag)"</span>
+          <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"el-icon-close"</span>
+          @click<span class="token punctuation">.</span>prevent<span class="token punctuation">.</span>stop<span class="token operator">=</span><span class="token string">"closeSelectedTag(tag)"</span>
+        <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>scroll<span class="token operator">-</span>pane<span class="token operator">></span>
+    <span class="token operator">&lt;</span>ul
+      v<span class="token operator">-</span>show<span class="token operator">=</span><span class="token string">"visible"</span>
+      <span class="token operator">:</span>style<span class="token operator">=</span><span class="token string">"&#123;left:left+'px',top:top+'px'&#125;"</span>
+      <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"contextmenu"</span>
+    <span class="token operator">></span>
+      <span class="token operator">&lt;</span>li @click<span class="token operator">=</span><span class="token string">"refreshSelectedTag(selectedTag)"</span><span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> <span class="token function">$t</span><span class="token punctuation">(</span><span class="token string">'tagsView.refresh'</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+      <span class="token operator">&lt;</span>li
+        v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"!isAffix(selectedTag)"</span>
+        @click<span class="token operator">=</span><span class="token string">"closeSelectedTag(selectedTag)"</span>
+      <span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> <span class="token function">$t</span><span class="token punctuation">(</span><span class="token string">'tagsView.close'</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+      <span class="token operator">&lt;</span>li @click<span class="token operator">=</span><span class="token string">"closeOthersTags"</span><span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> <span class="token function">$t</span><span class="token punctuation">(</span><span class="token string">'tagsView.closeOthers'</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+      <span class="token operator">&lt;</span>li @click<span class="token operator">=</span><span class="token string">"closeAllTags(selectedTag)"</span><span class="token operator">></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> <span class="token function">$t</span><span class="token punctuation">(</span><span class="token string">'tagsView.closeAll'</span><span class="token punctuation">)</span> <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">import</span> ScrollPane <span class="token keyword">from</span> <span class="token string">'./ScrollPane'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> generateTitle <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@/utils/il8n'</span>
+<span class="token keyword">import</span> path <span class="token keyword">from</span> <span class="token string">'path'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> ScrollPane <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">visible</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">top</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">left</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">selectedTag</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">affixTags</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">computed</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">visitedViews</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>tagsView<span class="token punctuation">.</span>visitedViews
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span>options<span class="token punctuation">.</span>routes
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">watch</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">$route</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">addTags</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">moveToCurrentTag</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">visible</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>closeMenu<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>closeMenu<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initTags</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">addTags</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    generateTitle<span class="token punctuation">,</span>
+    <span class="token function">isActive</span><span class="token punctuation">(</span><span class="token parameter">route</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> route<span class="token punctuation">.</span>path <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>path
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">isAffix</span><span class="token punctuation">(</span><span class="token parameter">tag</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">return</span> tag<span class="token punctuation">.</span>meta <span class="token operator">&amp;&amp;</span> tag<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>affix
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">filterAffixTags</span><span class="token punctuation">(</span>routes<span class="token punctuation">,</span> basePath <span class="token operator">=</span> <span class="token string">'/'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">let</span> tags <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>routes<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        routes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">route</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+          <span class="token comment">//tagPath调整位置，这个是源框架的一个bug，做了修复</span>
+          <span class="token keyword">const</span> tagPath <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>basePath<span class="token punctuation">,</span> route<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>route<span class="token punctuation">.</span>meta <span class="token operator">&amp;&amp;</span> route<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>affix<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            tags<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+              <span class="token literal-property property">fullPath</span><span class="token operator">:</span> tagPath<span class="token punctuation">,</span>
+              <span class="token literal-property property">path</span><span class="token operator">:</span> tagPath<span class="token punctuation">,</span>
+              <span class="token literal-property property">name</span><span class="token operator">:</span> route<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+              <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token operator">...</span>route<span class="token punctuation">.</span>meta <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">&#125;</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>route<span class="token punctuation">.</span>children<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">const</span> tempTags <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">filterAffixTags</span><span class="token punctuation">(</span>route<span class="token punctuation">.</span>children<span class="token punctuation">,</span> tagPath<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>tempTags<span class="token punctuation">.</span>length <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+              tags <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>tags<span class="token punctuation">,</span> <span class="token operator">...</span>tempTags<span class="token punctuation">]</span>
+            <span class="token punctuation">&#125;</span>
+          <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">return</span> tags
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">initTags</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> affixTags <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>affixTags <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">filterAffixTags</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>routes<span class="token punctuation">)</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> tag <span class="token keyword">of</span> affixTags<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// Must have tag name</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>tag<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'tagsView/addVisitedView'</span><span class="token punctuation">,</span> tag<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">addTags</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> name <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'tagsView/addView'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">moveToCurrentTag</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> tags <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>tag
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> tag <span class="token keyword">of</span> tags<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>tag<span class="token punctuation">.</span>to<span class="token punctuation">.</span>path <span class="token operator">===</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>path<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>scrollPane<span class="token punctuation">.</span><span class="token function">moveToTarget</span><span class="token punctuation">(</span>tag<span class="token punctuation">)</span>
+            <span class="token comment">// when query is different then update</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>tag<span class="token punctuation">.</span>to<span class="token punctuation">.</span>fullPath <span class="token operator">!==</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">.</span>fullPath<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+              <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'tagsView/updateVisitedView'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$route<span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">break</span>
+          <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">refreshSelectedTag</span><span class="token punctuation">(</span><span class="token parameter">view</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'tagsView/delCachedView'</span><span class="token punctuation">,</span> view<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> fullPath <span class="token punctuation">&#125;</span> <span class="token operator">=</span> view
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+            <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/redirect'</span> <span class="token operator">+</span> fullPath
+          <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">closeSelectedTag</span><span class="token punctuation">(</span><span class="token parameter">view</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'tagsView/delView'</span><span class="token punctuation">,</span> view<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span> visitedViews <span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isActive</span><span class="token punctuation">(</span>view<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">toLastView</span><span class="token punctuation">(</span>visitedViews<span class="token punctuation">,</span> view<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">closeOthersTags</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>selectedTag<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'tagsView/delOthersViews'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>selectedTag<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">moveToCurrentTag</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">closeAllTags</span><span class="token punctuation">(</span><span class="token parameter">view</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'tagsView/delAllViews'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span> visitedViews <span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>affixTags<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token parameter">tag</span> <span class="token operator">=></span> tag<span class="token punctuation">.</span>path <span class="token operator">===</span> view<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">return</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">toLastView</span><span class="token punctuation">(</span>visitedViews<span class="token punctuation">,</span> view<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">toLastView</span><span class="token punctuation">(</span><span class="token parameter">visitedViews<span class="token punctuation">,</span> view</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> latestView <span class="token operator">=</span> visitedViews<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>latestView<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>latestView<span class="token punctuation">.</span>fullPath<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// now the default is to redirect to the home page if there is no tags-view,</span>
+        <span class="token comment">// you can adjust it according to your needs.</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>view<span class="token punctuation">.</span>name <span class="token operator">===</span> <span class="token string">'Dashboard'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token comment">// to reload home page</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/redirect'</span> <span class="token operator">+</span> view<span class="token punctuation">.</span>fullPath <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">openMenu</span><span class="token punctuation">(</span><span class="token parameter">tag<span class="token punctuation">,</span> e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> menuMinWidth <span class="token operator">=</span> <span class="token number">105</span>
+      <span class="token keyword">const</span> offsetLeft <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>left <span class="token comment">// container margin left</span>
+      <span class="token keyword">const</span> offsetWidth <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">.</span>offsetWidth <span class="token comment">// container width</span>
+      <span class="token keyword">const</span> maxLeft <span class="token operator">=</span> offsetWidth <span class="token operator">-</span> menuMinWidth <span class="token comment">// left boundary</span>
+      <span class="token keyword">const</span> left <span class="token operator">=</span> e<span class="token punctuation">.</span>clientX <span class="token operator">-</span> offsetLeft <span class="token operator">+</span> <span class="token number">15</span> <span class="token comment">// 15: margin right</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">></span> maxLeft<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>left <span class="token operator">=</span> maxLeft
+      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>left <span class="token operator">=</span> left
+      <span class="token punctuation">&#125;</span>
+
+      <span class="token keyword">this</span><span class="token punctuation">.</span>top <span class="token operator">=</span> e<span class="token punctuation">.</span>clientY
+      <span class="token keyword">this</span><span class="token punctuation">.</span>visible <span class="token operator">=</span> <span class="token boolean">true</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>selectedTag <span class="token operator">=</span> tag
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">closeMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>visible <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">handleScroll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">closeMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>style lang<span class="token operator">=</span><span class="token string">"scss"</span> scoped<span class="token operator">></span>
+<span class="token punctuation">.</span>tags<span class="token operator">-</span>view<span class="token operator">-</span>container <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">height</span><span class="token operator">:</span> 34px<span class="token punctuation">;</span>
+  <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+  <span class="token literal-property property">background</span><span class="token operator">:</span> #fff<span class="token punctuation">;</span>
+  border<span class="token operator">-</span>bottom<span class="token operator">:</span> 1px solid #d8dce5<span class="token punctuation">;</span>
+  box<span class="token operator">-</span>shadow<span class="token operator">:</span> <span class="token number">0</span> 1px 3px <span class="token number">0</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.12</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token number">0</span> 3px <span class="token number">0</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.04</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">.</span>tags<span class="token operator">-</span>view<span class="token operator">-</span>wrapper <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">.</span>tags<span class="token operator">-</span>view<span class="token operator">-</span>item <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">display</span><span class="token operator">:</span> inline<span class="token operator">-</span>block<span class="token punctuation">;</span>
+      <span class="token literal-property property">position</span><span class="token operator">:</span> relative<span class="token punctuation">;</span>
+      <span class="token literal-property property">cursor</span><span class="token operator">:</span> pointer<span class="token punctuation">;</span>
+      <span class="token literal-property property">height</span><span class="token operator">:</span> 26px<span class="token punctuation">;</span>
+      line<span class="token operator">-</span>height<span class="token operator">:</span> 26px<span class="token punctuation">;</span>
+      <span class="token literal-property property">border</span><span class="token operator">:</span> 1px solid #d8dce5<span class="token punctuation">;</span>
+      <span class="token literal-property property">color</span><span class="token operator">:</span> #<span class="token number">495060</span><span class="token punctuation">;</span>
+      <span class="token literal-property property">background</span><span class="token operator">:</span> #fff<span class="token punctuation">;</span>
+      <span class="token literal-property property">padding</span><span class="token operator">:</span> <span class="token number">0</span> 8px<span class="token punctuation">;</span>
+      font<span class="token operator">-</span>size<span class="token operator">:</span> 12px<span class="token punctuation">;</span>
+      margin<span class="token operator">-</span>left<span class="token operator">:</span> 5px<span class="token punctuation">;</span>
+      margin<span class="token operator">-</span>top<span class="token operator">:</span> 4px<span class="token punctuation">;</span>
+      <span class="token operator">&amp;</span><span class="token operator">:</span>first<span class="token operator">-</span><span class="token keyword">of</span><span class="token operator">-</span>type <span class="token punctuation">&#123;</span>
+        margin<span class="token operator">-</span>left<span class="token operator">:</span> 15px<span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token operator">&amp;</span><span class="token operator">:</span>last<span class="token operator">-</span><span class="token keyword">of</span><span class="token operator">-</span>type <span class="token punctuation">&#123;</span>
+        margin<span class="token operator">-</span>right<span class="token operator">:</span> 15px<span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token operator">&amp;</span><span class="token punctuation">.</span>active <span class="token punctuation">&#123;</span>
+        background<span class="token operator">-</span>color<span class="token operator">:</span> #42b983<span class="token punctuation">;</span>
+        <span class="token literal-property property">color</span><span class="token operator">:</span> #fff<span class="token punctuation">;</span>
+        border<span class="token operator">-</span>color<span class="token operator">:</span> #42b983<span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span><span class="token operator">:</span><span class="token operator">:</span>before <span class="token punctuation">&#123;</span>
+          <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+          <span class="token literal-property property">background</span><span class="token operator">:</span> #fff<span class="token punctuation">;</span>
+          <span class="token literal-property property">display</span><span class="token operator">:</span> inline<span class="token operator">-</span>block<span class="token punctuation">;</span>
+          <span class="token literal-property property">width</span><span class="token operator">:</span> 8px<span class="token punctuation">;</span>
+          <span class="token literal-property property">height</span><span class="token operator">:</span> 8px<span class="token punctuation">;</span>
+          border<span class="token operator">-</span>radius<span class="token operator">:</span> <span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
+          <span class="token literal-property property">position</span><span class="token operator">:</span> relative<span class="token punctuation">;</span>
+          margin<span class="token operator">-</span>right<span class="token operator">:</span> 2px<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">.</span>contextmenu <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">margin</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">background</span><span class="token operator">:</span> #fff<span class="token punctuation">;</span>
+    z<span class="token operator">-</span>index<span class="token operator">:</span> <span class="token number">3000</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">position</span><span class="token operator">:</span> absolute<span class="token punctuation">;</span>
+    list<span class="token operator">-</span>style<span class="token operator">-</span>type<span class="token operator">:</span> none<span class="token punctuation">;</span>
+    <span class="token literal-property property">padding</span><span class="token operator">:</span> 5px <span class="token number">0</span><span class="token punctuation">;</span>
+    border<span class="token operator">-</span>radius<span class="token operator">:</span> 4px<span class="token punctuation">;</span>
+    font<span class="token operator">-</span>size<span class="token operator">:</span> 12px<span class="token punctuation">;</span>
+    font<span class="token operator">-</span>weight<span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">color</span><span class="token operator">:</span> #<span class="token number">333</span><span class="token punctuation">;</span>
+    box<span class="token operator">-</span>shadow<span class="token operator">:</span> 2px 2px 3px <span class="token number">0</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    li <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">margin</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token literal-property property">padding</span><span class="token operator">:</span> 7px 16px<span class="token punctuation">;</span>
+      <span class="token literal-property property">cursor</span><span class="token operator">:</span> pointer<span class="token punctuation">;</span>
+      <span class="token operator">&amp;</span><span class="token operator">:</span>hover <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">background</span><span class="token operator">:</span> #eee<span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>style lang<span class="token operator">=</span><span class="token string">"scss"</span><span class="token operator">></span>
+<span class="token comment">//reset element css of el-icon-close</span>
+<span class="token punctuation">.</span>tags<span class="token operator">-</span>view<span class="token operator">-</span>wrapper <span class="token punctuation">&#123;</span>
+  <span class="token punctuation">.</span>tags<span class="token operator">-</span>view<span class="token operator">-</span>item <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">.</span>el<span class="token operator">-</span>icon<span class="token operator">-</span>close <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">width</span><span class="token operator">:</span> 16px<span class="token punctuation">;</span>
+      <span class="token literal-property property">height</span><span class="token operator">:</span> 16px<span class="token punctuation">;</span>
+      vertical<span class="token operator">-</span>align<span class="token operator">:</span> 2px<span class="token punctuation">;</span>
+      border<span class="token operator">-</span>radius<span class="token operator">:</span> <span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
+      text<span class="token operator">-</span>align<span class="token operator">:</span> center<span class="token punctuation">;</span>
+      <span class="token literal-property property">transition</span><span class="token operator">:</span> all <span class="token number">0</span><span class="token punctuation">.</span>3s cubic<span class="token operator">-</span><span class="token function">bezier</span><span class="token punctuation">(</span><span class="token number">0.645</span><span class="token punctuation">,</span> <span class="token number">0.045</span><span class="token punctuation">,</span> <span class="token number">0.355</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      transform<span class="token operator">-</span>origin<span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span> <span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
+      <span class="token operator">&amp;</span><span class="token operator">:</span>before <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">transform</span><span class="token operator">:</span> <span class="token function">scale</span><span class="token punctuation">(</span><span class="token number">0.6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token literal-property property">display</span><span class="token operator">:</span> inline<span class="token operator">-</span>block<span class="token punctuation">;</span>
+        vertical<span class="token operator">-</span>align<span class="token operator">:</span> <span class="token operator">-</span>3px<span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token operator">&amp;</span><span class="token operator">:</span>hover <span class="token punctuation">&#123;</span>
+        background<span class="token operator">-</span>color<span class="token operator">:</span> #b4bccc<span class="token punctuation">;</span>
+        <span class="token literal-property property">color</span><span class="token operator">:</span> #fff<span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>              </div>            </details>
               </div>
             </details>
 </div>
