@@ -54,7 +54,7 @@
     <!-- import link -->
     
         
-            
+            <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
         
             
         
@@ -62,7 +62,7 @@
     <!-- import script -->
     
         
-            
+            <script defer src="https://unpkg.com/element-ui/lib/index.js"></script>
         
             
         
@@ -1076,35 +1076,6 @@ module.exprots // 导出
         
           
           <swiper-slide>
-            <div class="item swiper-lazy" data-background="/medias/7.jpg" style=" background-size: 300000px; 
-            background-position: left center;" style="position: relative;">
-              <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
-              <div class="flag" style="z-index: 2;">
-                <div class="img-mask swiper-lazy" data-background="/medias/7.jpg" style="height: 100%; background-size: cover; 
-                  background-position: center center;">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
-                </div>
-                <div class="flag-text">
-                  <div class="flag-text-content">
-                    <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">
-                      <a href="/2022/02/07/webpack-da-bao/">
-                        webpack打包
-                      </a>
-                    </div>
-                    <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">项目打包</div>
-                  </div>
-                  <div class="bottom-one-btn ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="/2022/02/07/webpack-da-bao/" class="read-more swiper-btn-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
-                </div>
-              </div>
-            </div>
-
-          </swiper-slide>
-        
-      
-        
-        
-          
-          <swiper-slide>
             <div class="item swiper-lazy" data-background="/medias/10.jpg" style=" background-size: 300000px; 
             background-position: left center;" style="position: relative;">
               <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
@@ -1123,6 +1094,35 @@ module.exprots // 导出
                     <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">vue2项目搭建</div>
                   </div>
                   <div class="bottom-one-btn ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="/2022/02/07/vue-da-jian-xiang-mu/" class="read-more swiper-btn-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
+                </div>
+              </div>
+            </div>
+
+          </swiper-slide>
+        
+      
+        
+        
+          
+          <swiper-slide>
+            <div class="item swiper-lazy" data-background="/medias/7.jpg" style=" background-size: 300000px; 
+            background-position: left center;" style="position: relative;">
+              <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
+              <div class="flag" style="z-index: 2;">
+                <div class="img-mask swiper-lazy" data-background="/medias/7.jpg" style="height: 100%; background-size: cover; 
+                  background-position: center center;">
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
+                </div>
+                <div class="flag-text">
+                  <div class="flag-text-content">
+                    <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">
+                      <a href="/2022/02/07/webpack-da-bao/">
+                        webpack打包
+                      </a>
+                    </div>
+                    <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">项目打包</div>
+                  </div>
+                  <div class="bottom-one-btn ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="/2022/02/07/webpack-da-bao/" class="read-more swiper-btn-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
                 </div>
               </div>
             </div>
@@ -2133,10 +2133,167 @@ function isEmptyOb
 						<div class="text-main">
 							<div class="title"><a href="/2022/03/13/hexo-ming-ling/">Hexo命令</a></div>
 							<div class="content">
-								hexo启动本地服务hexo s
-创建文章hexo new "此处输入文章名字"
-hexo new page "页面"
+								<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">hexo new "此处输入文章名字"
+hexo new page "页面"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="编写文章"><a href="#编写文章" class="headerlink" title="编写文章"></a>编写文章</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">title: Hexo 命令 #本文标题
+date: 2022-01-13 17:37:37 #创建时间
+update：2022-01-13 18:00:00 #更新日期
+comments: true #是否可评论
+layout: post # 公开文章
+toc: true #是否显示文章目录
+swiper: true # 将改文章放入轮播图中
+swiperImg: '/medias/2.jpg' # 该文章在轮播图中的图片，可以是本地目录下图片也可以是 http://xxx 图片
+swiperDesc: 'Hexo 命令' #文字描述
+top: true #文章是否顶置
+onlyTitle: true #是否显示时间/字数统计/时长/阅读量信息
+categories: "hexo" #分类
+tags: 配置 #标签<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">// 也可以写成一条命令 hexo clean &amp;&amp; hexo g &amp;&amp; hexo s
+hexo clean 清除缓存
+hexo g 生成静态文件
+hexo d 网站部署
+hexo s 启动服务器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="hexo-创建"><a href="#hexo-创建" class="headerlink" title="hexo 创建"></a>hexo 创建</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">npm install hexo<span class="token operator">-</span>cli <span class="token operator">-</span>g
+hexo init blog （blog 项目名）
+cd blog
+npm install
+hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Typora-快捷键"><a href="#Typora-快捷键" class="headerlink" title="Typora 快捷键"></a>Typora 快捷键</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">Ctrl+1：一级标题
+Ctrl+2：二级标题
+Ctrl+3：三级标题
+Ctrl+4：四级标题
+Ctrl+5：五级标题
+Ctrl+6 ：六级标题
+Ctrl+0：段落
 
+Ctrl+I：斜体
+Ctrl+B：粗体
+Ctrl+U：下划线
+Alt+Shift+5：删除线
+Ctrl+Shift+Q: 文字引用
+
+方法一：[链接文字](链接地址 '链接描述')
+例如：[示例链接](https://www.example.com/ '示例链接')
+
+方法二：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>链接地址</span><span class="token punctuation">></span></span>
+例如：&lt;https://www.example.com/>
+
+图片
+&#123;% asset_img 图片路径 图片描述 %&#125;
+post_asset_folder: true
+&#123;% asset_img example.jpg This is an example image %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Front-matter-预定义参数"><a href="#Front-matter-预定义参数" class="headerlink" title="Front-matter 预定义参数"></a>Front-matter 预定义参数</h3><div class="widget test_a" id="test_a" style="order: 0;background: #fff">
+  <table class="content" width="value" height="value" border="value">
+    <tr>
+      <th>配置选项</th>
+      <th>默认值</th>
+      <th>描述</th>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>Markdown 的文件标题</td>
+      <td>文章标题</td>
+    </tr>
+    <tr>
+      <td>date</td>
+      <td>文件创建时的日期时间</td>
+      <td>发布时间，最好保证全局唯一</td>
+    </tr>
+    <tr>
+      <td>update</td>
+      <td>文件修改时的日期时间</td>
+      <td>修改时间，最好保证全局唯一</td>
+    </tr>
+    <tr>
+      <td>top</td>
+      <td>false</td>
+      <td>将该值设为 true，则将该篇文章显示在首页的置顶栏目中</td>
+    </tr>
+    <tr>
+      <td>toc</td>
+      <td>false</td>
+      <td>将该值设为 false，则该篇文章不显示右侧目录</td>
+    </tr>
+    <tr>
+      <td>tocOpen</td>
+      <td>false</td>
+      <td>将该值设为 false，则该篇文章右侧目录默认收缩</td>
+    </tr>
+    <tr>
+      <td>onlyTitle</td>
+      <td>false</td>
+      <td>是否显示时间/字数统计/时长/阅读量信息等信息</td>
+    </tr>
+    <tr>
+      <td>comments</td>
+      <td>false</td>
+      <td>将该值设为 false，则该篇文章不显示评论</td>
+    </tr>
+    <tr>
+      <td>share</td>
+      <td>false</td>
+      <td>将该值设为 false，则该篇文章不显示分享按钮</td>
+    </tr>
+    <tr>
+      <td>copyright</td>
+      <td>false</td>
+      <td>将该值设为 false，则该篇文章不显示版权声明</td>
+    </tr>
+    <tr>
+      <td>donate</td>
+      <td>false</td>
+      <td>将该值设为 false，则该篇文章不显示打赏按钮</td>
+    </tr>
+    <tr>
+      <td>swiper</td>
+      <td>false</td>
+      <td>表示该文章是否需要加入到首页轮播封面中</td>
+    </tr>
+    <tr>
+      <td>bgImgTransition</td>
+      <td>false</td>
+      <td>该篇文章的 bgImg 设置为数组,该值表示背景图片切换的动画,有三种值（fade, scale, translate-fade）</td>
+    </tr>
+    <tr>
+      <td>mathjax</td>
+      <td>false</td>
+      <td>mathjax 公式</td>
+    </tr>
+    <tr>
+      <td>imgTop</td>
+      <td>false</td>
+      <td>设置为 false 则文章和自定义页面顶部不要图片</td>
+    </tr>
+    <tr>
+      <td>tags</td>
+      <td>无</td>
+      <td>文章标签，一篇文章可以多个标签</td>
+    </tr>
+    <tr>
+      <td>categories</td>
+      <td>无</td>
+      <td>文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
+    </tr>
+    <tr>
+      <td>swiperImg</td>
+      <td>无</td>
+      <td>表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
+    </tr>
+    <tr>
+      <td>swiperDesc</td>
+      <td>无</td>
+      <td>表示该文章在首页轮播封面需要显示的文字描述（摘要），如果没有，则使用 excerpt，如果 excerpt 也没有，则取文章内容</td>
+    </tr>
+    <tr>
+      <td>img</td>
+      <td>无</td>
+      <td>文章特征图，该文章显示的图片，没有则默认使用文章的特色图片</td>
+    </tr>
+    <tr>
+      <td>excerpt</td>
+      <td>无</td>
+      <td>文章描述（摘要），该文章在首页的描述文字，如果没有，则取 swiperDesc,如果 swiperDesc 也没有，则取文章内容（优先取</td></tr></table></div>
 							</div>
 						</div>
 						<a href="/2022/03/13/hexo-ming-ling/" class="more">
@@ -2174,8 +2331,6 @@ git add
 			
 		
 			
-		
-			
 				<div class="article-link">
 					
 					<div class="article" style="background-size: cover; 
@@ -2194,6 +2349,8 @@ git add
 						</a>
 					</div>
 				</div>
+			
+		
 			
 		
 			
@@ -3151,7 +3308,7 @@ module.exprots // 导出
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Mar 06 2023 09:14:31 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Mon Mar 06 2023 10:23:06 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2023-03-06 日</div>
           
         </div>

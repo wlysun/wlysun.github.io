@@ -54,7 +54,7 @@
     <!-- import link -->
     
         
-            
+            <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
         
             
         
@@ -62,7 +62,7 @@
     <!-- import script -->
     
         
-            
+            <script defer src="https://unpkg.com/element-ui/lib/index.js"></script>
         
             
         
@@ -724,60 +724,136 @@ Ctrl+Shift+Q: 文字引用
 &#123;% asset_img 图片路径 图片描述 %&#125;
 post_asset_folder: true
 &#123;% asset_img example.jpg This is an example image %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="Front-matter-预定义参数"><a href="#Front-matter-预定义参数" class="headerlink" title="Front-matter 预定义参数"></a>Front-matter 预定义参数</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">配置选项 默认值 描述
-title Markdown 的文件标题 文章标题，强烈建议填写此选项
+<h3 id="Front-matter-预定义参数"><a href="#Front-matter-预定义参数" class="headerlink" title="Front-matter 预定义参数"></a>Front-matter 预定义参数</h3><div class="widget test_a" id="test_a" style="order: 0;background: #fff">
+  <table class="content" width="value" height="value" border="value">
+    <tr>
+      <th>配置选项</th>
+      <th>默认值</th>
+      <th>描述</th>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>Markdown 的文件标题</td>
+      <td>文章标题</td>
+    </tr>
+    <tr>
+      <td>date</td>
+      <td>文件创建时的日期时间</td>
+      <td>发布时间，最好保证全局唯一</td>
+    </tr>
+    <tr>
+      <td>update</td>
+      <td>文件修改时的日期时间</td>
+      <td>修改时间，最好保证全局唯一</td>
+    </tr>
+    <tr>
+      <td>top</td>
+      <td>false</td>
+      <td>将该值设为 true，则将该篇文章显示在首页的置顶栏目中</td>
+    </tr>
+    <tr>
+      <td>toc</td>
+      <td>false</td>
+      <td>将该值设为 false，则该篇文章不显示右侧目录</td>
+    </tr>
+    <tr>
+      <td>tocOpen</td>
+      <td>false</td>
+      <td>将该值设为 false，则该篇文章右侧目录默认收缩</td>
+    </tr>
+    <tr>
+      <td>onlyTitle</td>
+      <td>false</td>
+      <td>是否显示时间/字数统计/时长/阅读量信息等信息</td>
+    </tr>
+    <tr>
+      <td>comments</td>
+      <td>false</td>
+      <td>将该值设为 false，则该篇文章不显示评论</td>
+    </tr>
+    <tr>
+      <td>share</td>
+      <td>false</td>
+      <td>将该值设为 false，则该篇文章不显示分享按钮</td>
+    </tr>
+    <tr>
+      <td>copyright</td>
+      <td>false</td>
+      <td>将该值设为 false，则该篇文章不显示版权声明</td>
+    </tr>
+    <tr>
+      <td>donate</td>
+      <td>false</td>
+      <td>将该值设为 false，则该篇文章不显示打赏按钮</td>
+    </tr>
+    <tr>
+      <td>swiper</td>
+      <td>false</td>
+      <td>表示该文章是否需要加入到首页轮播封面中</td>
+    </tr>
+    <tr>
+      <td>bgImgTransition</td>
+      <td>false</td>
+      <td>该篇文章的 bgImg 设置为数组,该值表示背景图片切换的动画,有三种值（fade, scale, translate-fade）</td>
+    </tr>
+    <tr>
+      <td>mathjax</td>
+      <td>false</td>
+      <td>mathjax 公式</td>
+    </tr>
+    <tr>
+      <td>imgTop</td>
+      <td>false</td>
+      <td>设置为 false 则文章和自定义页面顶部不要图片</td>
+    </tr>
+    <tr>
+      <td>tags</td>
+      <td>无</td>
+      <td>文章标签，一篇文章可以多个标签</td>
+    </tr>
+    <tr>
+      <td>categories</td>
+      <td>无</td>
+      <td>文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
+    </tr>
+    <tr>
+      <td>swiperImg</td>
+      <td>无</td>
+      <td>表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
+    </tr>
+    <tr>
+      <td>swiperDesc</td>
+      <td>无</td>
+      <td>表示该文章在首页轮播封面需要显示的文字描述（摘要），如果没有，则使用 excerpt，如果 excerpt 也没有，则取文章内容</td>
+    </tr>
+    <tr>
+      <td>img</td>
+      <td>无</td>
+      <td>文章特征图，该文章显示的图片，没有则默认使用文章的特色图片</td>
+    </tr>
+    <tr>
+      <td>excerpt</td>
+      <td>无</td>
+      <td>文章描述（摘要），该文章在首页的描述文字，如果没有，则取 swiperDesc,如果 swiperDesc 也没有，则取文章内容（优先取<a id="more"></a>上面的内容）</td>
+    </tr>
+    <tr>
+      <td>bgImg</td>
+      <td>无</td>
+      <td>单独为这篇文章设置背景图片或者背景颜色，可以是数组，数组里面放图片链接，可以是字符串，字符串里面是颜色值，空值则背景颜色透明</td>
+    </tr>
+    <tr>
+      <td>prismjs</td>
+      <td>无</td>
+      <td>如果使用的是 hexo 自带的 prismjs 代码高亮，通过设置该值为该篇文章设置不同的代码高亮主题（default, coy, dark, funky, okaidia, solarizedlight, tomorrow, twilight）</td>
+    </tr>
+    <tr>
+      <td>bgImgDelay</td>
+      <td>180000(三分钟)</td>
+      <td>该篇文章的 bgImg 设置为数组,该值表示背景图片切换的延迟时间</td>
+    </tr>
+</table>
+</div>
 
-date 文件创建时的日期时间 发布时间，强烈建议填写此选项，且最好保证全局唯一
-
-swiper false 表示该文章是否需要加入到首页轮播封面中
-
-swiperImg 无 表示该文章在首页轮播封面需要显示的图片路径，如果没有，
-则默认使用文章的特色图片
-
-swiperDesc 无 表示该文章在首页轮播封面需要显示的文字描述（摘要），
-如果没有，则使用 excerpt，如果 excerpt 也没有，则取文章内容
-
-img 无 文章特征图，该文章显示的图片，没有则默认使用文章的特色图片
-
-excerpt 无 文章描述（摘要），该文章在首页的描述文字，如果没有，
-则取 swiperDesc,如果 swiperDesc 也没有，则取文章内容（优先取<span class="token comment">&lt;!-- more --></span>上面的内容）
-
-top false 将该值设为 true，则将该篇文章显示在首页的置顶栏目中
-
-toc true 将该值设为 false，则该篇文章不显示右侧目录
-
-tocOpen true 将该值设为 false，则该篇文章右侧目录默认收缩
-
-onlyTitle false 文章详情页头部是否只显示标题，不显示日期等信息
-
-comments true 将该值设为 false，则该篇文章不显示评论
-
-share true 将该值设为 false，则该篇文章不显示分享按钮
-
-copyright true 将该值设为 false，则该篇文章不显示版权声明
-
-donate true 将该值设为 false，则该篇文章不显示打赏按钮
-
-bgImg - 单独为这篇文章设置背景图片或者背景颜色，可以是数组，
-数组里面放图片链接，可以是字符串，字符串里面是颜色值，空值则背景颜色透明
-
-bgImgTransition fade 该篇文章的 bgImg 设置为数组,该值表示背景图片切换的动画,
-有三种值（fade, scale, translate-fade）
-
-bgImgDelay 180000(三分钟) 该篇文章的 bgImg 设置为数组,
-该值表示背景图片切换的延迟时间,
-
-categories 无 文章分类，本主题的分类表示宏观上大的分类，
-只建议一篇文章一个分类
-
-prismjs 无 如果使用的是 hexo 自带的 prismjs 代码高亮，通过设置该值为该篇文章
-设置不同的代码高亮主题（default, coy, dark, funky, okaidia, solarizedlight, tomorrow, twilight）
-
-tags 无 文章标签，一篇文章可以多个标签
-
-mathjax false mathjax 公式
-
-imgTop true 设置为 false 则文章和自定义页面顶部不要图片<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wsmrzx/article/details/81478945">https://blog.csdn.net/wsmrzx/article/details/81478945</a><br><a target="_blank" rel="noopener" href="https://yuang01.github.io/post/hexo-theme-bamboo/front-matter/">https://yuang01.github.io/post/hexo-theme-bamboo/front-matter/</a></p>
 </div>
       <div class="post-tags-categories">

@@ -286,16 +286,170 @@
     <link href="https://gitee.com/wlysun/2022/03/13/hexo-ming-ling/"/>
     <id>https://gitee.com/wlysun/2022/03/13/hexo-ming-ling/</id>
     <published>2022-03-12T16:00:00.000Z</published>
-    <updated>2023-01-13T09:15:57.401Z</updated>
+    <updated>2023-03-06T02:21:35.182Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;hexo&quot;&gt;&lt;a href=&quot;#hexo&quot; class=&quot;headerlink&quot; title=&quot;hexo&quot;&gt;&lt;/a&gt;hexo&lt;/h2&gt;&lt;h3 id=&quot;启动本地服务&quot;&gt;&lt;a href=&quot;#启动本地服务&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;hexo&quot;&gt;&lt;a href=&quot;#hexo&quot; class=&quot;headerlink&quot; title=&quot;hexo&quot;&gt;&lt;/a&gt;hexo&lt;/h2&gt;&lt;h3 id=&quot;启动本地服务&quot;&gt;&lt;a href=&quot;#启动本地服务&quot; class=&quot;headerlink&quot; title=&quot;启动本地服务&quot;&gt;&lt;/a&gt;启动本地服务&lt;/h3&gt;&lt;pre class=&quot;line-numbers language-markdown&quot; data-language=&quot;markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;hexo s&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;创建文章&quot;&gt;&lt;a href=&quot;#创建文章&quot; class=&quot;headerlink&quot; title=&quot;创建文章&quot;&gt;&lt;/a&gt;创建文章&lt;/h3&gt;&lt;pre class=&quot;line-numbers language-markdown&quot; data-language=&quot;markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;hexo new &quot;此处输入文章名字&quot;
+hexo new page &quot;页面&quot;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;编写文章&quot;&gt;&lt;a href=&quot;#编写文章&quot; class=&quot;headerlink&quot; title=&quot;编写文章&quot;&gt;&lt;/a&gt;编写文章&lt;/h3&gt;&lt;pre class=&quot;line-numbers language-markdown&quot; data-language=&quot;markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;title: Hexo 命令 #本文标题
+date: 2022-01-13 17:37:37 #创建时间
+update：2022-01-13 18:00:00 #更新日期
+comments: true #是否可评论
+layout: post # 公开文章
+toc: true #是否显示文章目录
+swiper: true # 将改文章放入轮播图中
+swiperImg: &#39;/medias/2.jpg&#39; # 该文章在轮播图中的图片，可以是本地目录下图片也可以是 http://xxx 图片
+swiperDesc: &#39;Hexo 命令&#39; #文字描述
+top: true #文章是否顶置
+onlyTitle: true #是否显示时间/字数统计/时长/阅读量信息
+categories: &quot;hexo&quot; #分类
+tags: 配置 #标签&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;发布文章&quot;&gt;&lt;a href=&quot;#发布文章&quot; class=&quot;headerlink&quot; title=&quot;发布文章&quot;&gt;&lt;/a&gt;发布文章&lt;/h3&gt;&lt;pre class=&quot;line-numbers language-markdown&quot; data-language=&quot;markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;// 也可以写成一条命令 hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo s
+hexo clean 清除缓存
+hexo g 生成静态文件
+hexo d 网站部署
+hexo s 启动服务器&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;hexo-创建&quot;&gt;&lt;a href=&quot;#hexo-创建&quot; class=&quot;headerlink&quot; title=&quot;hexo 创建&quot;&gt;&lt;/a&gt;hexo 创建&lt;/h3&gt;&lt;pre class=&quot;line-numbers language-javascript&quot; data-language=&quot;javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;npm install hexo&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;cli &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;g
+hexo init blog （blog 项目名）
+cd blog
+npm install
+hexo server&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;Typora-快捷键&quot;&gt;&lt;a href=&quot;#Typora-快捷键&quot; class=&quot;headerlink&quot; title=&quot;Typora 快捷键&quot;&gt;&lt;/a&gt;Typora 快捷键&lt;/h3&gt;&lt;pre class=&quot;line-numbers language-markdown&quot; data-language=&quot;markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;Ctrl+1：一级标题
+Ctrl+2：二级标题
+Ctrl+3：三级标题
+Ctrl+4：四级标题
+Ctrl+5：五级标题
+Ctrl+6 ：六级标题
+Ctrl+0：段落
+
+Ctrl+I：斜体
+Ctrl+B：粗体
+Ctrl+U：下划线
+Alt+Shift+5：删除线
+Ctrl+Shift+Q: 文字引用
+
+方法一：[链接文字](链接地址 &#39;链接描述&#39;)
+例如：[示例链接](https://www.example.com/ &#39;示例链接&#39;)
+
+方法二：&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;链接地址&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+例如：&amp;lt;https://www.example.com/&gt;
+
+图片
+&amp;#123;% asset_img 图片路径 图片描述 %&amp;#125;
+post_asset_folder: true
+&amp;#123;% asset_img example.jpg This is an example image %&amp;#125;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;Front-matter-预定义参数&quot;&gt;&lt;a href=&quot;#Front-matter-预定义参数&quot; class=&quot;headerlink&quot; title=&quot;Front-matter 预定义参数&quot;&gt;&lt;/a&gt;Front-matter 预定义参数&lt;/h3&gt;&lt;div class=&quot;widget test_a&quot; id=&quot;test_a&quot; style=&quot;order: 0;background: #fff&quot;&gt;
+  &lt;table class=&quot;content&quot; width=&quot;value&quot; height=&quot;value&quot; border=&quot;value&quot;&gt;
+    &lt;tr&gt;
+      &lt;th&gt;配置选项&lt;/th&gt;
+      &lt;th&gt;默认值&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;title&lt;/td&gt;
+      &lt;td&gt;Markdown 的文件标题&lt;/td&gt;
+      &lt;td&gt;文章标题&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;date&lt;/td&gt;
+      &lt;td&gt;文件创建时的日期时间&lt;/td&gt;
+      &lt;td&gt;发布时间，最好保证全局唯一&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;update&lt;/td&gt;
+      &lt;td&gt;文件修改时的日期时间&lt;/td&gt;
+      &lt;td&gt;修改时间，最好保证全局唯一&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;top&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;将该值设为 true，则将该篇文章显示在首页的置顶栏目中&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;toc&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;将该值设为 false，则该篇文章不显示右侧目录&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;tocOpen&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;将该值设为 false，则该篇文章右侧目录默认收缩&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;onlyTitle&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;是否显示时间/字数统计/时长/阅读量信息等信息&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;comments&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;将该值设为 false，则该篇文章不显示评论&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;share&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;将该值设为 false，则该篇文章不显示分享按钮&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;copyright&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;将该值设为 false，则该篇文章不显示版权声明&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;donate&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;将该值设为 false，则该篇文章不显示打赏按钮&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;swiper&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;表示该文章是否需要加入到首页轮播封面中&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;bgImgTransition&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;该篇文章的 bgImg 设置为数组,该值表示背景图片切换的动画,有三种值（fade, scale, translate-fade）&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mathjax&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;mathjax 公式&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;imgTop&lt;/td&gt;
+      &lt;td&gt;false&lt;/td&gt;
+      &lt;td&gt;设置为 false 则文章和自定义页面顶部不要图片&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;tags&lt;/td&gt;
+      &lt;td&gt;无&lt;/td&gt;
+      &lt;td&gt;文章标签，一篇文章可以多个标签&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;categories&lt;/td&gt;
+      &lt;td&gt;无&lt;/td&gt;
+      &lt;td&gt;文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;swiperImg&lt;/td&gt;
+      &lt;td&gt;无&lt;/td&gt;
+      &lt;td&gt;表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;swiperDesc&lt;/td&gt;
+      &lt;td&gt;无&lt;/td&gt;
+      &lt;td&gt;表示该文章在首页轮播封面需要显示的文字描述（摘要），如果没有，则使用 excerpt，如果 excerpt 也没有，则取文章内容&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;img&lt;/td&gt;
+      &lt;td&gt;无&lt;/td&gt;
+      &lt;td&gt;文章特征图，该文章显示的图片，没有则默认使用文章的特色图片&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;excerpt&lt;/td&gt;
+      &lt;td&gt;无&lt;/td&gt;
+      &lt;td&gt;文章描述（摘要），该文章在首页的描述文字，如果没有，则取 swiperDesc,如果 swiperDesc 也没有，则取文章内容（优先取&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</summary>
     
     
     
@@ -382,31 +536,6 @@
   </entry>
   
   <entry>
-    <title>webpack打包</title>
-    <link href="https://gitee.com/wlysun/2022/02/07/webpack-da-bao/"/>
-    <id>https://gitee.com/wlysun/2022/02/07/webpack-da-bao/</id>
-    <published>2022-02-06T16:00:00.000Z</published>
-    <updated>2022-12-02T10:28:10.141Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;webpack-打包&quot;&gt;&lt;a href=&quot;#webpack-打包&quot; class=&quot;headerlink&quot; title=&quot;webpack 打包&quot;&gt;&lt;/a&gt;webpack 打包&lt;/h1&gt;&lt;h2 id=&quot;webpack-在项目中的常见配置&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-    <category term="项目打包" scheme="https://gitee.com/wlysun/tags/%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>vue搭建项目</title>
     <link href="https://gitee.com/wlysun/2022/02/07/vue-da-jian-xiang-mu/"/>
     <id>https://gitee.com/wlysun/2022/02/07/vue-da-jian-xiang-mu/</id>
@@ -428,6 +557,31 @@
     
     
     <category term="项目搭建" scheme="https://gitee.com/wlysun/tags/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>webpack打包</title>
+    <link href="https://gitee.com/wlysun/2022/02/07/webpack-da-bao/"/>
+    <id>https://gitee.com/wlysun/2022/02/07/webpack-da-bao/</id>
+    <published>2022-02-06T16:00:00.000Z</published>
+    <updated>2022-12-02T10:28:10.141Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;webpack-打包&quot;&gt;&lt;a href=&quot;#webpack-打包&quot; class=&quot;headerlink&quot; title=&quot;webpack 打包&quot;&gt;&lt;/a&gt;webpack 打包&lt;/h1&gt;&lt;h2 id=&quot;webpack-在项目中的常见配置&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="项目打包" scheme="https://gitee.com/wlysun/tags/%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/"/>
     
   </entry>
   
