@@ -653,6 +653,10 @@
     
 
     <!-- 增添update时间 -->
+    
+    <span class="post-detail-header_update">
+      <i class="fas fa-history"></i> 更新于：2023-03-09 |
+    </span>
      
     <span class="post-detail-header_categories">
       <i class="iconfont iconbookmark1"></i> 分类： 
@@ -670,7 +674,101 @@
 <div class="post-detail-content row justify-position" style="padding-top: 0px">
   <div class="main-content">
     <article class="post post-detail">
-      <div class="post-content"></div>
+      <div class="post-content"><h1 id="Vuex-是一个专为-Vue-js-应用程序开发的状态管理模式，核心就是-store（仓库）用来储存东西的。"><a href="#Vuex-是一个专为-Vue-js-应用程序开发的状态管理模式，核心就是-store（仓库）用来储存东西的。" class="headerlink" title="Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，核心就是 store（仓库）用来储存东西的。"></a>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，核心就是 store（仓库）用来储存东西的。</h1><h2 id="核心属性"><a href="#核心属性" class="headerlink" title="核心属性"></a>核心属性</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">VueX 五个核心属性分别是 state、getter，mutations、actions、module
+
+<span class="token literal-property property">state</span><span class="token operator">:</span> 定义 vuex 的数据地方
+
+<span class="token literal-property property">actions</span><span class="token operator">:</span>定义异步延迟的方法
+
+<span class="token literal-property property">mutations</span><span class="token operator">:</span> 唯一可以修改 state 数据的方法
+
+<span class="token literal-property property">getters</span><span class="token operator">:</span>从现有 state 数据计算出新的数据， 类似于 vue 组件中的计算属性，对 state 数据进行计算（会被缓存）
+
+<span class="token literal-property property">modules</span><span class="token operator">:</span>模块化管理 store（仓库），每个模块拥有自己的 state、mutation、action、getter<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">mutation中的方法用commit回调
+
+actions中的方法用dispatch回调
+
+state里的状态只能在mutation中更改<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><h3 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">npm i vuex <span class="token operator">-</span><span class="token constant">S</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="新建：src-x2F-stroe-x2F-index-js"><a href="#新建：src-x2F-stroe-x2F-index-js" class="headerlink" title="新建：src&#x2F;stroe&#x2F;index.js"></a>新建：src&#x2F;stroe&#x2F;index.js</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 初始化一个vuex的实例（数据仓库） 导出即可</span>
+<span class="token keyword">import</span> Vuex <span class="token keyword">from</span> <span class="token string">'vuex'</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+
+<span class="token comment">// 使用安装</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Vuex<span class="token punctuation">)</span>
+
+<span class="token comment">// 初始化</span>
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">state</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">getters</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">mutations</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">actions</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">modules</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 导出</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> store<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="main-js-挂载"><a href="#main-js-挂载" class="headerlink" title="main.js 挂载"></a>main.js 挂载</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'@/store'</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  <span class="token comment">// 把store对象挂载到vue实例对象中，这样就可以在所有的组件中获取store中的数据了</span>
+  store<span class="token punctuation">,</span>
+  <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token parameter">h</span> <span class="token operator">=></span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="state"><a href="#state" class="headerlink" title="state"></a>state</h3><p>状态 state 用于存储所有组件的数据</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">state</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">// 定义vuex中的数据</span>
+	<span class="token literal-property property">cartNum</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+获取数据可以通过 $store<span class="token punctuation">.</span>state
+
+可以使用计算属性优化模板中获取数据的方式
+
+state中的数据是自定义的，但是state属性名是固定的
+
+计算属性不可以使用箭头函数（箭头函数本身是没有<span class="token keyword">this</span>的，实际上用的是父级函数中的<span class="token keyword">this</span>）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="getters"><a href="#getters" class="headerlink" title="getters"></a>getters</h3><p>从现有 state 数据计算出新的数据</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//在组件中调用</span>
+$store<span class="token punctuation">.</span>getters<span class="token punctuation">.</span>fee
+<span class="token comment">// 相当于state的计算属性（基于State处理成另外一份数据）</span>
+<span class="token comment">// getters的主要应用场景：模板中需要的数据和State中的数据不完全一样</span>
+<span class="token comment">// 需要基于state中的数据进行加工处理，形成一份新的的数据，给模板使用</span>
+<span class="token literal-property property">getters</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">// 从现有数据计算新的数据 每个商品佣金是0.5元</span>
+	<span class="token comment">// fee佣金会跟随cartNum变化而变化</span>
+	<span class="token function-variable function">fee</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">state</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> state<span class="token punctuation">.</span>cartNum<span class="token operator">*</span><span class="token number">0.5</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在调用时，使用$store.getters.方法名，如$store.getters.powerCounter 即可</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">caleList</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 注意：获取getters的值，不需要加括号（当属性使用）</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>getters<span class="token punctuation">.</span>getPartList
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="mutations"><a href="#mutations" class="headerlink" title="mutations"></a>mutations</h3><p>唯一可以改变 state 数据的工具 (提交 mutations)<br>先定义（mutations），再出发 this.$store.commit(‘mutation 的名称，参数’)<br>Vuex 规定必须通过 mutation 修改数据，不可以直接通过 store 修改状态数据<br>为什么要用 mutation 方式修改数据？统一管理数据，便于监控数据变化</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">mutations</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">// 修改state数据必须在mutations中的方法</span>
+	<span class="token comment">// 方法名建议大写</span>
+	<span class="token constant">SET_CART_NUM</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span>data</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token comment">// 修改cartNum的值</span>
+		state<span class="token punctuation">.</span>cartNum <span class="token operator">=</span> data<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>p<span class="token operator">></span>购物车数量<span class="token operator">:</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>cartNum<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+<span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"$store.commit('SET_CART_NUM',100)"</span><span class="token operator">></span>修改为<span class="token number">100</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+<span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"$store.commit('SET_CART_NUM',$store.state.cartNum+1)"</span><span class="token operator">></span>修改<span class="token operator">+</span><span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span><span class="token operator">&lt;</span>br<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="actions"><a href="#actions" class="headerlink" title="actions"></a>actions</h3><p>定义异步延迟的方法 this.$store.dispatch(‘getCartNum’, context,data)<br>使用异步操作 devtools 将不能很好地追踪,如果确实有异步操作，要使用 Action 替代 mutation 完成</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">actions</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// actions是固定的，用于定义异步,网络延迟等方法</span>
+	<span class="token comment">// 只能调用mutations,不能直接修改state</span>
+	<span class="token function">getCartNum</span><span class="token punctuation">(</span><span class="token parameter">context<span class="token punctuation">,</span>data</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token comment">// 可以执行网络请求,等待延迟</span>
+		<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+			<span class="token comment">// 等待4秒后执行mutations的 SET_CART_NUM方法</span>
+			context<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">"SET_CART_NUM"</span><span class="token punctuation">,</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//修改了cartNum的值为1</span>
+		<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token number">4000</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
       <div class="post-tags-categories">
         
         <div class="tags">
