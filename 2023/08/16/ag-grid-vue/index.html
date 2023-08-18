@@ -670,8 +670,8 @@
 <div class="post-detail-content row justify-position" style="padding-top: 0px">
   <div class="main-content">
     <article class="post post-detail">
-      <div class="post-content"><p>官网：<a target="_blank" rel="noopener" href="https://www.ag-grid.com/vue-data-grid/vue2/">https://www.ag-grid.com/vue-data-grid/vue2/</a></p>
-<details green><summary pointer> 依赖下载 </summary>
+      <div class="post-content"><p>这是一个基于Vue.js的数据表格组件。<br>官网：<a target="_blank" rel="noopener" href="https://www.ag-grid.com/vue-data-grid/vue2/">https://www.ag-grid.com/vue-data-grid/vue2/</a></p>
+<h2 id="依赖下载"><a href="#依赖下载" class="headerlink" title="依赖下载"></a>依赖下载</h2><details green><summary pointer> 依赖下载 </summary>
               <div class="content">
               <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">npm install <span class="token operator">--</span>save ag<span class="token operator">-</span>grid<span class="token operator">-</span>community ag<span class="token operator">-</span>grid<span class="token operator">-</span>vue vue<span class="token operator">-</span>property<span class="token operator">-</span>decorator@<span class="token operator">^</span><span class="token number">8.0</span><span class="token number">.0</span>
 npm install <span class="token operator">--</span>save ag<span class="token operator">-</span>grid<span class="token operator">-</span>enterprise<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -754,20 +754,109 @@ export default &#123;
 &lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
               </div>
             </details>
-<details green><summary pointer> 右键功能 </summary>
-              <div class="content">
-              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">autoGroupColumnDef
 
-<span class="token literal-property property">autoGroupColumnDef</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token literal-property property">headerName</span><span class="token operator">:</span> <span class="token string">'Model'</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">field</span><span class="token operator">:</span> <span class="token string">'model'</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">cellRenderer</span><span class="token operator">:</span> <span class="token string">'agGroupCellRenderer'</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">cellRendererParams</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-      <span class="token literal-property property">checkbox</span><span class="token operator">:</span> <span class="token boolean">true</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="扩展功能"><a href="#扩展功能" class="headerlink" title="扩展功能"></a>扩展功能</h2><h3 id="右键功能"><a href="#右键功能" class="headerlink" title="右键功能"></a>右键功能</h3><details green><summary pointer> 右键功能 </summary>
+              <div class="content">
+              <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>ag<span class="token operator">-</span>grid<span class="token operator">-</span>vue <span class="token operator">:</span>autoGroupColumnDef<span class="token operator">=</span><span class="token string">"autoGroupColumnDef"</span> <span class="token operator">/</span><span class="token operator">></span>
+
+<span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+     <span class="token literal-property property">autoGroupColumnDef</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+       <span class="token literal-property property">headerName</span><span class="token operator">:</span> <span class="token string">'Model'</span><span class="token punctuation">,</span>
+       <span class="token literal-property property">field</span><span class="token operator">:</span> <span class="token string">'model'</span><span class="token punctuation">,</span>
+       <span class="token literal-property property">cellRenderer</span><span class="token operator">:</span> <span class="token string">'agGroupCellRenderer'</span><span class="token punctuation">,</span>
+       <span class="token literal-property property">cellRendererParams</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+          <span class="token literal-property property">checkbox</span><span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
               </div>
-            </details></div>
+            </details>
+
+<h2 id="样式修改"><a href="#样式修改" class="headerlink" title="样式修改"></a>样式修改</h2><details green><summary pointer> 表格样式 </summary>
+              <div class="content">
+              <p>node_modules 搜索</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">[</span><span class="token keyword">class</span><span class="token operator">*=</span>ag<span class="token operator">-</span>theme<span class="token operator">-</span><span class="token punctuation">]</span> <span class="token punctuation">&#123;</span>
+  <span class="token operator">--</span>ag<span class="token operator">-</span>cell<span class="token operator">-</span>horizontal<span class="token operator">-</span>border     表体border
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">.</span>ag<span class="token operator">-</span>theme<span class="token operator">-</span>alpine<span class="token punctuation">,</span> <span class="token punctuation">.</span>ag<span class="token operator">-</span>theme<span class="token operator">-</span>alpine<span class="token operator">-</span>dark <span class="token punctuation">&#123;</span>
+  <span class="token operator">--</span>ag<span class="token operator">-</span>header<span class="token operator">-</span>background<span class="token operator">-</span>color             表头背景颜色
+  <span class="token operator">--</span>ag<span class="token operator">-</span>header<span class="token operator">-</span>column<span class="token operator">-</span>resize<span class="token operator">-</span>handle<span class="token operator">-</span>height  表头border高度
+  <span class="token operator">--</span>ag<span class="token operator">-</span>header<span class="token operator">-</span>column<span class="token operator">-</span>resize<span class="token operator">-</span>handle<span class="token operator">-</span>width   表头border宽度
+  <span class="token operator">--</span>ag<span class="token operator">-</span>odd<span class="token operator">-</span>row<span class="token operator">-</span>background<span class="token operator">-</span>color            奇数表体背景颜色
+  <span class="token operator">--</span>ag<span class="token operator">-</span>background<span class="token operator">-</span>color                    偶数表体背景颜色
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+              </div>
+            </details>
+
+<h2 id="配置项"><a href="#配置项" class="headerlink" title="配置项"></a>配置项</h2><div class="widget test_a" id="test_a" style="order: 0;background: #fff">
+  <table class="content" width="value" height="value" border="value">
+    <tr>
+      <th>配置选项</th>
+      <th>默认值</th>
+      <th>描述</th>
+    </tr>
+    <tr>
+      <td>headerName</td>
+      <td>自定义</td>
+      <td>表头名称</td>
+    </tr>
+    <tr>
+      <td>field</td>
+      <td>自定义</td>
+      <td>字段名称</td>
+    </tr>
+    <tr>
+      <td>valueGetter</td>
+      <td>node.rowIndex + 1</td>
+      <td>排列序号</td>
+    </tr>
+    <tr>
+      <td>width</td>
+      <td>10</td>
+      <td>表体宽度</td>
+    </tr>
+    <tr>
+      <td>sortable</td>
+      <td>false</td>
+      <td>表格排序</td>
+    </tr>
+    <tr>
+      <td>filter</td>
+      <td>false</td>
+      <td>表格过滤</td>
+    </tr>
+    <tr>
+      <td>suppressMenu</td>
+      <td>false</td>
+      <td>表头分组</td>
+    </tr>
+    <tr>
+      <td>pinned</td>
+      <td>left，right</td>
+      <td>列固定</td>
+    </tr>
+    <tr>
+      <td>cellClass</td>
+      <td>类名自定义</td>
+      <td>表格class</td>
+    </tr>
+    <tr>
+      <td>checkboxSelection</td>
+      <td>false</td>
+      <td>表体勾选</td>
+    </tr>
+    <tr>
+      <td>headerCheckboxSelection</td>
+      <td>false</td>
+      <td>表头勾选</td>
+    </tr>
+    <tr>
+      <td>gridOptions</td>
+      <td>对象</td>
+      <td>表格配置属性</td>
+    </tr>
+</table>
+</div></div>
       <div class="post-tags-categories">
         
         <div class="tags">
