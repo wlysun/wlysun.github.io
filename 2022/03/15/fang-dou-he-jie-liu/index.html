@@ -653,6 +653,10 @@
     
 
     <!-- 增添update时间 -->
+    
+    <span class="post-detail-header_update">
+      <i class="fas fa-history"></i> 更新于：2023-10-24 |
+    </span>
      
     <span class="post-detail-header_categories">
       <i class="iconfont iconbookmark1"></i> 分类： 
@@ -701,18 +705,18 @@
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> item</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> item</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
       <span class="token comment">// 如果为true，就触发技能，否则就不能触发</span>
       <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>canUse<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token comment">// 触发技能后，关闭开关</span>
         <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>canUse <span class="token operator">=</span> <span class="token boolean">false</span>
         <span class="token comment">// 在3秒后打开开关</span>
-        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span>canUse <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span> item<span class="token punctuation">)</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>canUse <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> item<span class="token punctuation">)</span>
       <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
     <span class="token function">sends</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">debounce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">throttle</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
       <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span>
     <span class="token punctuation">&#125;</span>
