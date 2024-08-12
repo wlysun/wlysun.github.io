@@ -6,7 +6,7 @@
   <link href="https://gitee.com/wlysun/atom.xml" rel="self"/>
   
   <link href="https://gitee.com/wlysun/"/>
-  <updated>2023-08-23T09:50:17.143Z</updated>
+  <updated>2024-08-12T10:22:54.454Z</updated>
   <id>https://gitee.com/wlysun/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>上传项目到服务器</title>
+    <link href="https://gitee.com/wlysun/2024/08/12/fu-wu-qi/"/>
+    <id>https://gitee.com/wlysun/2024/08/12/fu-wu-qi/</id>
+    <published>2024-08-11T16:00:00.000Z</published>
+    <updated>2024-08-12T10:22:54.454Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;上传项目到腾讯云服务器&quot;&gt;&lt;a href=&quot;#上传项目到腾讯云服务器&quot; class=&quot;headerlink&quot; title=&quot;上传项目到腾讯云服务器&quot;&gt;&lt;/a&gt;上传项目到腾讯云服务器&lt;/h1&gt;&lt;h2 id=&quot;选择服务器&quot;&gt;&lt;a href=&quot;#选择服务器&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="服务器" scheme="https://gitee.com/wlysun/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+    <category term="服务器知识点" scheme="https://gitee.com/wlysun/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    
+  </entry>
   
   <entry>
     <title>ag-grid-vue</title>
@@ -68,31 +93,6 @@
   </entry>
   
   <entry>
-    <title>ERP前端</title>
-    <link href="https://gitee.com/wlysun/2022/12/16/erp-guan-li/"/>
-    <id>https://gitee.com/wlysun/2022/12/16/erp-guan-li/</id>
-    <published>2022-12-15T16:00:00.000Z</published>
-    <updated>2023-03-07T05:41:16.185Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;技术栈：vue-vuex-webpack-axios-sass&quot;&gt;&lt;a href=&quot;#技术栈：vue-vuex-webpack-axios-sass&quot; class=&quot;headerlink&quot; title=&quot;技术栈：vue + vuex + webpack +</summary>
-        
-      
-    
-    
-    
-    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-    <category term="vue后台" scheme="https://gitee.com/wlysun/tags/vue%E5%90%8E%E5%8F%B0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>后台管理</title>
     <link href="https://gitee.com/wlysun/2022/12/16/erp-hou-tai/"/>
     <id>https://gitee.com/wlysun/2022/12/16/erp-hou-tai/</id>
@@ -114,31 +114,6 @@
     
     
     <category term="vue后台" scheme="https://gitee.com/wlysun/tags/vue%E5%90%8E%E5%8F%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ERP后端</title>
-    <link href="https://gitee.com/wlysun/2022/12/15/erp-zhi-xiang/"/>
-    <id>https://gitee.com/wlysun/2022/12/15/erp-zhi-xiang/</id>
-    <published>2022-12-14T16:00:00.000Z</published>
-    <updated>2023-02-28T06:04:01.627Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;技术栈：node-koa2-mysql-swagger&quot;&gt;&lt;a href=&quot;#技术栈：node-koa2-mysql-swagger&quot; class=&quot;headerlink&quot; title=&quot;技术栈：node + koa2 + mysql +</summary>
-        
-      
-    
-    
-    
-    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-    <category term="node接口" scheme="https://gitee.com/wlysun/tags/node%E6%8E%A5%E5%8F%A3/"/>
     
   </entry>
   
@@ -570,31 +545,6 @@ post_asset_folder: true
   </entry>
   
   <entry>
-    <title>webpack打包</title>
-    <link href="https://gitee.com/wlysun/2022/02/07/webpack-da-bao/"/>
-    <id>https://gitee.com/wlysun/2022/02/07/webpack-da-bao/</id>
-    <published>2022-02-06T16:00:00.000Z</published>
-    <updated>2022-12-02T10:28:10.141Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;webpack-打包&quot;&gt;&lt;a href=&quot;#webpack-打包&quot; class=&quot;headerlink&quot; title=&quot;webpack 打包&quot;&gt;&lt;/a&gt;webpack 打包&lt;/h1&gt;&lt;h2 id=&quot;webpack-在项目中的常见配置&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
-    
-    <category term="项目打包" scheme="https://gitee.com/wlysun/tags/%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>vue搭建项目</title>
     <link href="https://gitee.com/wlysun/2022/02/07/vue-da-jian-xiang-mu/"/>
     <id>https://gitee.com/wlysun/2022/02/07/vue-da-jian-xiang-mu/</id>
@@ -616,6 +566,31 @@ post_asset_folder: true
     
     
     <category term="项目搭建" scheme="https://gitee.com/wlysun/tags/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>webpack打包</title>
+    <link href="https://gitee.com/wlysun/2022/02/07/webpack-da-bao/"/>
+    <id>https://gitee.com/wlysun/2022/02/07/webpack-da-bao/</id>
+    <published>2022-02-06T16:00:00.000Z</published>
+    <updated>2022-12-02T10:28:10.141Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;webpack-打包&quot;&gt;&lt;a href=&quot;#webpack-打包&quot; class=&quot;headerlink&quot; title=&quot;webpack 打包&quot;&gt;&lt;/a&gt;webpack 打包&lt;/h1&gt;&lt;h2 id=&quot;webpack-在项目中的常见配置&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="项目" scheme="https://gitee.com/wlysun/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="项目打包" scheme="https://gitee.com/wlysun/tags/%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/"/>
     
   </entry>
   
@@ -666,6 +641,31 @@ post_asset_folder: true
     
     
     <category term="前端笔记" scheme="https://gitee.com/wlysun/tags/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网址</title>
+    <link href="https://gitee.com/wlysun/2022/01/14/wang-zhi/"/>
+    <id>https://gitee.com/wlysun/2022/01/14/wang-zhi/</id>
+    <published>2022-01-13T16:00:00.000Z</published>
+    <updated>2022-12-02T10:27:46.808Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;URL&quot;&gt;&lt;a href=&quot;#URL&quot; class=&quot;headerlink&quot; title=&quot;URL&quot;&gt;&lt;/a&gt;URL&lt;/h2&gt;&lt;h3 id=&quot;谷歌插件&quot;&gt;&lt;a href=&quot;#谷歌插件&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="插件" scheme="https://gitee.com/wlysun/categories/%E6%8F%92%E4%BB%B6/"/>
+    
+    
+    <category term="网址" scheme="https://gitee.com/wlysun/tags/%E7%BD%91%E5%9D%80/"/>
     
   </entry>
   
