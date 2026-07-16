@@ -680,36 +680,40 @@
 
 <h3 id="配置-vscode-插件"><a href="#配置-vscode-插件" class="headerlink" title="配置 vscode 插件"></a>配置 vscode 插件</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">Chinese</span> <span class="token punctuation">(</span>Simplified<span class="token punctuation">)</span> <span class="token punctuation">(</span>简体中文<span class="token punctuation">)</span>
 别名路径跳转
-ChatGPT中文版
-Auto Close Tag
-Color Highlight
-<span class="token function">ESLint</span> <span class="token punctuation">(</span>可有可无<span class="token punctuation">)</span>
-formate<span class="token operator">-</span>custom<span class="token operator">:</span> <span class="token constant">CSS</span><span class="token operator">/</span><span class="token constant">LESS</span><span class="token operator">/</span><span class="token constant">SCS</span>
-Git History
-GitLens — Git supercharged
-Image preview
-javascript console utils
-open <span class="token keyword">in</span> browser
-Path Intellisense
-Power Mode
-Prettier <span class="token operator">-</span> Code formatter
-Vetur
-Vue VSCode Snippets<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token constant">CSS</span> <span class="token function">Peek</span> <span class="token punctuation">(</span>样式类名跳转<span class="token punctuation">)</span>
+Auto Close <span class="token function">Tag</span> <span class="token punctuation">(</span>自动添加<span class="token constant">HTML</span><span class="token operator">/</span><span class="token constant">XML</span><span class="token punctuation">)</span>
+Auto Rename <span class="token function">Tag</span> <span class="token punctuation">(</span>自动重命名成对的<span class="token constant">HTML</span><span class="token operator">/</span><span class="token constant">XML</span><span class="token punctuation">)</span>
+Path <span class="token function">Intellisense</span> <span class="token punctuation">(</span>路径提示<span class="token punctuation">)</span>
+Git <span class="token function">History</span> <span class="token punctuation">(</span>git历史记录<span class="token punctuation">)</span>
+GitLens — Git <span class="token function">supercharged</span> <span class="token punctuation">(</span>git历史记录<span class="token punctuation">)</span>
+Image <span class="token function">preview</span> <span class="token punctuation">(</span>图片预览<span class="token punctuation">)</span>
+javascript console <span class="token function">utils</span> <span class="token punctuation">(</span>快捷打印<span class="token punctuation">)</span>
+i18n <span class="token function">Ally</span> <span class="token punctuation">(</span>i18n多语言<span class="token punctuation">)</span>
+open <span class="token keyword">in</span> <span class="token function">browser</span> <span class="token punctuation">(</span>浏览器打开<span class="token punctuation">)</span>
+Power <span class="token function">Mode</span> <span class="token punctuation">(</span>打字特效<span class="token punctuation">)</span>
+<span class="token function">ESLint</span> <span class="token punctuation">(</span>代码校验<span class="token punctuation">)</span>
+<span class="token function">Stylelint</span> <span class="token punctuation">(</span>代码检查<span class="token punctuation">)</span>
+Color <span class="token function">Highlight</span> <span class="token punctuation">(</span>样式设置<span class="token punctuation">)</span>
+Prettier <span class="token operator">-</span> Code <span class="token function">formatter</span> <span class="token punctuation">(</span>代码格式化<span class="token punctuation">)</span>
+formate<span class="token operator">-</span>custom<span class="token operator">:</span> <span class="token constant">CSS</span><span class="token operator">/</span><span class="token constant">LESS</span><span class="token operator">/</span><span class="token constant">SCS</span> <span class="token punctuation">(</span>样式格式化<span class="token punctuation">)</span>
+<span class="token function">DotENV</span> <span class="token punctuation">(</span>代码高亮<span class="token punctuation">)</span>
+<span class="token function">Vetur</span> <span class="token punctuation">(</span>代码高亮<span class="token punctuation">)</span>
+Vue VSCode <span class="token function">Snippets</span> <span class="token punctuation">(</span>vue代码片段<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="settings-json"><a href="#settings-json" class="headerlink" title="settings.json :"></a>settings.json :</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">&#123;</span>
   <span class="token comment">// vscode默认启用了根据文件类型自动设置tabsize的选项</span>
   <span class="token string-property property">"editor.detectIndentation"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 重新设定tabsize</span>
   <span class="token string-property property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-  <span class="token string-property property">"editor.wordWrap"</span><span class="token operator">:</span> <span class="token string">"on"</span><span class="token punctuation">,</span> <span class="token comment">//超出页面自动换行</span>
-  <span class="token string-property property">"editor.formatOnSave"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"editor.wordWrap"</span><span class="token operator">:</span> <span class="token string">"on"</span><span class="token punctuation">,</span>
   <span class="token string-property property">"editor.codeActionsOnSave"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token string-property property">"source.fixAll"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token string-property property">"source.fixAll.eslint"</span><span class="token operator">:</span> <span class="token string">"explicit"</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"eslint.run"</span><span class="token operator">:</span> <span class="token string">"onType"</span><span class="token punctuation">,</span>
   <span class="token string-property property">"eslint.validate"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"javascript"</span><span class="token punctuation">,</span> <span class="token string">"javascriptreact"</span><span class="token punctuation">,</span> <span class="token string">"vue"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token string-property property">"[javascript]"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token string-property property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"vscode.typescript-language-features"</span>
+    <span class="token string-property property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"esbenp.prettier-vscode"</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token string-property property">"[vue]"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token string-property property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"octref.vetur"</span>
+    <span class="token string-property property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"esbenp.prettier-vscode"</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
   <span class="token string-property property">"[jsonc]"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
     <span class="token string-property property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"esbenp.prettier-vscode"</span>
@@ -743,7 +747,9 @@ Vue VSCode Snippets<span aria-hidden="true" class="line-numbers-rows"><span></sp
   <span class="token string-property property">"files.associations"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
     <span class="token string-property property">"*.cjson"</span><span class="token operator">:</span> <span class="token string">"jsonc"</span><span class="token punctuation">,</span>
     <span class="token string-property property">"*.wxss"</span><span class="token operator">:</span> <span class="token string">"css"</span><span class="token punctuation">,</span>
-    <span class="token string-property property">"*.wxs"</span><span class="token operator">:</span> <span class="token string">"javascript"</span>
+    <span class="token string-property property">"*.wxs"</span><span class="token operator">:</span> <span class="token string">"javascript"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"*.txt"</span><span class="token operator">:</span> <span class="token string">"vscode"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"*.md"</span><span class="token operator">:</span> <span class="token string">"vscode"</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token comment">// 打字特效</span>
   <span class="token string-property property">"powermode.enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 开启特效</span>
   <span class="token string-property property">"powermode.shake.intensity"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">//解决防抖 // 去除右上角图标</span>
@@ -756,13 +762,39 @@ Vue VSCode Snippets<span aria-hidden="true" class="line-numbers-rows"><span></sp
   <span class="token string-property property">"settingsSync.ignoredExtensions"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token string-property property">"git.confirmSync"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
   <span class="token string-property property">"explorer.confirmDragAndDrop"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token string-property property">"security.workspace.trust.untrustedFiles"</span><span class="token operator">:</span> <span class="token string">"open"</span>
+  <span class="token string-property property">"security.workspace.trust.untrustedFiles"</span><span class="token operator">:</span> <span class="token string">"open"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"diffEditor.ignoreTrimWhitespace"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"terminal.integrated.enableMultiLinePasteWarning"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"workbench.colorTheme"</span><span class="token operator">:</span> <span class="token string">"Dark+"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"editor.foldingStrategy"</span><span class="token operator">:</span> <span class="token string">"indentation"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"editor.foldingImportsByDefault"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"[scss]"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token string-property property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"xuwenjie.formate-custom"</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"workbench.editorAssociations"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token string-property property">"*.svg"</span><span class="token operator">:</span> <span class="token string">"default"</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"editor.suggest.showStatusBar"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"editor.unicodeHighlight.nonBasicASCII"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"files.autoGuessEncoding"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"trae.advanced"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token string-property property">"logLevel"</span><span class="token operator">:</span> <span class="token string">"info"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"logFile"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"outOfScopeProcess"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"debounceInterval"</span><span class="token operator">:</span> <span class="token number">125</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"proxyMode"</span><span class="token operator">:</span> <span class="token string">"system"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"proxyUrl"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"addToChatHint"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"workbench.editor.empty.hint"</span><span class="token operator">:</span> <span class="token string">"hidden"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"editor.fontLigatures"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"workbench.colorCustomizations"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
   <span class="token comment">// "powermode.presets": "fireworks" // 烟花</span>
   <span class="token comment">// "powermode.presets": "magic" // 魔法</span>
   <span class="token comment">// "powermode.presets": "clippy" // 回形针</span>
   <span class="token comment">// "powermode.presets": "simple-rift" // 粒子</span>
   <span class="token comment">// "powermode.presets": "exploding-rift" // 粒子</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
       <div class="post-tags-categories">
         
         <div class="tags">
